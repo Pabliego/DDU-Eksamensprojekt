@@ -1,3 +1,3 @@
 # DDU-Eksamensprojekt
 
-Et spil der har fokus på at producere et spil som kunst.
+Et spil der har fokus på at fremvise spil som kunst.
