@@ -1,0 +1,157 @@
+using Godot;
+using System;
+using System.Threading.Tasks;
+
+public partial class MainMenu : Control
+{
+    LineEdit InputField;
+    RichTextLabel OutputText;
+    private bool CursorVisible = true;
+    private Timer CursorTimer;
+
+    private AudioStreamPlayer2D alrt; 
+    
+    public override void _Ready()
+    {
+        InputField = GetNode<LineEdit>("InputField");
+        OutputText = GetNode<RichTextLabel>("OutputText");
+        alrt = GetNode<AudioStreamPlayer2D>("AlertSound");
+
+        InputField.TextSubmitted += InputSubmit;
+
+        _ = BootScreen();
+    }
+
+
+    private async Task WriteToTerminal(string text, float typedelay, bool newline)
+    {
+        if (typedelay <= 0f)
+        {
+            OutputText.Text += text;
+        }else{
+        foreach (char character in text)
+        {
+            OutputText.Text += character;
+            await ToSignal(GetTree().CreateTimer(typedelay), SceneTreeTimer.SignalName.Timeout);
+        };
+        }
+        if (newline == true)
+        {
+            OutputText.Text += "\n";   
+        }
+    }
+
+
+    public async Task BootScreen()
+    {
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        
+        InputField.Editable = false;
+
+        string[] MetaforaLogo =
+        {
+            """             __       ___             """,
+            """  __ _  ___ / /____ _/ _/__  _______ _""",
+            """ /  ' \/ -_) __/ _ `/ _/ _ \/ __/ _ `/""",
+            """/_/_/_/\__/\__/\_,_/_/ \___/_/  \_,_/ """,
+            """                                corp. """,
+            """                                All Rights Reserved.""",
+            """ """
+        };
+
+        foreach (string line in MetaforaLogo)
+        {
+            await WriteToTerminal(line, 0f, true);
+            await ToSignal(GetTree().CreateTimer(0.05f), SceneTreeTimer.SignalName.Timeout);
+        }
+
+        await ToSignal(GetTree().CreateTimer(0.4f), SceneTreeTimer.SignalName.Timeout);
+
+        //await WriteToTerminal("REMOTE CONNECTION SYSTEM BOOT v7.3.6 ................. [OK]", 0.001f, false);
+        await WriteToTerminal("REMOTE CONNECTION SYSTEM BOOT v7.3.6 ", 0.001f, false);
+        await WriteToTerminal(".................", 0.05f, false);
+        await WriteToTerminal(" [OK]", 0f, true);
+        //await WriteToTerminal("Loading user interface ...................... [FAIL]", 0.005f);
+        await WriteToTerminal("Loading user interface ", 0.001f, false);
+        await WriteToTerminal("......................", 0.08f, false);
+        await WriteToTerminal(" [FAIL]", 0f, true);
+        await WriteToTerminal("Initializing connection hardware ", 0.008f, false);
+        await WriteToTerminal("..................", 0.005f, false);
+        await WriteToTerminal(" [OK]", 0f, true);
+        await WriteToTerminal("Attempting connection ..................", 0.008f, false);
+        await WriteToTerminal(" [FAIL]", 0f, true);
+        await WriteToTerminal("Attempting connection ..................", 0.006f, false);
+        await WriteToTerminal(" [FAIL]", 0f, true);
+        await WriteToTerminal("Attempting connection ..................", 0.003f, false);
+        await WriteToTerminal(" [FAIL]", 0f, true);
+
+        await ToSignal(GetTree().CreateTimer(0.8f), SceneTreeTimer.SignalName.Timeout);
+
+        //await WriteToTerminal("Attempting connection .................. [OK]", 0.002f);
+        await WriteToTerminal("Attempting connection ", 0.002f, false);
+        await WriteToTerminal("..................", 0.10f, false);
+        await WriteToTerminal(" [OK]", 0f, true);
+
+        await WriteToTerminal("\nType 'help' for available commands.", 0.001f, true);
+        await WriteToTerminal("> ", 0.01f, true);
+
+        InputField.Editable = true;
+        InputField.GrabFocus();
+    }
+
+    bool quitstatus = false;
+    public async void InputSubmit(string text)
+    {
+        string input = text.Trim().ToLower();
+        InputField.Clear();
+
+        alrt.Play();
+        
+
+        switch (input)
+        {
+            case "start":
+                _ = StartGameSequence();
+                break;
+            case "help":
+                await WriteToTerminal("> Available commands: start, quit, options", 0.01f, true);
+                break;
+            case "quit":
+                await WriteToTerminal("Are you sure? y/n", 0f, true);
+                quitstatus = true;
+                break;
+
+            case "y":
+                if (quitstatus == true)
+                {
+                    GetTree().Quit();
+                } else {
+                    await WriteToTerminal($"> Unknown command: {input}", 0.01f, true);
+                    quitstatus = false;
+                }
+                break;
+            case "n":
+                quitstatus = false;
+                break;
+
+
+            default:
+                await WriteToTerminal($"> Unknown command: {input}", 0.01f, true);
+                quitstatus = false;
+                break;
+        }
+
+        InputField.GrabFocus();
+
+    }
+
+
+    private async Task StartGameSequence()
+    {
+        GetTree().ChangeSceneToFile("res://scenes/levels/world1.tscn");
+    } 
+
+
+}

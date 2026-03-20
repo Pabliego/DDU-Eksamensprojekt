@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhugwdxnuolr0"
+path="res://.godot/imported/alert2 version 9 by tissman Freesound org.wav-b87929a7a7991ea18602f350463404fa.sample"
+
+[deps]
+
+source_file="res://assets/audio/alert2 version 9 by tissman Freesound org.wav"
+dest_files=["res://.godot/imported/alert2 version 9 by tissman Freesound org.wav-b87929a7a7991ea18602f350463404fa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

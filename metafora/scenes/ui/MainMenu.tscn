@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://binaohjvvxn4b"]
+
+[ext_resource type="Script" uid="uid://11r6fhrfrfq5" path="res://scripts/ui/MainMenu.cs" id="1_vjtqc"]
+[ext_resource type="FontFile" uid="uid://d2h1n654joknf" path="res://assets/fonts/MozartNbp-93Ey.ttf" id="2_6jbdy"]
+[ext_resource type="Theme" uid="uid://clpg7gx8tlo41" path="res://assets/fonts/PixelFontTheme.tres" id="2_iwbf0"]
+[ext_resource type="Shader" uid="uid://cm27ol86f1jt1" path="res://addons/CRT-VISUAL-SHADER-GODOT 4.0/CRT.gdshader" id="4_2ysvc"]
+[ext_resource type="AudioStream" uid="uid://bhugwdxnuolr0" path="res://assets/audio/alert2 version 9 by tissman Freesound org.wav" id="5_bhu4a"]
+[ext_resource type="AudioStream" uid="uid://f0ikrqun16nx" path="res://assets/audio/vhs hum by jacobzeier Freesound org.wav" id="5_xpiny"]
+
+[sub_resource type="Theme" id="Theme_iwbf0"]
+default_font = ExtResource("2_6jbdy")
+default_font_size = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwbf0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ysvc"]
+font = ExtResource("2_6jbdy")
+font_size = 70
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ysvc"]
+shader = ExtResource("4_2ysvc")
+shader_parameter/overlay = false
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/brightness = 1.4
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.1790000085025
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.0
+shader_parameter/roll_size = 15.0000007125
+shader_parameter/roll_variation = 1.36900006176762
+shader_parameter/distort_intensity = 0.0
+shader_parameter/aberration = 0.00800004787999997
+shader_parameter/noise_opacity = 0.09200000437
+shader_parameter/noise_speed = 1.0
+shader_parameter/static_noise_intensity = 0.01600000076
+shader_parameter/pixelate = false
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.6150000292125
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5330000253175
+
+[node name="Main Menu" type="Control" unique_id=941181685]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vjtqc")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1913661828]
+layout_mode = 0
+offset_left = -54.0
+offset_top = -57.0
+offset_right = 1953.0
+offset_bottom = 1112.0
+color = Color(0.18359044, 0.18359044, 0.18359044, 1)
+
+[node name="OutputText" type="RichTextLabel" parent="." unique_id=1540854353]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 46.0
+offset_right = 1878.0
+offset_bottom = 792.0
+theme = ExtResource("2_iwbf0")
+scroll_active = false
+scroll_following = true
+
+[node name="InputFieldBackdrop" type="ColorRect" parent="." unique_id=184800828]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 865.0
+offset_right = 1844.0
+offset_bottom = 1036.0
+color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+
+[node name="InputField" type="LineEdit" parent="." unique_id=1890585924]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 868.0
+offset_right = 1814.0
+offset_bottom = 941.0
+theme = SubResource("Theme_iwbf0")
+theme_override_constants/caret_width = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_iwbf0")
+keep_editing_on_text_submit = true
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+flat = true
+virtual_keyboard_enabled = false
+caret_blink = true
+caret_force_displayed = true
+
+[node name="Label" type="Label" parent="." unique_id=1323100174]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 807.0
+offset_right = 424.0
+offset_bottom = 880.0
+text = "Terminal Input"
+label_settings = SubResource("LabelSettings_2ysvc")
+
+[node name="CRT Filter" type="ColorRect" parent="." unique_id=224283600]
+material = SubResource("ShaderMaterial_2ysvc")
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1080.0
+
+[node name="AlertSound" type="AudioStreamPlayer2D" parent="." unique_id=203208656]
+stream = ExtResource("5_bhu4a")
+volume_db = -6.318
+
+[node name="ScreenHum" type="AudioStreamPlayer2D" parent="." unique_id=1376589970]
+stream = ExtResource("5_xpiny")
+autoplay = true
