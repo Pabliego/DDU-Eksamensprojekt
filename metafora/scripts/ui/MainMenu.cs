@@ -49,7 +49,7 @@ public partial class MainMenu : Control
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         
         InputField.Editable = false;
-
+        /*
         string[] MetaforaLogo =
         {
             """             __       ___             """,
@@ -59,6 +59,21 @@ public partial class MainMenu : Control
             """                                corp. """,
             """                                All Rights Reserved.""",
             """ """
+        };
+        */
+
+        string[] MetaforaLogo =
+        {
+            "                                                   ,d8888b                           ",
+            "                                d8P                88P'                              ",
+            "                            d888888P           d888888P                             ",
+            "        88bd8b,d88b   d8888b  ?88'   d888b8b     ?88'   d8888b    88bd88b  d888b8b  ",
+            "       88P'`?8P'?8b d8b_,dP  88P   d8P' ?88     88P   d8P' ?88   88P'   `d8P' ?88  ",
+            "      d88  d88  88  P88b      88b   88b  ,88b   d88    88b  d88  d88      88b  ,88b ",
+            "     d88' d88'  88b `?888P'  `?8b  `?88P'`88b d88'    `?8888P' d88'      `?88P'`88b",
+            "                                                                         corp.",
+            "                                                                         All Rights Reserved.",
+            ""                                                               
         };
 
         foreach (string line in MetaforaLogo)
@@ -128,7 +143,10 @@ public partial class MainMenu : Control
                 {
                     GetTree().Quit();
                 } else {
+                    InputField.Editable = false;
                     await WriteToTerminal($"> Unknown command: {input}", 0.01f, true);
+                    InputField.Editable = true;
+                    InputField.GrabFocus();
                     quitstatus = false;
                 }
                 break;
