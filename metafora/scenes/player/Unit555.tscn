@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://cktqbwdtjrkv3"]
 
 [ext_resource type="Script" uid="uid://brf7frs8s6aad" path="res://scripts/player/Unit555.cs" id="1_00sqr"]
+[ext_resource type="Texture2D" uid="uid://dqhneuammh4xj" path="res://assets/sprites/metafora/tank/tank idle.png" id="2_3cmg6"]
 [ext_resource type="Texture2D" uid="uid://3s2caswpjcuf" path="res://assets/sprites/metafora/tank/tank walk.png" id="2_xjypf"]
 [ext_resource type="Texture2D" uid="uid://cb111nvwg0y6h" path="res://assets/sprites/metafora/tank/tank turn.png" id="3_3cmg6"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4vayc"]
-load_path = "res://.godot/imported/tank idle.png-620575fc30cf4eab02a1f15dca78afeb.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vayc"]
+atlas = ExtResource("2_3cmg6")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jj7yo"]
-atlas = SubResource("CompressedTexture2D_4vayc")
-region = Rect2(0, 0, 64, 64)
+atlas = ExtResource("2_3cmg6")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5rrp"]
 atlas = ExtResource("2_xjypf")
@@ -51,11 +53,14 @@ region = Rect2(256, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4vayc")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_jj7yo")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -95,28 +100,33 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnkno"]
-size = Vector2(35, 4)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cmg6"]
+radius = 2.0
+height = 36.0
 
 [node name="Unit555" type="Node2D" unique_id=1766458665]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1582328617]
+[node name="Unit555Body" type="CharacterBody2D" parent="." unique_id=1582328617]
 script = ExtResource("1_00sqr")
 MaxSpeed = 150.0
 Acceleration = 400.0
 Deceleration = 300.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=534515840]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Unit555Body" unique_id=534515840]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_wssvm")
 animation = &"idle"
+frame_progress = 0.32795075
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=99454791]
-position = Vector2(0.5, -3)
-shape = SubResource("RectangleShape2D_mnkno")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Unit555Body" unique_id=99454791]
+position = Vector2(0, -3)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_3cmg6")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=390973805]
+[node name="Camera2D" type="Camera2D" parent="Unit555Body" unique_id=390973805]
 offset = Vector2(0, -25)
 zoom = Vector2(4.35, 4.35)
 process_callback = 0
 position_smoothing_enabled = true
+
+[connection signal="animation_finished" from="Unit555Body/AnimatedSprite2D" to="Unit555Body" method="AnimationFinished"]

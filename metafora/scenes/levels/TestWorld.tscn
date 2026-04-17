@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bm68mdtdgf01s"]
+
+[ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="1_iyqsp"]
+[ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="2_ydtff"]
+[ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/button.tscn" id="3_v3ud1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aj5d"]
+size = Vector2(604.5, 82)
+
+[node name="TestWorld" type="Node2D" unique_id=764947150]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1962611247]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=789197879]
+position = Vector2(504, 674)
+shape = SubResource("RectangleShape2D_1aj5d")
+
+[node name="Door" parent="." unique_id=485062677 instance=ExtResource("1_iyqsp")]
+position = Vector2(412, 600)
+
+[node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("2_ydtff")]
+position = Vector2(224, 633)
+
+[node name="Button" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
+position = Vector2(317, 630)
+linkedDoor = NodePath("../Door")

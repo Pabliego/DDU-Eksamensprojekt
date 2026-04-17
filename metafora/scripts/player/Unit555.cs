@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Net.Http;
 
 public partial class Unit555 : CharacterBody2D
 {
@@ -12,19 +13,25 @@ public partial class Unit555 : CharacterBody2D
     private bool LookingRight = true;
     private bool Turning = false;
 
-
-	    public override void _Ready()
+    
+	public override void _Ready()
     {
         Unit555ani = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
 	
 
-
 	public override void _PhysicsProcess(double delta)
 	{
-		float input = 0f;
-        if (Input.IsActionPressed("ui_right")) input =  1f;
-        if (Input.IsActionPressed("ui_left"))  input = -1f;
+        float input = 0f;
+
+        if (Input.IsActionPressed("ui_right"))
+        {
+            input =  1f;  
+        } 
+        if (Input.IsActionPressed("ui_left"))
+        {
+            input = -1f;
+        }
 
 
 		bool detectTurn = false;
@@ -71,10 +78,9 @@ public partial class Unit555 : CharacterBody2D
 
 		MoveAndSlide();
 		UpdateAnimation();
-		
 	}
 
-	    private void UpdateAnimation()
+	private void UpdateAnimation()
     {
         if (Turning)
             Unit555ani.Play("turn");
@@ -83,4 +89,5 @@ public partial class Unit555 : CharacterBody2D
         else
             Unit555ani.Play("idle");
     }
+
 }

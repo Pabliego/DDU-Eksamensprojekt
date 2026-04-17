@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqhneuammh4xj"
-path="res://.godot/imported/tank idle.png-620575fc30cf4eab02a1f15dca78afeb.ctex"
+uid="uid://c221hpj2f4ri3"
+path="res://.godot/imported/bunker vault door.png-02ab201fa3c4828791a6c18ee0d83226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/metafora/tank/tank idle.png"
-dest_files=["res://.godot/imported/tank idle.png-620575fc30cf4eab02a1f15dca78afeb.ctex"]
+source_file="res://assets/textures/Bunker/bunker vault door.png"
+dest_files=["res://.godot/imported/bunker vault door.png-02ab201fa3c4828791a6c18ee0d83226.ctex"]
 
 [params]
 
