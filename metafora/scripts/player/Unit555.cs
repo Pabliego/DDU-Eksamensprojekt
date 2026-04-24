@@ -1,93 +1,78 @@
 using Godot;
 using System;
-using System.Net.Http;
 
 public partial class Unit555 : CharacterBody2D
 {
-	[Export] public float MaxSpeed;
-    [Export] public float Acceleration;
-    [Export] public float Deceleration;
+    [Export] public float MaxSpeed = 150;
+    [Export] public float Acceleration = 350;
+    [Export] public float Deceleration = 250;
 
-	private AnimatedSprite2D Unit555ani;
-	private float currentSpeed = 0f;
-    private bool LookingRight = true;
+    private AnimatedSprite2D Unit555ani;
+    private float currentSpeed = 0f;
     private bool Turning = false;
+    private int FacingDirection = 1; // 1 = right, -1 = left
 
-    
-	public override void _Ready()
+    public override void _Ready()
     {
         Unit555ani = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     }
-	
 
-	public override void _PhysicsProcess(double delta)
-	{
-        float input = 0f;
+    public override void _PhysicsProcess(double delta)
+    {
+        int input = 0;
 
         if (Input.IsActionPressed("ui_right"))
         {
-            input =  1f;  
-        } 
+            input = 1;
+        }
         if (Input.IsActionPressed("ui_left"))
         {
-            input = -1f;
+            input = -1;
         }
 
 
-		bool detectTurn = false;
-		if (input > 0f && !LookingRight || input < 0f && LookingRight)
-		{
-			detectTurn = true;
-		}
-		if (detectTurn && !Turning)
-		{
-			Turning = true; 
-		}
+        if (input != 0 && input != FacingDirection && !Turning)
+        {
+            FacingDirection = input;
+            Turning = true;
+        }
 
-
-		if (Turning)
+        if (Turning)
         {
             currentSpeed = Mathf.MoveToward(currentSpeed, 0f, Deceleration * (float)delta);
 
-            // Once fully stopped, flip and exit turning state
             if (Mathf.Abs(currentSpeed) < 1f)
             {
-                LookingRight = !LookingRight;
-                Unit555ani.FlipH = !LookingRight;
+                Unit555ani.FlipH = FacingDirection != 1;
                 Turning = false;
             }
         }
         else
         {
-            if (input != 0f)
-			{
+            if (input != 0)
                 currentSpeed = Mathf.MoveToward(currentSpeed, input * MaxSpeed, Acceleration * (float)delta);
-			}
-			else
-			{
+            else
                 currentSpeed = Mathf.MoveToward(currentSpeed, 0f, Deceleration * (float)delta);
-			}
         }
 
-		Velocity = new Vector2(currentSpeed, Velocity.Y);
-		if (!IsOnFloor())
-		{
-			Velocity += GetGravity() * (float)delta;
-		}
+        Velocity = new Vector2(currentSpeed, Velocity.Y);
+        if (!IsOnFloor())
+            Velocity += GetGravity() * (float)delta;
 
+        MoveAndSlide();
+        UpdateAnimation();
+    }
 
-		MoveAndSlide();
-		UpdateAnimation();
-	}
-
-	private void UpdateAnimation()
+    private void UpdateAnimation()
     {
         if (Turning)
-            Unit555ani.Play("turn");
+        {
+            if (Unit555ani.Animation != "turn")
+                Unit555ani.Play("turn");
+        }
         else if (Mathf.Abs(currentSpeed) > 5f)
             Unit555ani.Play("move");
         else
             Unit555ani.Play("idle");
     }
-
 }

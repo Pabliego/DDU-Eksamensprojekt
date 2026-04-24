@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dlptl17l7mwbb"]
+
+[ext_resource type="Script" uid="uid://dnmcise5i0g5d" path="res://scripts/systems/Elevator.cs" id="1_3mm5b"]
+[ext_resource type="Texture2D" uid="uid://ourl1rskgt0g" path="res://assets/textures/Bunker/ElevatorBlue.png" id="1_k2ghr"]
+[ext_resource type="Texture2D" uid="uid://c011pqqhoissa" path="res://assets/textures/Bunker/ElevatorGreen.png" id="2_3mm5b"]
+[ext_resource type="Texture2D" uid="uid://kie6gblwun5a" path="res://assets/textures/Bunker/ElevatorRed.png" id="3_1dn5o"]
+[ext_resource type="Texture2D" uid="uid://ubes4y4ulygq" path="res://assets/textures/Bunker/ElevatorYellow.png" id="4_1qe38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2ghr"]
+size = Vector2(38, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujsu4"]
+atlas = ExtResource("1_k2ghr")
+region = Rect2(0, 0, 38, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vy3x"]
+atlas = ExtResource("2_3mm5b")
+region = Rect2(0, 0, 38, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io85x"]
+atlas = ExtResource("3_1dn5o")
+region = Rect2(0, 0, 38, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utl0r"]
+atlas = ExtResource("4_1qe38")
+region = Rect2(0, 0, 38, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kqew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujsu4")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vy3x")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io85x")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utl0r")
+}],
+"loop": true,
+"name": &"yellow",
+"speed": 5.0
+}]
+
+[node name="elevator" type="Node2D" unique_id=1021299162]
+script = ExtResource("1_3mm5b")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=74628857]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1020543513]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_k2ghr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=530975234]
+sprite_frames = SubResource("SpriteFrames_1kqew")
+animation = &"blue"
