@@ -1,18 +1,18 @@
-[gd_scene format=3 uid="uid://c8taeqpj72bqx"]
+[gd_scene format=3 uid="uid://55ns62ca0pet"]
 
-[ext_resource type="Script" uid="uid://ckbl7sas5aweq" path="res://scripts/systems/Button.cs" id="1_4jl2d"]
-[ext_resource type="Texture2D" uid="uid://ckp0ew4y47c25" path="res://assets/textures/Bunker/button press.png" id="1_4rg76"]
+[ext_resource type="Script" uid="uid://dnjjb5i6yx7of" path="res://scripts/systems/Elevatorbutton.cs" id="1_liy6l"]
+[ext_resource type="Texture2D" uid="uid://ckp0ew4y47c25" path="res://assets/textures/Bunker/button press.png" id="2_45vbm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_86suh"]
-atlas = ExtResource("1_4rg76")
+atlas = ExtResource("2_45vbm")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_id1bk"]
-atlas = ExtResource("1_4rg76")
+atlas = ExtResource("2_45vbm")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ec8cw"]
-atlas = ExtResource("1_4rg76")
+atlas = ExtResource("2_45vbm")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k8y15"]
@@ -48,8 +48,8 @@ size = Vector2(17, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmci"]
 size = Vector2(15, 3)
 
-[node name="Button" type="Node2D" unique_id=1785796626]
-script = ExtResource("1_4jl2d")
+[node name="ElevatorButton" type="Node2D" unique_id=1785796626]
+script = ExtResource("1_liy6l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1508164876]
 position = Vector2(0.99999994, -6.500001)

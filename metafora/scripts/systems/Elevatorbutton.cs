@@ -1,10 +1,9 @@
 using Godot;
 using System;
 
-public partial class Button : Node2D
+public partial class Elevatorbutton : Node2D
 {
-	
-	[Export] public Door linkedDoor;
+	[Export] public Elevator linkedElevator;
 
 	private AnimatedSprite2D aniButton;
 	private Area2D DetectBox;
@@ -20,11 +19,11 @@ public partial class Button : Node2D
 	{
 		if (Activated != true)
 		{
-			linkedDoor.Activate(true);
+			linkedElevator.Activate();
 			Activated = true;
 		} else
 		{
-			linkedDoor.Activate(false);
+			linkedElevator.Activate();
 			Activated = false;
 		}
 		
@@ -35,7 +34,7 @@ public partial class Button : Node2D
 		if (body.Name == "Unit555Body")
 		{
 			aniButton.Play("pressed");
-			if (linkedDoor != null)
+			if (linkedElevator != null)
 			{
 				ActivateLink();
 			} else {

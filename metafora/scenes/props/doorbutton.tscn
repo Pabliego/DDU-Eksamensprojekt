@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c8taeqpj72bqx"]
+
+[ext_resource type="Script" uid="uid://dm2yk0o62ww4p" path="res://scripts/systems/DoorButton.cs" id="1_0o3a3"]
+[ext_resource type="Texture2D" uid="uid://ckp0ew4y47c25" path="res://assets/textures/Bunker/button press.png" id="1_4rg76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86suh"]
+atlas = ExtResource("1_4rg76")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id1bk"]
+atlas = ExtResource("1_4rg76")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec8cw"]
+atlas = ExtResource("1_4rg76")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8y15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86suh")
+}],
+"loop": true,
+"name": &"engaged",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id1bk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec8cw")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jl2d"]
+size = Vector2(17, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmci"]
+size = Vector2(15, 3)
+
+[node name="DoorButton" type="Node2D" unique_id=1785796626]
+script = ExtResource("1_0o3a3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1508164876]
+position = Vector2(0.99999994, -6.500001)
+scale = Vector2(1.1249999, 1.1875)
+sprite_frames = SubResource("SpriteFrames_k8y15")
+animation = &"idle"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1796653436]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1755745398]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_4jl2d")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=935923163]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=903965278]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_2kmci")
+debug_color = Color(0.9739358, 0.80458915, 0.3755614, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="BodyEntered"]
+[connection signal="body_exited" from="Area2D" to="." method="BodyExited"]

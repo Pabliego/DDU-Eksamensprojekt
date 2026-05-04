@@ -13,6 +13,8 @@ public partial class Elevator : Node2D
 	[Export] private Node2D Point1 {get; set;}
 	[Export] private Node2D Point2 {get; set;}
 
+	[Export] private bool AwaitActivaion = false;
+
 	[Export(PropertyHint.Enum, "red, blue, yellow, green")] private string ColorSelect;
 
 	public Vector2 TargetPosition;
@@ -29,7 +31,13 @@ public partial class Elevator : Node2D
 
 		ani.Play(ColorSelect);
 
-		MovePlatform();
+		if (AwaitActivaion)
+		{
+			
+		} else
+		{
+			MovePlatform();
+		}
     }
 
 	
@@ -44,5 +52,10 @@ public partial class Elevator : Node2D
         tween.TweenProperty(platform, "global_position", Point1.GlobalPosition, MovementDuration).SetTrans(Tween.TransitionType.Sine).SetEase(Tween.EaseType.InOut);
 		tween.TweenInterval(PauseDuration);
     }
+
+	public void Activate()
+	{
+		MovePlatform();
+	}
 
 }
