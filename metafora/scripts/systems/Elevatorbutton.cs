@@ -5,6 +5,8 @@ public partial class Elevatorbutton : Node2D
 {
 	[Export] public Elevator linkedElevator;
 
+	[Export] public bool HasToBeHeld = false;
+
 	private AnimatedSprite2D aniButton;
 	private Area2D DetectBox;
 	bool Activated = false;
@@ -31,7 +33,7 @@ public partial class Elevatorbutton : Node2D
 
 	private void BodyEntered(Node2D body)
 	{
-		if (body.Name == "Unit555Body")
+		if (body.Name == "Unit555Body" || body.IsInGroup("pushable"))
 		{
 			aniButton.Play("pressed");
 			if (linkedElevator != null)
@@ -46,7 +48,7 @@ public partial class Elevatorbutton : Node2D
 
 	private void BodyExited(Node2D body)
 	{
-		if (body.Name == "Unit555Body")
+		if (body.Name == "Unit555Body" || body.IsInGroup("pushable"))
 		{
 			if (Activated == true)
 			{
@@ -54,6 +56,11 @@ public partial class Elevatorbutton : Node2D
 			} else {
 				aniButton.Play("idle");
 			}
+		}
+		if (HasToBeHeld == true)
+		{
+			linkedElevator.Activate();
+			Activated = false;
 		}
 	} 
 }

@@ -3,9 +3,11 @@ using System;
 
 public partial class Unit555 : CharacterBody2D
 {
-    [Export] public float MaxSpeed = 150;
-    [Export] public float Acceleration = 350;
-    [Export] public float Deceleration = 250;
+    [Export] public float MaxSpeed = 150f;
+    [Export] public float Acceleration = 350f;
+    [Export] public float Deceleration = 250f;
+
+    [Export] public float PushForce = 100f;
 
     private AnimatedSprite2D Unit555ani;
     private float currentSpeed = 0f;
@@ -61,6 +63,16 @@ public partial class Unit555 : CharacterBody2D
 
         MoveAndSlide();
         UpdateAnimation();
+
+        for (int i = 0; i < GetSlideCollisionCount(); i++)
+        {
+            KinematicCollision2D collision = GetSlideCollision(i);
+
+            if (collision.GetCollider() is RigidBody2D pushable)
+            {
+                pushable.ApplyForce(-collision.GetNormal() * PushForce);
+            }
+        }
     }
 
     private void UpdateAnimation()

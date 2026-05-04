@@ -19,7 +19,7 @@ public partial class Elevator : Node2D
 
 	public Vector2 TargetPosition;
 	
-
+	private bool Activated = false;
 
 
 
@@ -55,7 +55,11 @@ public partial class Elevator : Node2D
 
 	public void Activate()
 	{
-		MovePlatform();
+		if (Activated == false)
+		{
+			MovePlatform();
+			Activated = true;
+		}
 	}
 
 }

@@ -101,8 +101,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cmg6"]
-radius = 2.0
+radius = 3.0
 height = 36.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vayc"]
+height = 34.0
 
 [node name="Unit555" type="Node2D" unique_id=1766458665]
 
@@ -119,6 +122,13 @@ animation = &"idle"
 position = Vector2(0, -3)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_3cmg6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Unit555Body" unique_id=1777058991]
+visible = false
+position = Vector2(1, -10)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_4vayc")
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="Unit555Body" unique_id=390973805]
 position = Vector2(0, -30)

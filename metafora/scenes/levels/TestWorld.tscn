@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="3_v3ud1"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_ydtff"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="5_v3ud1"]
+[ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="6_nig7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aj5d"]
 size = Vector2(604.5, 82)
@@ -26,6 +27,7 @@ position = Vector2(226, 633)
 [node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(342, 630)
 linkedDoor = NodePath("../Door")
+HasToBeHeld = true
 
 [node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_ydtff")]
 position = Vector2(490, 635)
@@ -54,3 +56,8 @@ position = Vector2(-2, -73)
 [node name="ElevatorButton" parent="." unique_id=1830074238 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_v3ud1")]
 position = Vector2(653, 630)
 linkedElevator = NodePath("../elevator2")
+
+[node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("6_nig7w")]
+position = Vector2(273, 620)
+mass = 0.09
+lock_rotation = true

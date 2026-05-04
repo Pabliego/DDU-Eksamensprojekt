@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dxp27bsxadg02"]
+
+[ext_resource type="Texture2D" uid="uid://lyfmhwk1rycl" path="res://assets/textures/Bunker/Box Blue.png" id="1_6a08m"]
+[ext_resource type="Script" uid="uid://jdfariq7h3yi" path="res://scripts/systems/PushableBox.cs" id="1_or3dk"]
+[ext_resource type="Texture2D" uid="uid://dd7f1fpxr60f" path="res://assets/textures/Bunker/Box Green.png" id="2_or3dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x7wo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eieg"]
+atlas = ExtResource("1_6a08m")
+region = Rect2(0, 0, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlm0q"]
+atlas = ExtResource("2_or3dk")
+region = Rect2(0, 0, 11, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6x7wo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eieg")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlm0q")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[node name="PushableBox" type="RigidBody2D" unique_id=239121608 groups=["pushable"]]
+script = ExtResource("1_or3dk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=617166307]
+shape = SubResource("RectangleShape2D_6x7wo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1000262956]
+position = Vector2(3.9013952e-07, -8.940697e-08)
+scale = Vector2(1.8181818, 1.8181818)
+sprite_frames = SubResource("SpriteFrames_6x7wo")
+animation = &"blue"
