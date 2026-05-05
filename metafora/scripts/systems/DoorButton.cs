@@ -8,6 +8,8 @@ public partial class DoorButton : Node2D
 
 	[Export] public bool HasToBeHeld = false;
 
+	[Export] public bool ActivateOnce = false;
+
 	private AnimatedSprite2D aniButton;
 	private Area2D DetectBox;
 	bool Activated = false;
@@ -27,7 +29,10 @@ public partial class DoorButton : Node2D
 		} else
 		{
 			linkedDoor.Activate(false);
-			Activated = false;
+			if (ActivateOnce != true)
+			{
+				Activated = false;	
+			}
 		}
 		
 	}
