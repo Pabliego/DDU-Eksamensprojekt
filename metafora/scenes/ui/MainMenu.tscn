@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://cm27ol86f1jt1" path="res://addons/CRT-VISUAL-SHADER-GODOT 4.0/CRT.gdshader" id="4_2ysvc"]
 [ext_resource type="AudioStream" uid="uid://bhugwdxnuolr0" path="res://assets/audio/alert2 version 9 by tissman Freesound org.wav" id="5_bhu4a"]
 [ext_resource type="AudioStream" uid="uid://f0ikrqun16nx" path="res://assets/audio/vhs hum by jacobzeier Freesound org.wav" id="5_xpiny"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="7_e2per"]
 
 [sub_resource type="Theme" id="Theme_iwbf0"]
 default_font = ExtResource("2_6jbdy")
@@ -122,3 +123,6 @@ volume_db = -6.318
 [node name="ScreenHum" type="AudioStreamPlayer2D" parent="." unique_id=1376589970]
 stream = ExtResource("5_xpiny")
 autoplay = true
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("7_e2per")]
+layout_mode = 1

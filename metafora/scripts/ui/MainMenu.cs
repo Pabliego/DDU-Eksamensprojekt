@@ -168,6 +168,8 @@ public partial class MainMenu : Control
 
     private async Task StartGameSequence()
     {
+        GetTree().CurrentScene.GetNode<SceneFadeTransition>("SceneFadeTransition").PlayTransition("FadeOut");
+        await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
         GetTree().ChangeSceneToFile("res://scenes/levels/The Elevators.tscn");
     } 
 

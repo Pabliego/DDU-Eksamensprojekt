@@ -47,13 +47,13 @@ public partial class Door : Node2D
 		}
 	}
 
-	public void BodyEntered(Node2D body)
+	public async void BodyEntered(Node2D body)
 	{
 		if (body.Name == "Unit555Body")
 		{
 			if (selectedScene != null)
 			{
-				GetTree().ChangeSceneToFile(selectedScene.ResourcePath);	
+				GetTree().CurrentScene.GetNode<SceneFadeTransition>("SceneFadeTransition").PlayTransitionAndChangeScene(selectedScene.ResourcePath);	
 			}		
 		}
 

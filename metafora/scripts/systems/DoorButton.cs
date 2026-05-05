@@ -28,9 +28,9 @@ public partial class DoorButton : Node2D
 			Activated = true;
 		} else
 		{
-			linkedDoor.Activate(false);
 			if (ActivateOnce != true)
 			{
+				linkedDoor.Activate(false);
 				Activated = false;	
 			}
 		}

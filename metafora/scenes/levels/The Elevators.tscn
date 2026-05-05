@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfcwop1jysxc" path="res://scenes/levels/The Gap.tscn" id="3_sqwa2"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_j3qbt"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_016tv"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="7_1evv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtrwo"]
 texture = ExtResource("1_i88qs")
@@ -655,3 +656,9 @@ position = Vector2(1, -54)
 
 [node name="Node2D2" type="Node2D" parent="elevator12" unique_id=1918443614]
 position = Vector2(0, 77)
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("7_1evv3")]
+offset_left = 440.0
+offset_top = -108.0
+offset_right = 440.0
+offset_bottom = -108.0
