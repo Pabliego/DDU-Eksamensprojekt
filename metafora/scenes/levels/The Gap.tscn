@@ -546,6 +546,7 @@ position = Vector2(86, 1)
 [node name="DoorButton2" parent="." unique_id=406246847 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_d314w")]
 position = Vector2(927, -3)
 linkedDoor = NodePath("../Door2")
+ActivateOnce = true
 
 [node name="elevator3" parent="." unique_id=1071540878 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_d314w")]
 position = Vector2(424, -54)

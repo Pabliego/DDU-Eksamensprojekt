@@ -213,6 +213,7 @@ autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1009711656]
 disable_mode = 1
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1040518055]
 position = Vector2(0, 2.5)

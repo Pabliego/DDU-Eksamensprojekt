@@ -25,10 +25,10 @@ public partial class Door : Node2D
     {
         if (AreaDetect.Monitoring == true)
 		{
-
+			Collision.Visible = true;
 		} else
 		{
-			
+			Collision.Visible = false;
 		}
     }
 
@@ -39,7 +39,6 @@ public partial class Door : Node2D
 		{
 			aniDoor.Play("open");	
 			AreaDetect.Monitoring = true;
-
 		}
 		else
 		{
