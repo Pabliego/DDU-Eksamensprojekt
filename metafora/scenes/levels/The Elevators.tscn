@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://chl5gctyff6jy"]
 
-[ext_resource type="Texture2D" uid="uid://bdubwemja1r28" path="res://assets/textures/Bunker/bunker tiles.png" id="1_82eri"]
-[ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="2_0gomc"]
-[ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="3_g4my2"]
-[ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_7gb3t"]
-[ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_wv3ah"]
+[ext_resource type="Texture2D" uid="uid://bdubwemja1r28" path="res://assets/textures/Bunker/bunker tiles.png" id="1_i88qs"]
+[ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="2_sqwa2"]
+[ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="3_1evv3"]
+[ext_resource type="PackedScene" uid="uid://bfcwop1jysxc" path="res://scenes/levels/The Gap.tscn" id="3_sqwa2"]
+[ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_j3qbt"]
+[ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_016tv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtrwo"]
-texture = ExtResource("1_82eri")
+texture = ExtResource("1_i88qs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -167,19 +168,12 @@ texture = ExtResource("1_82eri")
 0:7/0 = 0
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2.378296, -8, 2.2792006, 8, 8, 8, -8, 8)
 1:7/0 = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 2:7/0 = 0
-2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 3:7/0 = 0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 4:7/0 = 0
-4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 5:7/0 = 0
-5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 6:7/0 = 0
-6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 7:7/0 = 0
-7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 10:7/0 = 0
 11:7/0 = 0
 12:7/0 = 0
@@ -420,21 +414,14 @@ texture = ExtResource("1_82eri")
 24:18/0 = 0
 25:18/0 = 0
 0:19/0 = 0
-0:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 1:19/0 = 0
-1:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 2:19/0 = 0
-2:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 3:19/0 = 0
-3:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 4:19/0 = 0
-4:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 5:19/0 = 0
-5:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 6:19/0 = 0
-6:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 7.041333, 8, 7.035795, 8, 8, -8, 8)
 7:19/0 = 0
-7:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2.378296, -8, 2.2792006, 8, 8, 8, -8, 8)
+7:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -2.378296, -8, -2.2792006, 8, -8, 8, 8, 8)
 9:19/0 = 0
 10:19/0 = 0
 11:19/0 = 0
@@ -475,15 +462,25 @@ texture = ExtResource("1_82eri")
 7:21/0 = 0
 9:21/0 = 0
 11:21/0 = 0
+11:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:21/0 = 0
+12:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:21/0 = 0
+13:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:21/0 = 0
+14:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:21/0 = 0
+15:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:21/0 = 0
+16:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:21/0 = 0
+17:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:21/0 = 0
+18:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:21/0 = 0
+19:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:21/0 = 0
+20:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:21/0 = 0
 7:20/0 = 0
 6:20/0 = 0
@@ -491,9 +488,6 @@ texture = ExtResource("1_82eri")
 [sub_resource type="TileSet" id="TileSet_yg3ru"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vtrwo")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca3nq"]
-size = Vector2(125, 31)
 
 [node name="The Elevators" type="Node2D" unique_id=503743448]
 
@@ -509,13 +503,14 @@ tile_set = SubResource("TileSet_yg3ru")
 tile_map_data = PackedByteArray("AAAhAPT/AAAQAA4AAAAhAPX/AAAQAA8AAAAhAPb/AAAQABAAAAAhAPH/AAAQAA4AAAAhAPL/AAAQAA8AAAAhAPP/AAAQABAAAAAhAO7/AAAQAA8AAAAhAO//AAAQABAAAAAhAPD/AAAQABAAAAAhAO3/AAAQAA4AAAAhAOr/AAAQAA4AAAAhAOv/AAAQAA8AAAAhAOz/AAAQABAAAAAgAPT/AAAPAA4AAAAgAPX/AAAPAA8AAAAgAPb/AAAPABAAAAAgAPH/AAAPAA4AAAAgAPL/AAAPAA8AAAAgAPP/AAAPABAAAAAgAO7/AAAPAA4AAAAgAO//AAAPAA8AAAAgAPD/AAAPABAAAAAgAOv/AAAPABAAAAAgAOz/AAAPAA8AAAAgAO3/AAAPABAAAAAgAOn/AAAPAA4AAAAgAOr/AAAPAA8AAAAdAPT/AAANAA4AAAAdAPX/AAANAA8AAAAdAPb/AAANABAAAAAdAPH/AAANAA4AAAAdAPL/AAANAA8AAAAdAPP/AAANABAAAAAdAO7/AAANAA4AAAAdAO//AAANAA8AAAAdAPD/AAANABAAAAAdAOv/AAANABAAAAAdAOz/AAANAA8AAAAdAO3/AAANABAAAAAdAOn/AAANAA4AAAAdAOr/AAANAA8AAAA=")
 tile_set = SubResource("TileSet_yg3ru")
 
-[node name="Door" parent="." unique_id=485062677 instance=ExtResource("2_0gomc")]
+[node name="Door" parent="." unique_id=485062677 instance=ExtResource("2_sqwa2")]
 position = Vector2(503, -175)
+selectedScene = ExtResource("3_sqwa2")
 
-[node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_g4my2")]
+[node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_1evv3")]
 position = Vector2(36, 0)
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(105, 1)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
@@ -525,13 +520,7 @@ position = Vector2(-1, -70)
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=731888284]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1878799334]
-position = Vector2(105, 16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1326062417]
-shape = SubResource("RectangleShape2D_ca3nq")
-
-[node name="elevator2" parent="." unique_id=1361522646 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator2" parent="." unique_id=1361522646 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(152, -28)
 MovementDuration = 1.0
 Point1 = NodePath("Node2D4")
@@ -542,7 +531,7 @@ position = Vector2(0, -57)
 
 [node name="Node2D4" type="Node2D" parent="elevator2" unique_id=953528629]
 
-[node name="elevator3" parent="." unique_id=452786111 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator3" parent="." unique_id=452786111 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(200, -110)
 MovementDuration = 2.5
 Point1 = NodePath("Node2D")
@@ -553,11 +542,11 @@ Point2 = NodePath("Node2D2")
 [node name="Node2D2" type="Node2D" parent="elevator3" unique_id=1134201805]
 position = Vector2(0, 96)
 
-[node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_wv3ah")]
+[node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_016tv")]
 position = Vector2(-195, -162)
 linkedDoor = NodePath("../Door")
 
-[node name="elevator4" parent="." unique_id=1566103076 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator4" parent="." unique_id=1566103076 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(-24, 0)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
@@ -568,7 +557,7 @@ ColorSelect = " yellow"
 [node name="Node2D2" type="Node2D" parent="elevator4" unique_id=1150557786]
 position = Vector2(0, -53)
 
-[node name="elevator5" parent="." unique_id=1188652807 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator5" parent="." unique_id=1188652807 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(-86, -101)
 MovementDuration = 1.0
 PauseDuration = 3.0
@@ -582,7 +571,7 @@ position = Vector2(0, 5)
 [node name="Node2D2" type="Node2D" parent="elevator5" unique_id=371737728]
 position = Vector2(-1, 54)
 
-[node name="elevator6" parent="." unique_id=411056252 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator6" parent="." unique_id=411056252 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(-39, -149)
 MovementDuration = 5.0
 PauseDuration = 1.6
@@ -595,7 +584,7 @@ ColorSelect = " yellow"
 [node name="Node2D2" type="Node2D" parent="elevator6" unique_id=953099885]
 position = Vector2(-1, 69)
 
-[node name="elevator7" parent="." unique_id=814615723 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator7" parent="." unique_id=814615723 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(-88, -184)
 MovementDuration = 0.8
 PauseDuration = 1.0
@@ -609,7 +598,7 @@ position = Vector2(1, 41)
 [node name="Node2D2" type="Node2D" parent="elevator7" unique_id=201984154]
 position = Vector2(1, -26)
 
-[node name="elevator8" parent="." unique_id=1393948372 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator8" parent="." unique_id=1393948372 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(248, -85)
 MovementDuration = 1.4
 Point1 = NodePath("Node2D")
@@ -621,7 +610,7 @@ position = Vector2(0, -29)
 [node name="Node2D2" type="Node2D" parent="elevator8" unique_id=85793502]
 position = Vector2(0, 53)
 
-[node name="elevator9" parent="." unique_id=1441129836 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator9" parent="." unique_id=1441129836 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(297, -98)
 MovementDuration = 1.0
 Point1 = NodePath("Node2D")
@@ -633,7 +622,7 @@ position = Vector2(-1, -18)
 [node name="Node2D2" type="Node2D" parent="elevator9" unique_id=833561399]
 position = Vector2(-1, 21)
 
-[node name="elevator10" parent="." unique_id=1066844639 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator10" parent="." unique_id=1066844639 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(345, -71)
 MovementDuration = 30.0
 Point1 = NodePath("Node2D")
@@ -644,7 +633,7 @@ Point2 = NodePath("Node2D2")
 [node name="Node2D2" type="Node2D" parent="elevator10" unique_id=1470427349]
 position = Vector2(-1, 39)
 
-[node name="elevator11" parent="." unique_id=1181805606 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator11" parent="." unique_id=1181805606 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(392, -42)
 MovementDuration = 2.1
 Point1 = NodePath("Node2D")
@@ -656,7 +645,7 @@ position = Vector2(0, 12)
 [node name="Node2D2" type="Node2D" parent="elevator11" unique_id=1278471013]
 position = Vector2(0, -57)
 
-[node name="elevator12" parent="." unique_id=290512048 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_7gb3t")]
+[node name="elevator12" parent="." unique_id=290512048 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_j3qbt")]
 position = Vector2(440, -108)
 MovementDuration = 1.7
 Point1 = NodePath("Node2D")
@@ -667,10 +656,3 @@ position = Vector2(1, -54)
 
 [node name="Node2D2" type="Node2D" parent="elevator12" unique_id=1918443614]
 position = Vector2(0, 77)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1232952205]
-position = Vector2(105, 16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1260068275]
-position = Vector2(-125, 0)
-shape = SubResource("RectangleShape2D_ca3nq")

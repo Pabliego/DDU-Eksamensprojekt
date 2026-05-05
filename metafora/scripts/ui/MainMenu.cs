@@ -168,7 +168,7 @@ public partial class MainMenu : Control
 
     private async Task StartGameSequence()
     {
-        GetTree().ChangeSceneToFile("res://scenes/levels/TestWorld.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/levels/The Elevators.tscn");
     } 
 
 
