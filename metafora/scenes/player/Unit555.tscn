@@ -133,9 +133,10 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="Unit555Body" unique_id=390973805]
 position = Vector2(0, -30)
-offset = Vector2(0, -25)
+offset = Vector2(0, -20)
 zoom = Vector2(5.7, 5.7)
 process_callback = 0
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
 [connection signal="animation_finished" from="Unit555Body/AnimatedSprite2D" to="Unit555Body" method="AnimationFinished"]
