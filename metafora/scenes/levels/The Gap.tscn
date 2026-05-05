@@ -534,14 +534,15 @@ position = Vector2(-195, -32)
 position = Vector2(-176, 1)
 
 [node name="elevator2" parent="." unique_id=441263377 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_d314w")]
-position = Vector2(285, -56)
+position = Vector2(376, -59)
+PauseDuration = 1.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=508942020]
 
 [node name="Node2D2" type="Node2D" parent="elevator2" unique_id=313945370]
-position = Vector2(86, 1)
+position = Vector2(-89, 2)
 
 [node name="DoorButton2" parent="." unique_id=406246847 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_d314w")]
 position = Vector2(927, -3)
@@ -550,7 +551,6 @@ ActivateOnce = true
 
 [node name="elevator3" parent="." unique_id=1071540878 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_d314w")]
 position = Vector2(424, -54)
-MovementDuration = 10.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 

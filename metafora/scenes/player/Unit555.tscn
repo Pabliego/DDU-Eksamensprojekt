@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqhneuammh4xj" path="res://assets/sprites/metafora/tank/tank idle.png" id="2_3cmg6"]
 [ext_resource type="Texture2D" uid="uid://3s2caswpjcuf" path="res://assets/sprites/metafora/tank/tank walk.png" id="2_xjypf"]
 [ext_resource type="Texture2D" uid="uid://cb111nvwg0y6h" path="res://assets/sprites/metafora/tank/tank turn.png" id="3_3cmg6"]
+[ext_resource type="AudioStream" uid="uid://bokcer0s3ure0" path="res://assets/audio/TankSound.wav" id="5_4vayc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4vayc"]
 atlas = ExtResource("2_3cmg6")
@@ -138,5 +139,9 @@ zoom = Vector2(5.7, 5.7)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Unit555Body" unique_id=1279237764]
+stream = ExtResource("5_4vayc")
+pitch_scale = 0.8
 
 [connection signal="animation_finished" from="Unit555Body/AnimatedSprite2D" to="Unit555Body" method="AnimationFinished"]

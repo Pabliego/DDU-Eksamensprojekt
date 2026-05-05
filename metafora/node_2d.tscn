@@ -4963,6 +4963,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kdubu")
 sources/1 = SubResource("TileSetAtlasSource_d21ai")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+
 [node name="Node2D" type="Node2D" unique_id=1661786547]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=680328914]
@@ -4979,7 +4981,6 @@ tile_set = SubResource("TileSet_rj586")
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("3_d21ai")]
 position = Vector2(514, -88)
-mass = 0.09
 
 [node name="Door" parent="." unique_id=485062677 instance=ExtResource("3_0hol4")]
 position = Vector2(32, -32)
@@ -5014,3 +5015,15 @@ linkedElevator = NodePath("../elevator")
 position = Vector2(519, -2)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1029856000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=164233615]
+position = Vector2(-82, -9)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=809624628]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1358490864]
+position = Vector2(1102, -8)
+shape = SubResource("RectangleShape2D_4d7sh")

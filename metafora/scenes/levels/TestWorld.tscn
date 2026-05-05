@@ -60,5 +60,4 @@ linkedElevator = NodePath("../elevator2")
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("6_nig7w")]
 position = Vector2(273, 620)
-mass = 0.09
 lock_rotation = true
