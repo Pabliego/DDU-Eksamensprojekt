@@ -202,7 +202,7 @@ script = ExtResource("1_5e0ln")
 
 [node name="blue" type="AnimatedSprite2D" parent="." unique_id=595865776]
 sprite_frames = SubResource("SpriteFrames_5e0ln")
-animation = &"open"
+animation = &"close"
 autoplay = "idle"
 
 [node name="red" type="AnimatedSprite2D" parent="." unique_id=1906273493]
