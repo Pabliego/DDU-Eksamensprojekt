@@ -110,6 +110,7 @@ height = 34.0
 [node name="Unit555" type="Node2D" unique_id=1766458665]
 
 [node name="Unit555Body" type="CharacterBody2D" parent="." unique_id=1582328617]
+disable_mode = 1
 script = ExtResource("1_00sqr")
 Deceleration = 200.0
 

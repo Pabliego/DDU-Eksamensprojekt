@@ -212,11 +212,11 @@ animation = &"open"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1009711656]
+disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1040518055]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_yepiq")
-disabled = true
 debug_color = Color(0.6125713, 0.44431224, 0.7930894, 0.41960785)
 
-[connection signal="area_entered" from="Area2D" to="." method="BodyEntered"]
+[connection signal="body_entered" from="Area2D" to="." method="BodyEntered"]
