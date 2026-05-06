@@ -223,6 +223,5 @@ debug_color = Color(0.6125713, 0.44431224, 0.7930894, 0.41960785)
 
 [node name="DoorAudio" type="AudioStreamPlayer2D" parent="." unique_id=1759673733]
 stream = ExtResource("4_lbmyp")
-volume_db = 13.633
 
 [connection signal="body_entered" from="Area2D" to="." method="BodyEntered"]

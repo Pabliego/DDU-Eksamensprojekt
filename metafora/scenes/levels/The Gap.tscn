@@ -1,12 +1,13 @@
 [gd_scene format=4 uid="uid://bfcwop1jysxc"]
 
 [ext_resource type="Texture2D" uid="uid://bdubwemja1r28" path="res://assets/textures/Bunker/bunker tiles.png" id="1_m32la"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="1_oc38p"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="2_d314w"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="3_5anx2"]
 [ext_resource type="PackedScene" uid="uid://bn0ec22mhm4y8" path="res://node_2d.tscn" id="3_45obp"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_45obp"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_d314w"]
-[ext_resource type="Script" uid="uid://bi8ubeiqv81ke" path="res://scenes/levels/Area2d.cs" id="6_5anx2"]
+[ext_resource type="Script" uid="uid://bi8ubeiqv81ke" path="res://scripts/systems/WorldBoundry.cs" id="6_5anx2"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_n36qf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n36qf"]
@@ -498,6 +499,8 @@ sources/0 = SubResource("TileSetAtlasSource_n36qf")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5anx2"]
 
 [node name="Node2D" type="Node2D" unique_id=985997203]
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("1_oc38p")]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1810955110]
 position = Vector2(1, 0)
