@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public partial class Door : Node2D
 {
@@ -10,9 +11,15 @@ public partial class Door : Node2D
 
 	private AudioStreamPlayer2D DoorSound;
 
+	private AudioStreamPlayer2D DoorSoundClose;
+
 	[Export(PropertyHint.Enum, "red, blue")] private string ColorSelect = "blue";
 
 	[Export] PackedScene selectedScene {get; set;}
+
+	[Export] public Godot.Collections.Array<DoorButton> LinkedButtons = new();
+	private bool DoorOpen = false;
+
 
 		public override void _Ready()
     {
@@ -23,8 +30,64 @@ public partial class Door : Node2D
 		Collision = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
 
 		DoorSound = GetNode<AudioStreamPlayer2D>("DoorAudio");
+		DoorSoundClose = GetNode<AudioStreamPlayer2D>("DoorAudioClose");
 
     }
+
+	public void UpdateButtonState(DoorButton button, bool activated)
+	{
+		CheckAllButtons();
+	}
+
+
+	private void CheckAllButtons()
+	{
+		if (LinkedButtons.Count == 0)
+		{
+			return;
+		}
+
+		bool AllLinkedPressed = true;
+
+		for (int i = 0; i < LinkedButtons.Count; i++)
+		{
+			DoorButton button = LinkedButtons[i] as DoorButton;
+			if (button == null || button.Activated == false)
+			{
+				AllLinkedPressed = false;
+				break;
+			}
+		}
+
+
+		if (AllLinkedPressed && DoorOpen == false)
+		{
+			Activate(true);
+			DoorOpen = true;
+		}
+		else if (AllLinkedPressed == false && DoorOpen == true)
+		{
+			bool shouldClose = false;
+			for (int i = 0; i < LinkedButtons.Count; i++)
+			{
+				DoorButton button = LinkedButtons[i] as DoorButton;
+				if (button != null && button.ActivateOnce == false && button.Activated == false)
+				{
+					shouldClose = true;
+					break;
+				}
+			}
+
+			if (shouldClose)
+			{
+				Activate(false);
+				DoorOpen = false;
+			}
+		}
+
+
+	}
+
 
     public override void _Process(double delta)
     {
@@ -50,6 +113,7 @@ public partial class Door : Node2D
 		{
 			aniDoor.Play("close");
 			AreaDetect.Monitoring = false;
+			DoorSoundClose.Play();
 		}
 	}
 

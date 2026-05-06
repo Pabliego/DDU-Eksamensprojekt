@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bn0ec22mhm4y8" path="res://node_2d.tscn" id="3_45obp"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_45obp"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_d314w"]
-[ext_resource type="Script" uid="uid://bi8ubeiqv81ke" path="res://scripts/systems/WorldBoundry.cs" id="6_5anx2"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_n36qf"]
+[ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="8_oc38p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n36qf"]
 texture = ExtResource("1_m32la")
@@ -642,7 +642,7 @@ Point2 = NodePath("Node2D/Node2D")
 position = Vector2(-55, 1)
 
 [node name="Boundry" type="Area2D" parent="." unique_id=172665643]
-script = ExtResource("6_5anx2")
+script = ExtResource("8_oc38p")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundry" unique_id=1680617894]
 position = Vector2(0, 140)
@@ -650,5 +650,6 @@ shape = SubResource("WorldBoundaryShape2D_5anx2")
 debug_color = Color(0.84547526, 0.2839165, 0.63786876, 0.41960785)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_n36qf")]
+visible = false
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

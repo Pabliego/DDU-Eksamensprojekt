@@ -23,14 +23,19 @@ size = Vector2(604.5, 82)
 position = Vector2(504, 674)
 shape = SubResource("RectangleShape2D_1aj5d")
 
-[node name="Door" parent="." unique_id=485062677 instance=ExtResource("1_iyqsp")]
-position = Vector2(412, 601)
+[node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("1_iyqsp")]
+position = Vector2(413, 601)
 selectedScene = ExtResource("2_8toc6")
+LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("2_ydtff")]
 position = Vector2(226, 633)
 
-[node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
+[node name="DoorButton2" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
+position = Vector2(690, 630)
+linkedDoor = NodePath("../Door")
+
+[node name="DoorButton" parent="." unique_id=577633547 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(342, 630)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true

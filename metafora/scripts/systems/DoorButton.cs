@@ -10,9 +10,10 @@ public partial class DoorButton : Node2D
 
 	[Export] public bool ActivateOnce = false;
 
+
 	private AnimatedSprite2D aniButton;
 	private Area2D DetectBox;
-	bool Activated = false;
+	public bool Activated = false;
 
 	public override void _Ready()
     {
@@ -24,14 +25,22 @@ public partial class DoorButton : Node2D
 	{
 		if (Activated != true)
 		{
-			linkedDoor.Activate(true);
 			Activated = true;
+
+			if (linkedDoor != null)
+			{
+				linkedDoor.UpdateButtonState(this, true);
+			}
+
 		} else
 		{
 			if (ActivateOnce != true)
 			{
-				linkedDoor.Activate(false);
 				Activated = false;	
+				if(linkedDoor != null)
+				{
+					linkedDoor.UpdateButtonState(this, false);
+				}
 			}
 		}
 		
@@ -56,23 +65,19 @@ public partial class DoorButton : Node2D
 	{
 		if (body.Name == "Unit555Body" || body.IsInGroup("pushable"))
 		{
-			if (Activated == true)
+			if (HasToBeHeld ==true || ActivateOnce == false)
 			{
-				if (HasToBeHeld != true)
-				{
-					aniButton.Play("engaged");
-				} else
-				{
-					aniButton.Play("idle");	
-				}
-			} else {
+				Activated = false;
 				aniButton.Play("idle");
+				if (linkedDoor != null)
+				{
+					linkedDoor.UpdateButtonState(this, false);
+				}
 			}
-		}
-		if (HasToBeHeld == true)
-		{
-			linkedDoor.Activate(false);
-			Activated = false;
+			else
+			{
+				aniButton.Play("engaged");
+			}
 		}
 	} 
 }
