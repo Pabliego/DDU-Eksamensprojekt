@@ -40,7 +40,7 @@ animations = [{
 
 [node name="PushableBox" type="RigidBody2D" unique_id=239121608 groups=["pushable"]]
 mass = 0.09
-lock_rotation = true
+can_sleep = false
 script = ExtResource("1_or3dk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=617166307]

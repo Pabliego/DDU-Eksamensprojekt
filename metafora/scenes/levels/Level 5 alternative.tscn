@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bw5vv1r8yu4d"]
+
+[ext_resource type="PackedScene" uid="uid://bwagvnkrbjmvk" path="res://scenes/levels/Level 5.tscn" id="1_ejgkv"]
+
+[node name="Node2D" unique_id=1343293576 instance=ExtResource("1_ejgkv")]
+
+[node name="Unit555" parent="." index="6" unique_id=1766458665]
+position = Vector2(1150, -15)
+
+[node name="PushableBox2" parent="." index="7" unique_id=862744780]
+position = Vector2(668, -35)
+
+[node name="PushableBox" parent="." index="8" unique_id=239121608]
+position = Vector2(670, -113)
