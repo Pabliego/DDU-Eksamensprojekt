@@ -58,7 +58,13 @@ public partial class DoorButton : Node2D
 		{
 			if (Activated == true)
 			{
-				aniButton.Play("engaged");
+				if (HasToBeHeld != true)
+				{
+					aniButton.Play("engaged");
+				} else
+				{
+					aniButton.Play("idle");	
+				}
 			} else {
 				aniButton.Play("idle");
 			}
