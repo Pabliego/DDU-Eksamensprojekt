@@ -8,6 +8,8 @@ public partial class Door : Node2D
 
 	private CollisionShape2D Collision;
 
+	private AudioStreamPlayer2D DoorSound;
+
 	[Export(PropertyHint.Enum, "red, blue")] private string ColorSelect = "blue";
 
 	[Export] PackedScene selectedScene {get; set;}
@@ -19,6 +21,9 @@ public partial class Door : Node2D
 		
 		AreaDetect = GetNode<Area2D>("Area2D");
 		Collision = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
+
+		DoorSound = GetNode<AudioStreamPlayer2D>("DoorAudio");
+
     }
 
     public override void _Process(double delta)
@@ -39,6 +44,7 @@ public partial class Door : Node2D
 		{
 			aniDoor.Play("open");	
 			AreaDetect.Monitoring = true;
+			DoorSound.Play();
 		}
 		else
 		{

@@ -61,6 +61,11 @@ position = Vector2(653, 630)
 linkedElevator = NodePath("../elevator2")
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("6_nig7w")]
-position = Vector2(273, 620)
+position = Vector2(546, 620)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_y2t7r")]
+visible = false
+offset_left = 55.0
+offset_top = -51.0
+offset_right = 55.0
+offset_bottom = -51.0

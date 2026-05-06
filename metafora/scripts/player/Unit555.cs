@@ -11,6 +11,7 @@ public partial class Unit555 : CharacterBody2D
 
     private AnimatedSprite2D Unit555ani;
     private AudioStreamPlayer2D sound;
+    private AudioStreamPlaybackInteractive interactiveSound;
     private float currentSpeed = 0f;
     private bool Turning = false;
     private int FacingDirection = 1; // 1 = right, -1 = left
@@ -20,24 +21,35 @@ public partial class Unit555 : CharacterBody2D
         Unit555ani = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         sound = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
         sound.Play();
+        interactiveSound = sound.GetStreamPlayback() as AudioStreamPlaybackInteractive;
+    }
+
+    string CurrentSetClip;
+    private void SetSound(string SetClip)
+    {
+        if (CurrentSetClip == SetClip) return;
+        CurrentSetClip = SetClip;
+        interactiveSound.SwitchToClipByName(SetClip);
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        sound.PitchScale = 0.9f;
+        string ExecutedSound = "IdleSound";
         
         int input = 0;
 
         if (Input.IsActionPressed("ui_right"))
         {
             input = 1;
-            sound.PitchScale = 1.1f;
+            ExecutedSound = "WorkingSound";
         }
         if (Input.IsActionPressed("ui_left"))
         {
             input = -1;
-            sound.PitchScale = 1.1f;
+            ExecutedSound = "WorkingSound";
         }
+
+        SetSound(ExecutedSound);
 
 
         if (input != 0 && input != FacingDirection && !Turning)

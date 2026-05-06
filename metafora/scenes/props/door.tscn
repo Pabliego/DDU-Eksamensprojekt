@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bac7jr6xlw5ae" path="res://scripts/systems/Door.cs" id="1_5e0ln"]
 [ext_resource type="Texture2D" uid="uid://cejntyu38n0n5" path="res://assets/textures/Bunker/bunker door 1 blue.png" id="2_yepiq"]
 [ext_resource type="Texture2D" uid="uid://bxrc8ren7lqsp" path="res://assets/textures/Bunker/bunker door 2 red.png" id="3_8dmq6"]
+[ext_resource type="AudioStream" uid="uid://dibu616ajemj0" path="res://assets/audio/DoorOpening(Sounddino).wav" id="4_lbmyp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dmq6"]
 atlas = ExtResource("2_yepiq")
@@ -219,5 +220,9 @@ monitoring = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_yepiq")
 debug_color = Color(0.6125713, 0.44431224, 0.7930894, 0.41960785)
+
+[node name="DoorAudio" type="AudioStreamPlayer2D" parent="." unique_id=1759673733]
+stream = ExtResource("4_lbmyp")
+volume_db = 13.633
 
 [connection signal="body_entered" from="Area2D" to="." method="BodyEntered"]
