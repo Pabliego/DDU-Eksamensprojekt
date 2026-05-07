@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://cvepptgkjrwks"]
+
+[ext_resource type="Script" uid="uid://dqhn6e52swuto" path="res://scripts/ui/Dialogue.cs" id="1_0hdn5"]
+[ext_resource type="Texture2D" uid="uid://gs6opfewjgol" path="res://assets/textures/Bunker/SIREN/Siren idel.png" id="1_umwmw"]
+[ext_resource type="Texture2D" uid="uid://beg0wccsb5h42" path="res://assets/textures/Bunker/SIREN/Siren talk1-sheet.png" id="2_0hdn5"]
+[ext_resource type="FontFile" uid="uid://d2h1n654joknf" path="res://assets/fonts/MozartNbp-93Ey.ttf" id="3_lm6d5"]
+[ext_resource type="AudioStream" uid="uid://clpto33s1k5r8" path="res://assets/audio/Dialogue/Dialogue1.wav" id="5_rbg7v"]
+[ext_resource type="AudioStream" uid="uid://y78rmvqgpo4d" path="res://assets/audio/Dialogue/Dialogue2.wav" id="6_lo0ha"]
+[ext_resource type="AudioStream" uid="uid://bbiusoctrdcdp" path="res://assets/audio/Dialogue/Dialogue11.wav" id="7_n8kei"]
+[ext_resource type="AudioStream" uid="uid://hkgiv3c2xtfl" path="res://assets/audio/Dialogue/Dialogue12.wav" id="8_53561"]
+[ext_resource type="AudioStream" uid="uid://vmjw7vuhceqx" path="res://assets/audio/Dialogue/Dialogue3.wav" id="9_ekwb0"]
+[ext_resource type="AudioStream" uid="uid://cydrud5gknxh2" path="res://assets/audio/Dialogue/Dialogue4.wav" id="10_eg877"]
+[ext_resource type="AudioStream" uid="uid://dm40ejw26nhpm" path="res://assets/audio/Dialogue/Dialogue5.wav" id="11_mpih2"]
+[ext_resource type="AudioStream" uid="uid://upak4pgnphto" path="res://assets/audio/Dialogue/Dialogue6.wav" id="12_ch16e"]
+[ext_resource type="AudioStream" uid="uid://dx0qo0yqebgh" path="res://assets/audio/Dialogue/Dialogue7.wav" id="13_qmpov"]
+[ext_resource type="AudioStream" uid="uid://dr1j438amcd12" path="res://assets/audio/Dialogue/Dialogue8.wav" id="14_w8x7e"]
+[ext_resource type="AudioStream" uid="uid://b7aes4rlaqy24" path="res://assets/audio/Dialogue/Dialogue9.wav" id="15_lqwq0"]
+[ext_resource type="AudioStream" uid="uid://ckwewix2mnnwt" path="res://assets/audio/Dialogue/Dialogue10.wav" id="16_xctb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv07d"]
+atlas = ExtResource("1_umwmw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grwwu"]
+atlas = ExtResource("2_0hdn5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1ltj"]
+atlas = ExtResource("2_0hdn5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srrjg"]
+atlas = ExtResource("2_0hdn5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j12tw"]
+atlas = ExtResource("2_0hdn5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p61l"]
+atlas = ExtResource("2_0hdn5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ano"]
+atlas = ExtResource("2_0hdn5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfs06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv07d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grwwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1ltj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srrjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j12tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p61l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ano")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 9.0
+}]
+
+[sub_resource type="Theme" id="Theme_jra3u"]
+default_font = ExtResource("3_lm6d5")
+default_font_size = 70
+
+[sub_resource type="Animation" id="Animation_0hdn5"]
+resource_name = "LoadIn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(109, 0, 0, 0.083333336, -2.1666667, 96, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-376, 0, 0, 0.083333336, 68.5, 35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_uv07d"]
+resource_name = "LoadOut"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(96, -0.25, 0, 0.25, 0, 109, 0, 0, 0.083333336, -2.1666667),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0, -376, 0, 0, 0.083333336, 68.5),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_lm6d5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(96, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uv07d"]
+_data = {
+&"LoadIn": SubResource("Animation_0hdn5"),
+&"LoadOut": SubResource("Animation_uv07d"),
+&"RESET": SubResource("Animation_lm6d5")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_h5ggf"]
+random_pitch = 1.3348398
+streams_count = 12
+stream_0/stream = ExtResource("5_rbg7v")
+stream_1/stream = ExtResource("6_lo0ha")
+stream_2/stream = ExtResource("9_ekwb0")
+stream_3/stream = ExtResource("10_eg877")
+stream_4/stream = ExtResource("11_mpih2")
+stream_5/stream = ExtResource("12_ch16e")
+stream_6/stream = ExtResource("13_qmpov")
+stream_7/stream = ExtResource("14_w8x7e")
+stream_8/stream = ExtResource("15_lqwq0")
+stream_9/stream = ExtResource("16_xctb3")
+stream_10/stream = ExtResource("7_n8kei")
+stream_11/stream = ExtResource("8_53561")
+
+[node name="Dialogue" type="CanvasLayer" unique_id=190047994]
+script = ExtResource("1_0hdn5")
+TextSpeed = 0.03
+
+[node name="Panel" type="Panel" parent="." unique_id=1709097914]
+offset_left = 96.0
+offset_top = 35.0
+offset_right = 1815.0
+offset_bottom = 340.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel" unique_id=2135811596]
+position = Vector2(143, 153)
+scale = Vector2(13, 13)
+sprite_frames = SubResource("SpriteFrames_pfs06")
+animation = &"idle"
+frame_progress = 0.60883
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=1724965586]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 28.0
+offset_right = 1653.0
+offset_bottom = 280.0
+theme = SubResource("Theme_jra3u")
+text = "Placeholder"
+scroll_following = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2136682306]
+libraries/ = SubResource("AnimationLibrary_uv07d")
+
+[node name="DialogueSound" type="AudioStreamPlayer2D" parent="." unique_id=751914413]
+stream = SubResource("AudioStreamRandomizer_h5ggf")
+pitch_scale = 0.6
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="AnimationFinished"]

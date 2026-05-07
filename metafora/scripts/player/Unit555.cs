@@ -26,14 +26,18 @@ public partial class Unit555 : CharacterBody2D
     {
         GetNode<AnimatedSprite2D>("AnimatedSprite2D").Visible = false;
         GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
+        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true; 
+        GetNode<CollisionShape2D>("CollisionShape2D2").Disabled = true; 
 
         if (!HasLegs)
         {
-            Unit555ani = GetNode<AnimatedSprite2D>("AnimatedSprite2D");   
+            Unit555ani = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+            GetNode<CollisionShape2D>("CollisionShape2D2").Disabled = false;   
         }
         else
         {
             Unit555ani = GetNode<AnimatedSprite2D>("AnimatedSprite2D2"); 
+            GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false; 
         }
         Unit555ani.Visible = true;
         

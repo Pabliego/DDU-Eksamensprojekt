@@ -13,7 +13,7 @@ public partial class Door : Node2D
 
 	private AudioStreamPlayer2D DoorSoundClose;
 
-	[Export(PropertyHint.Enum, "red, blue")] private string ColorSelect = "blue";
+	[Export(PropertyHint.Enum, "red,blue")] private string ColorSelect = "blue";
 
 	[Export] PackedScene selectedScene {get; set;}
 

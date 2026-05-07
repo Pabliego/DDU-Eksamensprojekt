@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="1_iyqsp"]
 [ext_resource type="PackedScene" uid="uid://bfcwop1jysxc" path="res://scenes/levels/The Gap.tscn" id="2_8toc6"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="2_w5yr6"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="2_ydtff"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="3_v3ud1"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_ydtff"]
@@ -16,6 +17,9 @@ size = Vector2(604.5, 82)
 [node name="TestWorld" type="Node2D" unique_id=764947150]
 
 [node name="Menu" parent="." unique_id=838198991 instance=ExtResource("9_70pek")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("2_w5yr6")]
+DialogueText = "Oh my goooooood, this is actually a crazy test place... i don't know if i like that exactly :c"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1962611247]
 
@@ -78,6 +82,7 @@ HasToBeHeld = true
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("6_nig7w")]
 position = Vector2(546, 620)
+ColorSelect = " green"
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_y2t7r")]
 visible = false

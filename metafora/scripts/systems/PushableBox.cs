@@ -5,7 +5,7 @@ public partial class PushableBox : RigidBody2D
 {
 	private AnimatedSprite2D aniBox;
 
-	[Export(PropertyHint.Enum, "red, blue, green")] private string ColorSelect;
+	[Export(PropertyHint.Enum, "red,blue,green")] private string ColorSelect;
 
     public override void _Ready()
     {
