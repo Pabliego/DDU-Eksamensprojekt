@@ -119,7 +119,7 @@ public partial class Door : Node2D
 
 	public async void BodyEntered(Node2D body)
 	{
-		if (body.Name == "Unit555Body")
+		if (body.Name == "Unit555")
 		{
 			if (selectedScene != null)
 			{

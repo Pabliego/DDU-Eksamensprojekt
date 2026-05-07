@@ -48,7 +48,7 @@ public partial class DoorButton : Node2D
 
 	private void BodyEntered(Node2D body)
 	{
-		if (body.Name == "Unit555Body" || body.IsInGroup("pushable"))
+		if (body.Name == "Unit555" || body.IsInGroup("pushable"))
 		{
 			aniButton.Play("pressed");
 			if (linkedDoor != null)
@@ -63,7 +63,7 @@ public partial class DoorButton : Node2D
 
 	private void BodyExited(Node2D body)
 	{
-		if (body.Name == "Unit555Body" || body.IsInGroup("pushable"))
+		if (body.Name == "Unit555" || body.IsInGroup("pushable"))
 		{
 			if (HasToBeHeld ==true || ActivateOnce == false)
 			{
