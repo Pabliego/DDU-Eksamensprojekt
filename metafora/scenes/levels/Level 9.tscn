@@ -36,7 +36,8 @@ scale = Vector2(0.85, 0.75)
 LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_1ts8h")]
-position = Vector2(156, -17)
+position = Vector2(155, -17)
+script = null
 
 [node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_btc5u")]
 position = Vector2(1022, -115)
