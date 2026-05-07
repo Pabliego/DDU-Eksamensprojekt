@@ -49,18 +49,6 @@ public partial class MainMenu : Control
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         
         InputField.Editable = false;
-        /*
-        string[] MetaforaLogo =
-        {
-            """             __       ___             """,
-            """  __ _  ___ / /____ _/ _/__  _______ _""",
-            """ /  ' \/ -_) __/ _ `/ _/ _ \/ __/ _ `/""",
-            """/_/_/_/\__/\__/\_,_/_/ \___/_/  \_,_/ """,
-            """                                corp. """,
-            """                                All Rights Reserved.""",
-            """ """
-        };
-        */
 
         string[] MetaforaLogo =
         {

@@ -13,10 +13,13 @@ public partial class Elevatorbutton : Node2D
 	private Area2D DetectBox;
 	public bool Activated = false;
 
+	private AudioStreamPlayer2D ButtonSound;
+
 	public override void _Ready()
     {
         aniButton = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		DetectBox = GetNode<Area2D>("Area2D");
+		ButtonSound = GetNode<AudioStreamPlayer2D>("ButtonSound");
     }
 	
 	private void ActivateLink()
@@ -48,6 +51,7 @@ public partial class Elevatorbutton : Node2D
 		if (body.Name == "Unit555" || body.IsInGroup("pushable"))
 		{
 			aniButton.Play("pressed");
+			ButtonSound.Play();
 			if (linkedElevator != null)
 			{
 				ActivateLink();

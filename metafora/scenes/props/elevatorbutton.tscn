@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dnjjb5i6yx7of" path="res://scripts/systems/Elevatorbutton.cs" id="1_liy6l"]
 [ext_resource type="Texture2D" uid="uid://ckp0ew4y47c25" path="res://assets/textures/Bunker/button press.png" id="2_45vbm"]
+[ext_resource type="AudioStream" uid="uid://dry34pnqpivc4" path="res://assets/audio/KeyPress/Key1.wav" id="3_r3lhm"]
+[ext_resource type="AudioStream" uid="uid://dycpm35p6mjby" path="res://assets/audio/KeyPress/Key2.wav" id="4_0x4wd"]
+[ext_resource type="AudioStream" uid="uid://dkmp4ajwlb3hl" path="res://assets/audio/KeyPress/Key3.wav" id="5_buhxe"]
+[ext_resource type="AudioStream" uid="uid://bomruwm6xbxpn" path="res://assets/audio/KeyPress/Key4.wav" id="6_ypaev"]
+[ext_resource type="AudioStream" uid="uid://cqf074kmv7cf7" path="res://assets/audio/KeyPress/Key5.wav" id="7_hagrb"]
+[ext_resource type="AudioStream" uid="uid://cu8s3ye4gdf1t" path="res://assets/audio/KeyPress/Key6.wav" id="8_7lekr"]
+[ext_resource type="AudioStream" uid="uid://c44kui6fvcqpd" path="res://assets/audio/KeyPress/Key7.wav" id="9_wlu5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_86suh"]
 atlas = ExtResource("2_45vbm")
@@ -48,6 +55,17 @@ size = Vector2(17, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kmci"]
 size = Vector2(15, 3)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_y8oy0"]
+random_pitch = 1.1553527
+streams_count = 7
+stream_0/stream = ExtResource("3_r3lhm")
+stream_1/stream = ExtResource("4_0x4wd")
+stream_2/stream = ExtResource("5_buhxe")
+stream_3/stream = ExtResource("6_ypaev")
+stream_4/stream = ExtResource("7_hagrb")
+stream_5/stream = ExtResource("8_7lekr")
+stream_6/stream = ExtResource("9_wlu5a")
+
 [node name="ElevatorButton" type="Node2D" unique_id=1785796626]
 script = ExtResource("1_liy6l")
 
@@ -70,6 +88,9 @@ disabled = true
 position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_2kmci")
 debug_color = Color(0.9739358, 0.80458915, 0.3755614, 0.41960785)
+
+[node name="ButtonSound" type="AudioStreamPlayer2D" parent="." unique_id=511060003]
+stream = SubResource("AudioStreamRandomizer_y8oy0")
 
 [connection signal="body_entered" from="Area2D" to="." method="BodyEntered"]
 [connection signal="body_exited" from="Area2D" to="." method="BodyExited"]
