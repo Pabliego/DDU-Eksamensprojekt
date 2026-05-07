@@ -25,11 +25,14 @@ shape = SubResource("RectangleShape2D_1aj5d")
 
 [node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("1_iyqsp")]
 position = Vector2(413, 601)
+ColorSelect = "red"
 selectedScene = ExtResource("2_8toc6")
-LinkedButtons = [NodePath("../DoorButton")]
+LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("2_ydtff")]
 position = Vector2(226, 633)
+JumpVelocity = -300.0
+HasLegs = true
 
 [node name="DoorButton2" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(690, 630)
