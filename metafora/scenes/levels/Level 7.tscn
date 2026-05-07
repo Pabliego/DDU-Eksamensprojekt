@@ -25,13 +25,15 @@ tile_set = ExtResource("1_8bi3h")
 tile_map_data = PackedByteArray("AAARAPb/AwAWABEAAAARAPf/AwAWABIAAAARAPj/AwAWABMAAAARAPn/AwAWABQAAAARAPr/AwAWABUAAAARAP//AwAWABEAACARAP7/AwAWABIAACARAP3/AwAWABMAACARAPz/AwAWABQAACARAPv/AwAWABUAACA=")
 tile_set = ExtResource("1_8bi3h")
 
-[node name="Door2" parent="." unique_id=1728906078 instance=ExtResource("2_oxdap")]
+[node name="Door2" parent="." unique_id=1728906078 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_oxdap")]
 position = Vector2(584, -39)
 scale = Vector2(0.8, 0.75)
 selectedScene = ExtResource("3_daise")
+LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2")]
 
-[node name="Door" parent="." unique_id=485062677 instance=ExtResource("2_oxdap")]
+[node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_oxdap")]
 position = Vector2(69, -47)
+LinkedButtons = [NodePath("../DoorButton3")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_onvbp")]
 position = Vector2(136, -17)
