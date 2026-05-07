@@ -7,9 +7,11 @@ public partial class Elevatorbutton : Node2D
 
 	[Export] public bool HasToBeHeld = false;
 
+	[Export] public bool ActivateOnce = false;
+
 	private AnimatedSprite2D aniButton;
 	private Area2D DetectBox;
-	bool Activated = false;
+	public bool Activated = false;
 
 	public override void _Ready()
     {
@@ -21,14 +23,24 @@ public partial class Elevatorbutton : Node2D
 	{
 		if (Activated != true)
 		{
-			linkedElevator.Activate();
 			Activated = true;
+
+			if (linkedElevator != null)
+			{
+				linkedElevator.UpdateElevatorState(this, true);
+			}
+
 		} else
 		{
-			linkedElevator.Activate();
-			Activated = false;
+			if (ActivateOnce != true)
+			{
+				Activated = false;	
+				if(linkedElevator != null)
+				{
+					linkedElevator.UpdateElevatorState(this, false);
+				}
+			}
 		}
-		
 	}
 
 	private void BodyEntered(Node2D body)
@@ -41,8 +53,18 @@ public partial class Elevatorbutton : Node2D
 				ActivateLink();
 			} else {
 				GD.Print("No Door Node linked!");
-
+				return;
 			}
+
+		if (HasToBeHeld)
+        {
+            Activated = true;
+            linkedElevator.Activate();
+        }
+        else
+        {
+            ActivateLink();
+        }
 		}
 	} 
 
@@ -50,17 +72,28 @@ public partial class Elevatorbutton : Node2D
 	{
 		if (body.Name == "Unit555" || body.IsInGroup("pushable"))
 		{
-			if (Activated == true)
+			if (HasToBeHeld && linkedElevator != null)
 			{
-				aniButton.Play("engaged");
-			} else {
+				Activated = false;
+				linkedElevator.Deactivate();
 				aniButton.Play("idle");
 			}
-		}
-		if (HasToBeHeld == true)
-		{
-			linkedElevator.Activate();
-			Activated = false;
+			else
+			{
+				
+				string playani;
+
+				if (Activated == true)
+				{
+					playani = "engaged";
+				}
+				else
+				{
+					playani = "idle";
+				}
+				
+				aniButton.Play(playani);
+			}
 		}
 	} 
 }

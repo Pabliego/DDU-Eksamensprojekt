@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Data;
 using System.Threading;
 
 public partial class Elevator : Node2D
@@ -17,6 +18,8 @@ public partial class Elevator : Node2D
 
 	[Export(PropertyHint.Enum, "red, blue, yellow, green")] private string ColorSelect;
 
+	[Export] public Godot.Collections.Array<Elevatorbutton> LinkedButtons = new();
+
 	public Vector2 TargetPosition;
 	
 	private bool Activated = false;
@@ -30,6 +33,7 @@ public partial class Elevator : Node2D
 		ani = GetNode<AnimatedSprite2D>("AnimatableBody2D/AnimatedSprite2D");
 
 		ani.Play(ColorSelect);
+		platform.GlobalPosition = Point1.GlobalPosition;
 
 		if (AwaitActivaion)
 		{
@@ -40,12 +44,46 @@ public partial class Elevator : Node2D
 		}
     }
 
-	
+	public void UpdateElevatorState(Elevatorbutton button, bool activated)
+	{
+		CheckAllButtons();
+	}
+
+	private void CheckAllButtons()
+	{
+				if (LinkedButtons.Count == 0)
+		{
+			return;
+		}
+
+		bool AllLinkedPressed = true;
+
+		for (int i = 0; i < LinkedButtons.Count; i++)
+		{
+			Elevatorbutton elv = LinkedButtons[i] as Elevatorbutton;
+			if (elv == null || elv.Activated == false)
+			{
+				AllLinkedPressed = false;
+				break;
+			}
+		}
+
+		if (AllLinkedPressed == true)
+		{
+			Activate();
+		}
+	}
+
+
+	Tween tween;
     private void MovePlatform()
     {
-        platform.GlobalPosition = Point1.GlobalPosition;
+        if (tween != null)
+		{
+			tween.Kill();
+		}
 
-        Tween tween = CreateTween().SetLoops();
+		tween = CreateTween().SetLoops();
         
         tween.TweenProperty(platform, "global_position", Point2.GlobalPosition, MovementDuration).SetTrans(Tween.TransitionType.Sine);
 		tween.TweenInterval(PauseDuration);
@@ -53,13 +91,26 @@ public partial class Elevator : Node2D
 		tween.TweenInterval(PauseDuration);
     }
 
+	public void Deactivate()
+	{
+		if (tween != null)
+		{
+			tween.Kill();
+			tween = null;
+			Activated = false;
+		}
+	}
+
 	public void Activate()
 	{
-		if (Activated == false)
+		if (tween != null && tween.IsRunning())
 		{
-			MovePlatform();
-			Activated = true;
+			return;	
 		}
+	
+		MovePlatform();
+		Activated = true;
+
 	}
 
 }
