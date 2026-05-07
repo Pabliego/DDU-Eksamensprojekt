@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="3_8bpv7"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_xonvm"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="5_ob46r"]
-[ext_resource type="PackedScene" uid="uid://bwagvnkrbjmvk" path="res://scenes/levels/Level 6.tscn" id="5_xonvm"]
+[ext_resource type="PackedScene" path="res://scenes/levels/Level 6.tscn" id="5_xonvm"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="6_l5l6y"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="8_8bpv7"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="8_xonvm"]
@@ -4026,22 +4026,24 @@ tile_map_data = PackedByteArray("AAAAAPf/AAAfAAwAAAAAAPj/AAAfAA0AAAAAAPn/AAAfAA4
 tile_set = ExtResource("2_vsr66")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=99395699]
-tile_map_data = PackedByteArray("AAAnAPn/AgAWABEAAAAnAPr/AgAWABIAAAAnAPv/AgAWABMAAAAnAPz/AgAWABQAACAnAP//AgAWABEAACAnAP7/AgAWABIAACAnAP3/AgAWABMAACA3APn/AgAWABEAAAA3APr/AgAWABIAAAA3APv/AgAWABUAACA3APz/AgAWABQAACA3AP3/AgAWABMAACA3AP//AgAWABEAACA3AP7/AgAWABIAACAcAPf/AwAIAAYAAAAZAPf/AwAIAAQAAAAaAPf/AwAJAAQAAAAbAPf/AwAKAAQAAAA=")
+tile_map_data = PackedByteArray("AAAnAPn/AwAaABAAAAAnAPr/AwAaABEAAAAnAPv/AwAaABIAAAAnAPz/AwAaABEAAAAnAP//AwAaABQAAAAnAP7/AwAaABMAAAAnAP3/AwAaABIAAAA3APn/AgAWABEAAAA3APr/AgAWABIAAAA3APv/AgAWABUAACA3APz/AgAWABQAACA3AP3/AgAWABMAACA3AP//AgAWABEAACA3AP7/AgAWABIAACAcAPf/AwAIAAYAAAAZAPf/AwAIAAQAAAAaAPf/AwAJAAQAAAAbAPf/AwAKAAQAAAA=")
 tile_set = ExtResource("2_vsr66")
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("3_8bpv7")]
 position = Vector2(320, -108)
 
-[node name="Door" parent="." unique_id=485062677 instance=ExtResource("5_ob46r")]
+[node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("5_ob46r")]
 position = Vector2(80, -48)
+LinkedButtons = [NodePath("../DoorButton3")]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=321684486]
 tile_map_data = PackedByteArray("AAANAP//AgAWABEAACANAP7/AgAWABIAACANAPz/AgAWABMAAAANAP3/AgAWABQAAAANAPv/AgAWABMAACANAPr/AgAWABQAACANAPj/AgAWABEAAAANAPn/AgAWABIAAAArAPn/AwASABQAAAAtAPn/AwASABQAAAA=")
 tile_set = ExtResource("2_vsr66")
 
-[node name="Door2" parent="." unique_id=646654378 instance=ExtResource("5_ob46r")]
+[node name="Door2" parent="." unique_id=646654378 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("5_ob46r")]
 position = Vector2(1072, -48)
 selectedScene = ExtResource("5_xonvm")
+LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("6_l5l6y")]
 position = Vector2(130, -18)
@@ -4110,6 +4112,7 @@ position = Vector2(1179, -38)
 shape = SubResource("RectangleShape2D_8bpv7")
 
 [node name="TileMapLayer7" type="TileMapLayer" parent="." unique_id=888756178]
+tile_map_data = PackedByteArray("AAAnAPr/AwAOABMAAAAnAPn/AwASABQAAAAoAPn/AwASABQAAAApAPn/AwASABQAAAAqAPn/AwASABQAAAAmAPn/AwASABQAAAAlAPn/AwASABQAAAAkAPn/AwARABQAAAA=")
 tile_set = ExtResource("2_vsr66")
 
 [node name="PushableBox3" parent="." unique_id=944254387 instance=ExtResource("3_8bpv7")]
@@ -4122,3 +4125,4 @@ HasToBeHeld = true
 ActivateOnce = true
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("1_ob46r")]
+visible = false

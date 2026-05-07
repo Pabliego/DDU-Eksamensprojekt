@@ -4984,12 +4984,14 @@ tile_set = ExtResource("1_8bi3h")
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("3_d21ai")]
 position = Vector2(514, -88)
 
-[node name="Door" parent="." unique_id=485062677 instance=ExtResource("3_0hol4")]
+[node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("3_0hol4")]
 position = Vector2(32, -32)
+LinkedButtons = [NodePath("../DoorButton3")]
 
-[node name="Door2" parent="." unique_id=1815270860 instance=ExtResource("3_0hol4")]
+[node name="Door2" parent="." unique_id=1815270860 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("3_0hol4")]
 position = Vector2(1040, -32)
 selectedScene = ExtResource("5_4d7sh")
+LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_q6r6c")]
 position = Vector2(87, 0)
