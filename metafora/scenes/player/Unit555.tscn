@@ -384,7 +384,7 @@ Vector2i(1, 0): {
 }
 }
 
-[node name="Unit555Body" type="CharacterBody2D" unique_id=1668450867]
+[node name="Unit555" type="CharacterBody2D" unique_id=1668450867]
 disable_mode = 1
 script = ExtResource("1_00sqr")
 Deceleration = 300.0
