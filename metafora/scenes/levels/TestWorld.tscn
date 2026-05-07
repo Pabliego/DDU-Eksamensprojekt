@@ -8,11 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="5_v3ud1"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="6_nig7w"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_y2t7r"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_70pek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aj5d"]
 size = Vector2(604.5, 82)
 
 [node name="TestWorld" type="Node2D" unique_id=764947150]
+
+[node name="Menu" parent="." unique_id=838198991 instance=ExtResource("9_70pek")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1962611247]
 
@@ -20,17 +23,22 @@ size = Vector2(604.5, 82)
 position = Vector2(504, 674)
 shape = SubResource("RectangleShape2D_1aj5d")
 
-[node name="Door" parent="." unique_id=485062677 instance=ExtResource("1_iyqsp")]
-position = Vector2(412, 601)
+[node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("1_iyqsp")]
+position = Vector2(413, 601)
 selectedScene = ExtResource("2_8toc6")
+LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("2_ydtff")]
 position = Vector2(226, 633)
 
-[node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
+[node name="DoorButton2" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
+position = Vector2(690, 630)
+linkedDoor = NodePath("../Door")
+
+[node name="DoorButton" parent="." unique_id=577633547 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(342, 630)
 linkedDoor = NodePath("../Door")
-ActivateOnce = true
+HasToBeHeld = true
 
 [node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_ydtff")]
 position = Vector2(490, 635)
