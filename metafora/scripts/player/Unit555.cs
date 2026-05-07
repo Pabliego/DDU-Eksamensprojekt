@@ -7,7 +7,7 @@ public partial class Unit555 : CharacterBody2D
     [Export] public float Acceleration = 350f;
     [Export] public float Deceleration = 250f;
 
-    [Export] public float JumpVelocity = -400f;
+    [Export] public float JumpVelocity = -300f;
 
     [Export] public float PushForce = 100f;
 
