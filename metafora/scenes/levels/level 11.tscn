@@ -5,6 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="3_utcbm"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="4_iik3r"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="5_yblf5"]
+[ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="6_5fp3g"]
+[ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="7_utcbm"]
+[ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="8_iik3r"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yblf5"]
 
 [node name="Node2D" type="Node2D" unique_id=1398618689]
 
@@ -46,8 +51,43 @@ Point2 = NodePath("Node2D2")
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=1694213582]
 position = Vector2(0, -102)
 
-[node name="DoorButton" parent="." unique_id=1785796626 instance=ExtResource("4_iik3r")]
+[node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("4_iik3r")]
 position = Vector2(958, -115)
+linkedDoor = NodePath("../Door2")
+HasToBeHeld = true
 
-[node name="ElevatorButton" parent="." unique_id=1990201534 instance=ExtResource("5_yblf5")]
+[node name="ElevatorButton" parent="." unique_id=1990201534 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_yblf5")]
 position = Vector2(806, -19)
+linkedElevator = NodePath("../elevator2")
+
+[node name="Unit555Body" parent="." unique_id=1668450867 instance=ExtResource("6_5fp3g")]
+position = Vector2(79, -16)
+JumpVelocity = -315.0
+HasLegs = true
+
+[node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("7_utcbm")]
+position = Vector2(211, -26)
+
+[node name="Boundry" type="Area2D" parent="." unique_id=2040306451]
+position = Vector2(79, -16)
+script = ExtResource("8_iik3r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundry" unique_id=1241837018]
+position = Vector2(118, 87)
+shape = SubResource("WorldBoundaryShape2D_yblf5")
+debug_color = Color(0.84547526, 0.2839165, 0.63786876, 0.41960785)
+
+[node name="elevator2" parent="." unique_id=797222852 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("3_utcbm")]
+position = Vector2(331, -15)
+MovementDuration = 10.0
+PauseDuration = 5.0
+Point1 = NodePath("Node2D")
+Point2 = NodePath("Node2D2")
+AwaitActivaion = true
+
+[node name="Node2D" type="Node2D" parent="elevator2" unique_id=344553269]
+
+[node name="Node2D2" type="Node2D" parent="elevator2" unique_id=1044872229]
+position = Vector2(573, 0)
+
+[connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]
