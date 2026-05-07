@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="4_oxdap"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="5_cjca4"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="6_7jdx6"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_03pv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjca4"]
 size = Vector2(20, 148)
@@ -94,3 +95,5 @@ position = Vector2(-712, -66)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true
 ActivateOnce = true
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_03pv8")]
