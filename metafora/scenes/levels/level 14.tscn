@@ -4,6 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="2_euvga"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="3_7m5kv"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="4_cchio"]
+[ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_w40j8"]
+[ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="6_jpp3i"]
+[ext_resource type="PackedScene" uid="uid://cciu6nea3ki1v" path="res://scenes/levels/level 15.tscn" id="7_jpp3i"]
+[ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="7_qbck3"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="9_kqayy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_3tm2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbck3"]
+size = Vector2(103, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqayy"]
+size = Vector2(1012, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tm2c"]
+size = Vector2(20, 139)
 
 [node name="Node2D" type="Node2D" unique_id=1719410802]
 
@@ -12,11 +27,11 @@ tile_map_data = PackedByteArray("AADZ/93/AwAKABUAAADZ/97/AwAKABUAAADZ/9//AwAKABU
 tile_set = ExtResource("1_mtlte")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=531756408]
-tile_map_data = PackedByteArray("AAAcAPj/AwAJABEAAAAdAPj/AwAKABEAAAAeAPj/AwALABEAAAAfAPj/AwAMABEAAAALAPj/AwANABMAAAAMAPj/AwAOABMAAAANAPj/AwAPABMAAAAOAPj/AwAQABMAAAAQAPj/AwAaABEAAAAQAPn/AwAaABIAAAAQAPr/AwAaABMAAAAQAPv/AwAaABMAAAAQAP//AwAaABAAACAQAP7/AwAaABEAACAQAP3/AwAaABIAACAQAPz/AwAaABMAACAaAP//AwAaABAAACAaAP7/AwAaABEAACAaAP3/AwAaABIAACAaAPz/AwAaABMAAAAaAPv/AwAaABIAAAAaAPr/AwAaABMAAAAaAPn/AwAaABIAAAAaAPj/AwAaABEAAAAaAPf/AwAaABAAAAAQAPf/AwAaABAAAAAVAPj/AwAaABAAAAAVAPn/AwAaABEAAAAVAPr/AwAaABIAAAAVAPv/AwAaABMAAAAVAPz/AwAaABQAAAA=")
+tile_map_data = PackedByteArray("AAAcAPj/AwAJABEAAAAdAPj/AwAKABEAAAAeAPj/AwALABEAAAAfAPj/AwAMABEAAAALAPj/AwANABMAAAAMAPj/AwAOABMAAAANAPj/AwAPABMAAAAOAPj/AwAQABMAAAAQAPj/AwAaABEAAAAQAPn/AwAaABIAAAAQAPr/AwAaABMAAAAQAPv/AwAaABMAAAAQAP//AwAaABAAACAQAP7/AwAaABEAACAQAP3/AwAaABIAACAQAPz/AwAaABMAACAaAP//AwAaABAAACAaAP7/AwAaABEAACAaAP3/AwAaABIAACAaAPz/AwAaABMAAAAaAPv/AwAaABIAAAAaAPr/AwAaABMAAAAaAPn/AwAaABIAAAAaAPj/AwAaABEAAAAaAPf/AwAaABAAAAAQAPf/AwAaABAAAAAVAPj/AwAaABAAAAAVAPn/AwAaABEAAAAVAPr/AwAaABIAAAAVAPv/AwAaABMAAAAVAPz/AwAaABQAAAA0APr/AwARABUAAAA=")
 tile_set = ExtResource("1_mtlte")
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("2_euvga")]
-position = Vector2(-136, -26)
+position = Vector2(-403, -28)
 
 [node name="PushableBox2" parent="." unique_id=806030168 instance=ExtResource("2_euvga")]
 position = Vector2(346, -127)
@@ -31,11 +46,92 @@ position = Vector2(0, 57)
 
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=2057691829]
 
-[node name="ElevatorButton" parent="." unique_id=1785796626 instance=ExtResource("4_cchio")]
-position = Vector2(-441, -19)
+[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_cchio")]
+position = Vector2(348, -19)
+linkedElevator = NodePath("../elevator2")
+HasToBeHeld = true
 
-[node name="elevator2" parent="." unique_id=1345786572 instance=ExtResource("3_7m5kv")]
+[node name="elevator2" parent="." unique_id=1345786572 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("3_7m5kv")]
 position = Vector2(264, -15)
+Point1 = NodePath("Node2D2")
+Point2 = NodePath("Node2D")
+AwaitActivaion = true
+LinkedButtons = [NodePath("../ElevatorButton")]
 
-[node name="elevator3" parent="." unique_id=1388945168 instance=ExtResource("3_7m5kv")]
+[node name="Node2D" type="Node2D" parent="elevator2" unique_id=357955284]
+position = Vector2(0, -117)
+
+[node name="Node2D2" type="Node2D" parent="elevator2" unique_id=1880145510]
+
+[node name="elevator3" parent="." unique_id=1388945168 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("3_7m5kv")]
 position = Vector2(424, -15)
+Point1 = NodePath("Node2D")
+Point2 = NodePath("Node2D2")
+AwaitActivaion = true
+LinkedButtons = [NodePath("../ElevatorButton")]
+
+[node name="Node2D" type="Node2D" parent="elevator3" unique_id=816573556]
+
+[node name="Node2D2" type="Node2D" parent="elevator3" unique_id=173480605]
+position = Vector2(-1, -116)
+
+[node name="DoorButton" parent="." unique_id=452365444 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_w40j8")]
+position = Vector2(466, -130)
+linkedDoor = NodePath("../Door")
+HasToBeHeld = true
+
+[node name="DoorButton2" parent="." unique_id=893473938 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_w40j8")]
+position = Vector2(492, -130)
+linkedDoor = NodePath("../Door")
+HasToBeHeld = true
+
+[node name="Door2" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("6_jpp3i")]
+position = Vector2(70, -48)
+LinkedButtons = [NodePath("../DoorButton3")]
+
+[node name="Door" parent="." unique_id=657204424 instance=ExtResource("6_jpp3i")]
+position = Vector2(-78, -48)
+selectedScene = ExtResource("7_jpp3i")
+
+[node name="ElevatorButton2" parent="." unique_id=1341494525 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_cchio")]
+position = Vector2(209, -131)
+linkedElevator = NodePath("../elevator3")
+ActivateOnce = true
+
+[node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("7_qbck3")]
+position = Vector2(104, -16)
+HasLegs = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1832901405]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2025067368]
+position = Vector2(576, -81)
+shape = SubResource("RectangleShape2D_qbck3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=494448396]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=506628814]
+position = Vector2(25, -181)
+shape = SubResource("RectangleShape2D_kqayy")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1466356059]
+position = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=875305518]
+position = Vector2(-477, -84.5)
+shape = SubResource("RectangleShape2D_3tm2c")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=890063101]
+tile_map_data = PackedByteArray("AADs//v/AwAKABUAAADt//v/AwAKABUAAADu//v/AwAKABUAAADv//v/AwAKABUAAADw//v/AwAKABUAAADx//v/AwAKABUAAADy//v/AwAKABUAAADz//v/AwAKABUAAAD0//v/AwAKABUAAADs//f/AwAKABUAAADs//j/AwAKABUAAADs//n/AwAKABUAAADs//r/AwAKABUAAADt//f/AwAKABUAAADt//j/AwAKABUAAADt//n/AwAKABUAAADt//r/AwAKABUAAADu//f/AwAKABUAAADu//j/AwAKABUAAADu//n/AwAKABUAAADu//r/AwAKABUAAADv//f/AwAKABUAAADv//j/AwAKABUAAADv//n/AwAKABUAAADv//r/AwAKABUAAADw//f/AwAKABUAAADw//j/AwAKABUAAADw//n/AwAKABUAAADw//r/AwAKABUAAADx//f/AwAKABUAAADx//j/AwAKABUAAADx//n/AwAKABUAAADx//r/AwAKABUAAADy//f/AwAKABUAAADy//j/AwAKABUAAADy//n/AwAKABUAAADy//r/AwAKABUAAADz//f/AwAKABUAAADz//j/AwAKABUAAADz//n/AwAKABUAAADz//r/AwAKABUAAAD0//f/AwAKABUAAAD0//j/AwAKABUAAAD0//n/AwAKABUAAAD0//r/AwAKABUAAADr//b/AwAKABUAAADr//f/AwAKABUAAADr//j/AwAKABUAAADr//n/AwAKABUAAADr//r/AwAKABUAAADr//v/AwAKABUAAADr//z/AwAKABUAAADr//3/AwAKABUAAADr//7/AwAKABUAAADr////AwAKABUAAADr/wAAAwAKABUAAAD1//b/AwAKABUAAAD1//f/AwAKABUAAAD1//j/AwAKABUAAAD1//n/AwAKABUAAAD1//r/AwAKABUAAAD1//v/AwAKABUAAAD1//z/AwAKABUAAAD1//3/AwAKABUAAAD1//7/AwAKABUAAAD1////AwAKABUAAAD///b/AwAKABUAAAD///f/AwAKABUAAAD///j/AwAKABUAAAD///n/AwAKABUAAAD///r/AwAKABUAAAD///v/AwAKABUAAAD///z/AwAKABUAAAD///3/AwAKABUAAAD///7/AwAKABUAAAD/////AwAKABUAAAD//wAAAwAKABUAAAAJAPb/AwAKABUAAAAJAPf/AwAKABUAAAAJAPj/AwAKABUAAAAJAPn/AwAKABUAAAAJAPr/AwAKABUAAAAJAPv/AwAKABUAAAAJAPz/AwAKABUAAAAJAP3/AwAKABUAAAAJAP7/AwAKABUAAAAJAP//AwAKABUAAAAJAAAAAwAKABUAAAD2//z/AwAIABEAABD2//3/AwAIABIAABD2//7/AwAIABMAABD+//z/AwAIABEAAAD+//3/AwAIABIAAAD+//7/AwAIABMAAAAAAPz/AwAIABEAABAAAP3/AwAIABIAABAAAP7/AwAIABMAABAIAPz/AwAIABEAAAAIAP3/AwAIABIAAAAIAP7/AwAIABMAAAAKAPz/AwAIABEAABAKAP3/AwAIABIAABAKAP7/AwAIABMAABAgAPz/AwAIABEAAAAgAP3/AwAIABIAAAAgAP7/AwAIABMAAAAgAPr/AwAIABAAAAAgAPv/AwAIABEAAAAKAPr/AwAIABAAABAKAPv/AwAIABEAABAKAPn/AwAIAA4AABAgAPn/AwAIAA4AAAAgAPb/AwAIAAsAAAAgAPf/AwAIAAwAAAAgAPj/AwAIAA0AAAAKAPb/AwAIAAsAABAKAPf/AwAIAAwAABAKAPj/AwAIAA0AABAIAPf/AwAIAAsAAAAIAPj/AwAIAAwAAAAIAPn/AwAIAA0AAAAAAPf/AwAIAAsAABAAAPj/AwAIAAwAABAAAPn/AwAIAA0AABD+//f/AwAIAAsAAAD+//j/AwAIAAwAAAD+//n/AwAIAA0AAAD2//f/AwAIAAsAABD2//j/AwAIAAwAABD2//n/AwAIAA0AABDq//f/AwAIAAsAAADq//j/AwAIAAwAAADq//n/AwAIAA0AAADj//f/AwAIAAsAABDj//j/AwAIAAwAABDj//n/AwAIAA0AABDj//r/AwAIAA4AABDq//r/AwAIAA4AAADs//3/AwAIAA4AABD0//3/AwAIAA4AAAD2//r/AwAIAA4AABD+//r/AwAIAA4AAAAAAPr/AwAIAA4AABAIAPr/AwAIAA4AAAAIAPv/AwAIABAAAAAAAPv/AwAIABAAABD+//v/AwAIABAAAAD2//v/AwAIABAAABDq//v/AwAIABAAAADj//v/AwAIABAAABDj//z/AwAIABEAABDj//3/AwAIABIAABDj//7/AwAIABMAABDq//z/AwAIABEAAADq//3/AwAIABIAAADq//7/AwAIABMAAADs//7/AwAIABAAABD0//7/AwAIABAAAAD0//z/AwAIAA0AAADs//z/AwAIAA0AABA=")
+tile_set = ExtResource("1_mtlte")
+
+[node name="DoorButton3" parent="." unique_id=213660002 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_w40j8")]
+position = Vector2(841, -98)
+linkedDoor = NodePath("../Door2")
+
+[node name="PushableBox3" parent="." unique_id=559773067 instance=ExtResource("2_euvga")]
+position = Vector2(846, -140)
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("9_kqayy")]
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_3tm2c")]

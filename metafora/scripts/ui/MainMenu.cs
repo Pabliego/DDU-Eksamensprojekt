@@ -170,7 +170,7 @@ public partial class MainMenu : Control
     {
         GetTree().CurrentScene.GetNode<SceneFadeTransition>("SceneFadeTransition").PlayTransition("FadeOut");
         await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
-        GetTree().ChangeSceneToFile("res://scenes/levels/The Elevators.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/levels/Level 1.tscn");
     } 
 
 

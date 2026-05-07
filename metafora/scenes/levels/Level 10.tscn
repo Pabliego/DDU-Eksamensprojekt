@@ -6,6 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_6mqxj"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="5_72dth"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_fcax3"]
+[ext_resource type="PackedScene" uid="uid://cxktn32vvfvpv" path="res://scenes/levels/level 11.tscn" id="7_fcax3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcax3"]
+size = Vector2(821.5, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6uij"]
+size = Vector2(244, 162.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx8at"]
+size = Vector2(20, 156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5owm"]
+size = Vector2(67.25, 299)
 
 [node name="Node2D" type="Node2D" unique_id=1933379888]
 
@@ -33,11 +46,15 @@ tile_set = ExtResource("1_08v7p")
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("4_6mqxj")]
 position = Vector2(-59, -35)
 
-[node name="ElevatorButton" parent="." unique_id=1785796626 instance=ExtResource("5_72dth")]
+[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_72dth")]
 position = Vector2(46, -83)
+linkedElevator = NodePath("../elevator")
+HasToBeHeld = true
 
-[node name="ElevatorButton2" parent="." unique_id=1408366804 instance=ExtResource("5_72dth")]
+[node name="ElevatorButton2" parent="." unique_id=1408366804 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_72dth")]
 position = Vector2(545, -147)
+linkedElevator = NodePath("../elevator")
+HasToBeHeld = true
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=1142985521]
 tile_map_data = PackedByteArray("AAAIAPb/AwASABQAAAAGAPb/AwASABQAAAAcAPb/AwASABQAAAAeAPb/AwASABQAAAAeAPr/AwASABQAAAAcAPr/AwASABQAAAAIAPr/AwASABQAAAAGAPr/AwASABQAAAAJAPr/AwASABQAAAAKAPr/AwASABQAAAALAPr/AwASABQAAAAMAPr/AwATABQAAAAFAPr/AwASABQAAAAEAPr/AwASABQAAAADAPr/AwASABEAAAADAPb/AwARABQAAAAEAPb/AwASABQAAAAFAPb/AwASABQAAAAJAPb/AwASABQAAAAKAPb/AwASABQAAAALAPb/AwASABQAAAAMAPb/AwATABQAAAAkAPb/AwATABQAAAAjAPb/AwASABEAAAAfAPb/AwASABQAAAAgAPb/AwASABIAAAAiAPr/AwATABQAAAAhAPr/AwASABQAAAAgAPr/AwASABQAAAAfAPr/AwASABQAAAAbAPr/AwASABQAAAAaAPr/AwASABQAAAAZAPr/AwASABQAAAAYAPr/AwARABQAAAAdAPb/AwASABQAAAAbAPb/AwASABQAAAAaAPb/AwASABQAAAAZAPb/AwASABQAAAAYAPb/AwARABQAAAARAPX/AwAJAA4AAAARAPb/AwAJAA8AAAARAPf/AwAJAA4AAAASAPX/AwAKAA4AAAASAPb/AwAKAA8AAAASAPf/AwAKAA4AAAATAPX/AwALAA4AAAATAPb/AwALAA8AAAATAPf/AwALAA4AAAAUAPX/AwAMAA4AAAAUAPb/AwAMAA8AAAAUAPf/AwAMAA4AAAARAPj/AwAJAA8AAAARAPn/AwAJABAAAAASAPj/AwAKAA8AAAASAPn/AwAKABAAAAATAPj/AwALAA8AAAATAPn/AwALABAAAAAUAPj/AwAMAA8AAAAUAPn/AwAMABAAAAARAPr/AwAJAA4AAAARAPv/AwAJAA4AAAARAPz/AwAJAA8AAAASAPr/AwAKAA4AAAASAPv/AwAKAA4AAAASAPz/AwAKAA8AAAATAPr/AwALAA4AAAATAPv/AwALAA4AAAATAPz/AwALAA8AAAAUAPr/AwAMAA4AAAAUAPv/AwAMAA4AAAAUAPz/AwAMAA8AAAARAP3/AwAJABAAAAASAP3/AwAKABAAAAATAP3/AwALABAAAAAUAP3/AwAMABAAAAAGAPv/AwAKABMAAAAIAPv/AwAKABMAAAAJAPv/AwANAA4AAAAJAPz/AwANAA8AAAAJAP3/AwANABAAAAALAPv/AwAPAA4AAAALAPz/AwAPAA8AAAALAP3/AwAPABAAAAAMAPv/AwAPAA4AAAAMAPz/AwAPAA8AAAAMAP3/AwAPABAAAAAFAPv/AwAQAA4AAAAFAPz/AwAQAA8AAAAFAP3/AwAQABAAAAADAPv/AwAQAA4AAAADAPz/AwAQAA8AAAADAP3/AwAQABAAAAACAPv/AwANAA4AAAACAPz/AwANAA8AAAACAP3/AwANABAAAAARAPT/AwAJAA4AAAASAPT/AwAKAA4AAAATAPT/AwALAA4AAAAUAPT/AwAMAA4AAAA=")
@@ -47,19 +64,22 @@ tile_set = ExtResource("1_08v7p")
 tile_map_data = PackedByteArray("AAAGAPP/AgAWAAoAAAAGAPT/AgAWAAsAAAAGAPX/AgAWAAwAAAAGAPb/AgAWAA0AAAAGAPf/AgAWAA4AAAAGAPj/AgAWAA8AAAAGAPn/AgAWABAAAAAGAPr/AgAWABEAAAAGAPv/AgAWABIAAAAGAPz/AgAWABMAAAAGAP3/AgAWABQAAAAAAPP/AgAWAAoAABAAAPT/AgAWAAsAABAAAPX/AgAWAAwAABAAAPb/AgAWAA0AABAAAPf/AgAWAA4AABAAAPj/AgAWAA8AABAAAPn/AgAWABAAABAAAPr/AgAWABEAABAAAPv/AgAWABIAABAAAPz/AgAWABMAABAAAP3/AgAWABQAABAIAPP/AgAWAAoAABAIAPT/AgAWAAsAABAIAPX/AgAWAAwAABAIAPb/AgAWAA0AABAIAPf/AgAWAA4AABAIAPj/AgAWAA8AABAIAPn/AgAWABAAABAIAPr/AgAWABEAABAIAPv/AgAWABIAABAIAPz/AgAWABMAABAIAP3/AgAWABQAABAcAPP/AgAWAAoAAAAcAPT/AgAWAAsAAAAcAPX/AgAWAAwAAAAcAPb/AgAWAA0AAAAcAPf/AgAWAA4AAAAcAPj/AgAWAA8AAAAcAPn/AgAWABAAAAAcAPr/AgAWABEAAAAcAPv/AgAWABIAAAAcAPz/AgAWABMAAAAcAP3/AgAWABQAAAAeAPP/AgAWAAoAABAeAPT/AgAWAAsAABAeAPX/AgAWAAwAABAeAPb/AgAWAA0AABAeAPf/AgAWAA4AABAeAPj/AgAWAA8AABAeAPn/AgAWABAAABAeAPr/AgAWABEAABAeAPv/AgAWABIAABAeAPz/AgAWABMAABAeAP3/AgAWABQAABAnAPP/AgAWAAoAAAAnAPT/AgAWAAsAAAAnAPX/AgAWAAwAAAAnAPb/AgAWAA0AAAAnAPf/AgAWAA4AAAAnAPj/AgAWAA8AAAAnAPn/AgAWABAAAAAnAPr/AgAWABEAAAAnAPv/AgAWABIAAAAnAPz/AgAWABMAAAAnAP3/AgAWABQAAAApAPP/AgAWAAoAABApAPT/AgAWAAsAABApAPX/AgAWAAwAABApAPb/AgAWAA0AABApAPf/AgAWAA4AABApAPj/AgAWAA8AABApAPn/AgAWABAAABApAPr/AgAWABEAABApAPv/AgAWABIAABApAPz/AgAWABMAABApAP3/AgAWABQAABAyAPP/AgAWAAoAAAAyAPT/AgAWAAsAAAAyAPX/AgAWAAwAAAAyAPb/AgAWAA0AAAAyAPf/AgAWAA4AAAAyAPj/AgAWAA8AAAAyAPn/AgAWABAAAAAyAPr/AgAWABEAAAAyAPv/AgAWABIAAAAyAPz/AgAWABMAAAAyAP3/AgAWABQAAAD///r/AwAKABUAAAD///v/AwAKABUAAAD///z/AwAKABUAAAD///3/AwAKABUAAAD///7/AwAKABUAAAD/////AwAKABUAAAD//wAAAwAKABUAAAD//wEAAwAKABUAAAAHAPD/AwAKABUAAAAHAPH/AwAKABUAAAAHAPL/AwAKABUAAAAHAPP/AwAKABUAAAAHAPT/AwAKABUAAAAHAPX/AwAKABUAAAAHAPb/AwAKABUAAAAHAPf/AwAKABUAAAAHAPj/AwAKABUAAAAHAPn/AwAKABUAAAAHAPr/AwAKABUAAAAHAPv/AwAKABUAAAAHAPz/AwAKABUAAAAHAP3/AwAKABUAAAAHAP7/AwAKABUAAAAHAP//AwAKABUAAAAHAAAAAwAKABUAAAAdAPD/AwAKABUAAAAdAPH/AwAKABUAAAAdAPL/AwAKABUAAAAdAPP/AwAKABUAAAAdAPT/AwAKABUAAAAdAPX/AwAKABUAAAAdAPb/AwAKABUAAAAdAPf/AwAKABUAAAAdAPj/AwAKABUAAAAdAPn/AwAKABUAAAAdAPr/AwAKABUAAAAdAPv/AwAKABUAAAAdAPz/AwAKABUAAAAdAP3/AwAKABUAAAAdAP7/AwAKABUAAAAdAP//AwAKABUAAAAdAAAAAwAKABUAAAAoAPD/AwAKABUAAAAoAPH/AwAKABUAAAAoAPL/AwAKABUAAAAoAPP/AwAKABUAAAAoAPT/AwAKABUAAAAoAPX/AwAKABUAAAAoAPb/AwAKABUAAAAoAPf/AwAKABUAAAAoAPj/AwAKABUAAAAoAPn/AwAKABUAAAAoAPr/AwAKABUAAAAoAPv/AwAKABUAAAAoAPz/AwAKABUAAAAoAP3/AwAKABUAAAAoAP7/AwAKABUAAAAoAP//AwAKABUAAAAoAAAAAwAKABUAAAAoAAEAAwAKABUAAAAoAAIAAwAKABUAAAAoAOr/AwAKABUAAAAoAOv/AwAKABUAAAAoAOz/AwAKABUAAAAoAO3/AwAKABUAAAAoAO7/AwAKABUAAAAoAO//AwAKABUAAAAdAOn/AwAKABUAAAAdAOr/AwAKABUAAAAdAOv/AwAKABUAAAAdAOz/AwAKABUAAAAdAO3/AwAKABUAAAAdAO7/AwAKABUAAAAdAO//AwAKABUAAAAHAOz/AwAKABUAAAAHAO3/AwAKABUAAAAHAO7/AwAKABUAAAAHAO//AwAKABUAAAD//+r/AwAKABUAAAD//+v/AwAKABUAAAD//+z/AwAKABUAAAD//+3/AwAKABUAAAD//+7/AwAKABUAAAD//+//AwAKABUAAAD///D/AwAKABUAAAD///H/AwAKABUAAAD///L/AwAKABUAAAD///P/AwAKABUAAAD///T/AwAKABUAAAD///X/AwAKABUAAAD///b/AwAKABUAAAD///f/AwAKABUAAAD///j/AwAKABUAAAD///n/AwAKABUAAAD+//j/AwAIAA4AAAD+//n/AwAIAA8AAAD+//r/AwAIABAAAAD+//v/AwAIABEAAAD+//z/AwAIABIAAAD+//3/AwAIABMAAADx//v/AwAIABEAABDx//z/AwAIABIAABDx//3/AwAIABMAABARAPT/AwAKABMAAAASAPT/AwAKABMAAAATAPT/AwALABMAAAAUAPT/AwAMABMAAAAMAPv/AwAMABMAAAALAPv/AwALABMAAAAKAPv/AwAKABMAAAAJAPv/AwALABMAAAAFAPv/AwALABMAAAADAPv/AwALABMAAAACAPv/AwAJABMAAAAEAPv/AwAKABMAAAAQAPT/AwAJABMAAAAWAP7/AwAPABUAAAA=")
 tile_set = ExtResource("1_08v7p")
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("6_fcax3")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("6_fcax3")]
 position = Vector2(296, -102)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+LinkedButtons = [NodePath("../ElevatorButton"), NodePath("../ElevatorButton2")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=86552077]
 
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=1498205258]
 position = Vector2(0, -91)
 
-[node name="elevator2" parent="." unique_id=964252780 instance=ExtResource("6_fcax3")]
+[node name="elevator2" parent="." unique_id=964252780 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("6_fcax3")]
 position = Vector2(361, -27)
+Point1 = NodePath("Node2D")
+Point2 = NodePath("Node2D2")
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=1477751326]
 
@@ -78,3 +98,28 @@ position = Vector2(0, -135)
 
 [node name="Door2" parent="." unique_id=2098720273 instance=ExtResource("2_5i8gy")]
 position = Vector2(721, -64)
+selectedScene = ExtResource("7_fcax3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1522776176]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=505632558]
+position = Vector2(406.25, -339)
+shape = SubResource("RectangleShape2D_fcax3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2040602161]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=695831332]
+position = Vector2(-118, -255)
+shape = SubResource("RectangleShape2D_k6uij")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1237930048]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=562480196]
+position = Vector2(-247, -106)
+shape = SubResource("RectangleShape2D_fx8at")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=55605050]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=653999812]
+position = Vector2(827, -183.5)
+shape = SubResource("RectangleShape2D_y5owm")
