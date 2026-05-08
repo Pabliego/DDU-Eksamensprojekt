@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="2_sobph"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="3_bruhr"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="4_a74ai"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="4_eof16"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="4_eof16"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="5_bruhr"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="7_v8685"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="7_v8685"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_sdahi"]
 
 [node name="Node2D" type="Node2D" unique_id=1640436739]
@@ -102,7 +102,7 @@ position = Vector2(92, -18)
 position = Vector2(727.11237, -74.5564)
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("4_eof16")]
-DialogueText = "This is the end... are you ready to leave...? "
+DialogueText = "Current elevation: 0.5 meters below ground level."
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("7_v8685")]
 

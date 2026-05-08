@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="9_ir8iy"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="12_jrr24"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="13_pr2bn"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="12_jrr24"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="13_pr2bn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("2_0hol4")
@@ -5055,3 +5055,6 @@ visible = false
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("12_jrr24")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("13_pr2bn")]
+DialogueText = "No assisting engineering staff are present, to assist in unit refurbishment.
+
+"

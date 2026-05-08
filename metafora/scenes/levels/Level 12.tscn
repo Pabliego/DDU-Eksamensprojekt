@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="7_3xfrn"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="8_3xfrn"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_te1qw"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="11_yg08w"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_8dwba"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_yg08w"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="12_8dwba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh0ae"]
 size = Vector2(643, 20)
@@ -176,5 +176,6 @@ position = Vector2(790, -160)
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_yg08w")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_8dwba")]
+DialogueText = "Bunker owners are not legally liable for any and all harm, caused by structure instability."
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

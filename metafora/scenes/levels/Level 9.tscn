@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_r7gaa"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="7_vphsu"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_urbuw"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_ljsf5"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_r7gaa"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_ljsf5"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="11_r7gaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhtgv"]
 size = Vector2(20, 128)
@@ -134,3 +134,4 @@ position = Vector2(-304, -109)
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_ljsf5")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_r7gaa")]
+DialogueText = "Signals successfully received by 0 out of 18, system recognized cell towers."

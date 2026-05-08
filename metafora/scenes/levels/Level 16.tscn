@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="5_141nn"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_uly35"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="7_isodq"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_141nn"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_uly35"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="9_141nn"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_uly35"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="11_isodq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csuof"]
@@ -228,6 +228,7 @@ HasToBeHeld = true
 position = Vector2(763, -198)
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_141nn")]
+DialogueText = "Current elevation: 11.8 meters below ground level."
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_uly35")]
 

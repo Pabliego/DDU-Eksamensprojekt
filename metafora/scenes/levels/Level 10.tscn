@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_fcax3"]
 [ext_resource type="PackedScene" uid="uid://cxktn32vvfvpv" path="res://scenes/levels/level 11.tscn" id="7_fcax3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_y5owm"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="9_jhqoo"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="10_2pnxi"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_jhqoo"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="10_2pnxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcax3"]
 size = Vector2(821.5, 35)
@@ -134,3 +134,4 @@ shape = SubResource("RectangleShape2D_y5owm")
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("9_jhqoo")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("10_2pnxi")]
+DialogueText = "Current elevation: 15.4 meters below ground level."

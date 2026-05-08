@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_wmiy1"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="6_app4e"]
 [ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="7_h0ln6"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="7_iud4k"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="8_h0ln6"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="7_iud4k"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="8_h0ln6"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="11_vatyo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvscm"]
@@ -104,5 +104,6 @@ visible = false
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("7_iud4k")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("8_h0ln6")]
+DialogueText = "Current outside air quality: 130 AQI."
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]
