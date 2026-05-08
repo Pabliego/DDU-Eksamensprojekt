@@ -10,7 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="7_qbck3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="9_kqayy"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_3tm2c"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_3tm2c"]
+=======
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="11_3tm2c"]
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbck3"]
 size = Vector2(103, 188)
@@ -145,3 +149,4 @@ position = Vector2(846, -140)
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_3tm2c")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_3tm2c")]
+DialogueText = "Current date: 10/05/2029."

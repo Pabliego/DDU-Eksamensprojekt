@@ -11,7 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="8_8bpv7"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="8_xonvm"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_28dng"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_33pyt"]
+=======
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="12_33pyt"]
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrr24"]
 texture = ExtResource("1_c0mpg")
@@ -4138,3 +4142,4 @@ ActivateOnce = true
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_28dng")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_33pyt")]
+DialogueText = "Current elevation: 21.6 meters below ground level."

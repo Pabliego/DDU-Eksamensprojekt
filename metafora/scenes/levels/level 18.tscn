@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_cstcw"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="6_hfhx8"]
 [ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="7_733e3"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_mlrgj"]
+=======
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="9_mlrgj"]
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_5otsn"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="11_65pmb"]
 
@@ -374,6 +378,7 @@ position = Vector2(-34, -168)
 shape = SubResource("RectangleShape2D_mlrgj")
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_mlrgj")]
+DialogueText = "Current outside radiation levels: 1.3 micro-Sieverts per hour."
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_5otsn")]
 

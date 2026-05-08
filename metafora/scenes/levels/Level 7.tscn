@@ -9,7 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="6_7jdx6"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_03pv8"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_0up2q"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="10_ur65l"]
+=======
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="10_ur65l"]
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjca4"]
 size = Vector2(20, 148)
@@ -106,3 +110,4 @@ visible = false
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("9_0up2q")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("10_ur65l")]
+DialogueText = "vitals located in ventilation system. Expected reason, small rat infestation… "

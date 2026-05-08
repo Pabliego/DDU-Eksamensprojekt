@@ -11,7 +11,11 @@
 [ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="8_iik3r"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_e8rfc"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_7rfs3"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_7rfs3"]
+=======
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="12_7rfs3"]
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yblf5"]
 
@@ -177,5 +181,6 @@ position = Vector2(-422, -217)
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_7rfs3")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_7rfs3")]
+DialogueText = "Structural integrity compromised. Protocol: seek nearest emergency exist, or expect immanent job termination."
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

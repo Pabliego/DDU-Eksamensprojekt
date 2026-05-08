@@ -9,9 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://cxktn32vvfvpv" path="res://scenes/levels/level 11.tscn" id="7_fcax3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_y5owm"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_jhqoo"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="10_2pnxi"]
 [ext_resource type="PackedScene" path="res://scenes/player/legs.tscn" id="11_2pnxi"]
 [ext_resource type="PackedScene" path="res://scenes/ui/GetLegs.tscn" id="12_lhl0i"]
+=======
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="10_2pnxi"]
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcax3"]
 size = Vector2(821.5, 35)
@@ -140,6 +144,7 @@ visible = false
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("9_jhqoo")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("10_2pnxi")]
+<<<<<<< HEAD
 
 [node name="Legs" parent="." unique_id=2061665985 node_paths=PackedStringArray("LinkedLegAnimation") instance=ExtResource("11_2pnxi")]
 position = Vector2(297, -192)
@@ -147,3 +152,6 @@ LinkedLegAnimation = NodePath("../GetLegs")
 
 [node name="GetLegs" parent="." unique_id=205716060 instance=ExtResource("12_lhl0i")]
 visible = false
+=======
+DialogueText = "Current elevation: 15.4 meters below ground level."
+>>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda

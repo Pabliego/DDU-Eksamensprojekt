@@ -5060,3 +5060,6 @@ visible = false
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("12_jrr24")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("13_pr2bn")]
+DialogueText = "No assisting engineering staff are present, to assist in unit refurbishment.
+
+"
