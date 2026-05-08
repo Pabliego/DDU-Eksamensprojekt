@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_70pek"]
 [ext_resource type="PackedScene" uid="uid://drq3vyhtlk2j4" path="res://scenes/player/legs.tscn" id="11_r8na8"]
 [ext_resource type="PackedScene" uid="uid://cj18ype0mfpf0" path="res://scenes/ui/GetLegs.tscn" id="12_wgg1i"]
+[ext_resource type="PackedScene" uid="uid://mcsbx00vf1co" path="res://scenes/levels/level 18.tscn" id="13_wgg1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1aj5d"]
 size = Vector2(604.5, 82)
@@ -33,7 +34,7 @@ shape = SubResource("RectangleShape2D_1aj5d")
 position = Vector2(413, 601)
 ColorSelect = "vaultred"
 selectedScene = ExtResource("4_r8na8")
-LinkedButtons = [NodePath("../DoorButton")]
+LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("2_ydtff")]
 position = Vector2(226, 633)
@@ -42,6 +43,7 @@ HasLegs = true
 [node name="DoorButton2" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(690, 630)
 linkedDoor = NodePath("../Door")
+HasToBeHeld = true
 ColorSelect = "blue"
 
 [node name="DoorButton" parent="." unique_id=577633547 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
@@ -108,6 +110,6 @@ offset_bottom = -51.0
 position = Vector2(791, 629)
 LinkedLegAnimation = NodePath("../GetLegs")
 
-[node name="GetLegs" parent="." unique_id=205716060 node_paths=PackedStringArray("LinkedLeg") instance=ExtResource("12_wgg1i")]
+[node name="GetLegs" parent="." unique_id=205716060 instance=ExtResource("12_wgg1i")]
 visible = false
-LinkedLeg = NodePath("../Legs")
+selectedScene = ExtResource("13_wgg1i")

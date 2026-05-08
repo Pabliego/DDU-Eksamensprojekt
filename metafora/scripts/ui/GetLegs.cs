@@ -7,7 +7,8 @@ public partial class GetLegs : CanvasLayer
 	private AnimationPlayer player;
 	private AnimatedSprite2D sprite;
 
-	[Export] Legs LinkedLeg;
+	[Export] PackedScene selectedScene {get; set;}
+
 	public override void _Ready()
 	{
 		player = GetNode<AnimationPlayer>("AnimationPlayer");
@@ -22,7 +23,10 @@ public partial class GetLegs : CanvasLayer
 
 	public void SpriteFinished()
 	{
-		player.PlayBackwards("GetThemLegs");
+		if (selectedScene != null)
+		{
+			GetTree().CurrentScene.GetNode<SceneFadeTransition>("SceneFadeTransition").PlayTransitionAndChangeScene(selectedScene.ResourcePath);	
+		}
 	}
 
 
