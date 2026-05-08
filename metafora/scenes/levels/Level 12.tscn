@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="6_7c0yv"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="7_3xfrn"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="8_3xfrn"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_te1qw"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="11_yg08w"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_8dwba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh0ae"]
 size = Vector2(643, 20)
@@ -167,5 +170,11 @@ linkedDoor = NodePath("../Door")
 
 [node name="PushableBox2" parent="." unique_id=1443096884 instance=ExtResource("4_mdirl")]
 position = Vector2(790, -160)
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("10_te1qw")]
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_yg08w")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_8dwba")]
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

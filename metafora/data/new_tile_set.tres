@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://clul7vxbds0ae" path="res://assets/sprites/metafora/GOON room eksample.png" id="2_3ra02"]
 [ext_resource type="Texture2D" uid="uid://buqovjtefsta8" path="res://assets/sprites/metafora/bunker tiles.png" id="2_58acd"]
 [ext_resource type="Texture2D" uid="uid://g1bokktgy7a6" path="res://assets/sprites/metafora/from treds to legs.png" id="3_3ra02"]
+[ext_resource type="Texture2D" uid="uid://cftdwq11txpv5" path="res://assets/sprites/metafora/cutoffplatform.png" id="5_i8wbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ra02"]
 texture = ExtResource("1_ih3jy")
@@ -8559,15 +8560,10 @@ texture = ExtResource("3_3ra02")
 15:31/0 = 0
 16:31/0 = 0
 17:31/0 = 0
-17:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0719671, -8, 8, -8, 8, -2.9728708, 2.2792006, 2.6755848, -0.5732813, 2.4569178, -1.9840817, 1.7899868, -1.9409494, -2.9545565, -3.0408208, -3.019255)
 18:31/0 = 0
-18:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0719671, -8, 8, -8, 8, -2.9728708, 2.2792006, 2.6755848, -0.5732813, 2.4569178, -1.9840817, 1.7899868, -1.9409494, -2.9545565, -3.0408208, -3.019255)
 19:31/0 = 0
-19:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0719671, -8, 8, -8, 8, -2.9728708, 2.2792006, 2.6755848, -0.5732813, 2.4569178, -1.9840817, 1.7899868, -1.9409494, -2.9545565, -3.0408208, -3.019255)
 20:31/0 = 0
-20:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0719671, -8, 8, -8, 8, -2.9728708, 2.2792006, 2.6755848, -0.5732813, 2.4569178, -1.9840817, 1.7899868, -1.9409494, -2.9545565, -3.0408208, -3.019255)
 21:31/0 = 0
-21:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.0719671, -8, 8, -8, 8, -2.9728708, 2.2792006, 2.6755848, -0.5732813, 2.4569178, -1.9840817, 1.7899868, -1.9409494, -2.9545565, -3.0408208, -3.019255)
 22:31/0 = 0
 23:31/0 = 0
 24:31/0 = 0
@@ -9869,9 +9865,15 @@ texture = ExtResource("2_58acd")
 22:21/0 = 0
 26:21/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcjjn"]
+texture = ExtResource("5_i8wbx")
+0:0/0 = 0
+1:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3ra02")
 sources/3 = SubResource("TileSetAtlasSource_i8wbx")
 sources/1 = SubResource("TileSetAtlasSource_qb3df")
 sources/2 = SubResource("TileSetAtlasSource_5mpjc")
+sources/4 = SubResource("TileSetAtlasSource_rcjjn")

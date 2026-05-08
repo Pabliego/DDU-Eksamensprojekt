@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="9_ir8iy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="12_jrr24"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="13_pr2bn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("2_0hol4")
@@ -4993,6 +4995,22 @@ position = Vector2(1040, -32)
 selectedScene = ExtResource("5_4d7sh")
 LinkedButtons = [NodePath("../DoorButton")]
 
+[node name="DoorButton3" parent="." unique_id=101610016 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
+position = Vector2(-712, -66)
+linkedDoor = NodePath("../Door")
+HasToBeHeld = true
+ActivateOnce = true
+
+[node name="DoorButton" parent="." unique_id=1491291196 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
+position = Vector2(519, -2)
+linkedDoor = NodePath("../Door2")
+HasToBeHeld = true
+
+[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_4d7sh")]
+position = Vector2(280, -2)
+linkedElevator = NodePath("../elevator")
+ActivateOnce = true
+
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_q6r6c")]
 position = Vector2(87, 0)
 
@@ -5016,15 +5034,6 @@ LinkedButtons = [NodePath("../ElevatorButton")]
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=1122780459]
 position = Vector2(1, -100)
 
-[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_4d7sh")]
-position = Vector2(280, -2)
-linkedElevator = NodePath("../elevator")
-
-[node name="DoorButton" parent="." unique_id=1491291196 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
-position = Vector2(519, -2)
-linkedDoor = NodePath("../Door2")
-HasToBeHeld = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1029856000]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=164233615]
@@ -5040,10 +5049,9 @@ shape = SubResource("RectangleShape2D_4d7sh")
 [node name="PushableBox3" parent="." unique_id=1280616567 instance=ExtResource("3_d21ai")]
 position = Vector2(-711, -91)
 
-[node name="DoorButton3" parent="." unique_id=101610016 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
-position = Vector2(-712, -66)
-linkedDoor = NodePath("../Door")
-HasToBeHeld = true
-ActivateOnce = true
-
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("1_ir8iy")]
+visible = false
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("12_jrr24")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("13_pr2bn")]

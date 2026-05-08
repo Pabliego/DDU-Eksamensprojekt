@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bn0ec22mhm4y8" path="res://scenes/levels/Level 4.tscn" id="5_jsyro"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="6_h7tt3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="9_5dt25"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_5dt25"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_h7tt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n00oh"]
 size = Vector2(20, 126)
@@ -68,6 +70,7 @@ position = Vector2(0, -88)
 [node name="ElevatorButton" parent="." unique_id=801415846 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("6_h7tt3")]
 position = Vector2(888, -19)
 linkedElevator = NodePath("../elevator")
+ActivateOnce = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1101058118]
 
@@ -82,3 +85,8 @@ position = Vector2(947, -77)
 shape = SubResource("RectangleShape2D_n00oh")
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("9_5dt25")]
+visible = false
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_5dt25")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_h7tt3")]
