@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="8_un0qa"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_ifrw1"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_kldyl"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_ifrw1"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="12_ifrw1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_un0qa"]
 
