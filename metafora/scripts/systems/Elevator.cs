@@ -16,7 +16,7 @@ public partial class Elevator : Node2D
 
 	[Export] private bool AwaitActivaion = false;
 
-	[Export(PropertyHint.Enum, "red, blue, yellow, green")] private string ColorSelect;
+	[Export(PropertyHint.Enum, "red,blue,yellow,green")] private string ColorSelect;
 
 	[Export] public Godot.Collections.Array<Elevatorbutton> LinkedButtons = new();
 

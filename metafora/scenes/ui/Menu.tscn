@@ -5,10 +5,126 @@
 [ext_resource type="AudioStream" uid="uid://by5171rlr27a3" path="res://assets/audio/atmospheric sound(Sounddino).wav" id="2_sh3q5"]
 [ext_resource type="Texture2D" uid="uid://ddqnya8pgkcy5" path="res://assets/textures/RestartLevelicon.png" id="3_l8juw"]
 [ext_resource type="Texture2D" uid="uid://8sx38vma8pq2" path="res://assets/textures/homeicon.png" id="4_l8juw"]
+[ext_resource type="Theme" uid="uid://bx36cr42mbsqq" path="res://assets/textures/blehtheme.tres" id="6_tmidt"]
+[ext_resource type="Texture2D" uid="uid://biywy81qwawlt" path="res://assets/textures/spaceicon.png" id="7_ysqth"]
+[ext_resource type="Texture2D" uid="uid://dynapd2eocps6" path="res://assets/textures/righticon.png" id="8_v0o8o"]
+[ext_resource type="Texture2D" uid="uid://chu351kdtkxhb" path="res://assets/textures/lefticon.png" id="9_rwf8r"]
+[ext_resource type="Texture2D" uid="uid://dm871lq1atepw" path="res://assets/textures/escicon.png" id="10_rawfg"]
+[ext_resource type="Texture2D" uid="uid://b600g0p1shy7y" path="res://assets/textures/hicon.png" id="11_y0r5t"]
 
 [sub_resource type="Theme" id="Theme_ngvy7"]
 default_font = ExtResource("2_gcpqa")
 default_font_size = 40
+
+[sub_resource type="Animation" id="Animation_tmidt"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0, 50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(778, -0.25, 0, 0.25, 0, 1086, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_ysqth"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(50, 0, 0, 0.16666667, 0, 50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1086, 0, 0, 0.16666667, -51.333336, 778, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_v0o8o"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(778, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rwf8r"]
+resource_name = "start"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1086, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwf8r"]
+_data = {
+&"Close": SubResource("Animation_tmidt"),
+&"Open": SubResource("Animation_ysqth"),
+&"RESET": SubResource("Animation_v0o8o"),
+&"start": SubResource("Animation_rwf8r")
+}
 
 [node name="Menu" type="CanvasLayer" unique_id=1931243751]
 script = ExtResource("1_0dynd")
@@ -26,9 +142,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Button" type="Button" parent="CanvasLayer/MenuItems" unique_id=465365215]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00625
-anchor_top = -0.029547554
-anchor_right = 0.10104167
+anchor_left = -0.031770833
+anchor_top = -0.07202216
+anchor_right = 0.075520836
 anchor_bottom = -0.07202216
 offset_left = 605.0
 offset_top = 444.0
@@ -46,9 +162,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Button2" type="Button" parent="CanvasLayer/MenuItems" unique_id=1889847548]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0046875
-anchor_top = 0.14958449
-anchor_right = 0.111979164
+anchor_left = -0.030208332
+anchor_top = 0.11449677
+anchor_right = 0.08645833
 anchor_bottom = 0.11449677
 offset_left = 605.0
 offset_top = 444.0
@@ -66,6 +182,83 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=273589695]
 stream = ExtResource("2_sh3q5")
 volume_db = 10.0
+
+[node name="IconHelp" type="CanvasLayer" parent="." unique_id=408494724]
+
+[node name="Panel" type="Panel" parent="IconHelp" unique_id=375941004]
+offset_left = 50.0
+offset_top = 778.0
+offset_right = 325.0
+offset_bottom = 1036.0012
+
+[node name="Button" type="Button" parent="IconHelp/Panel" unique_id=1274578225]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 72.0
+theme = ExtResource("6_tmidt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Jump"
+icon = ExtResource("7_ysqth")
+flat = true
+alignment = 2
+expand_icon = true
+
+[node name="Button2" type="Button" parent="IconHelp/Panel" unique_id=262453424]
+layout_mode = 0
+offset_top = 59.0
+offset_right = 273.0
+offset_bottom = 131.0
+theme = ExtResource("6_tmidt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Right"
+icon = ExtResource("8_v0o8o")
+flat = true
+alignment = 2
+expand_icon = true
+
+[node name="Button3" type="Button" parent="IconHelp/Panel" unique_id=1568522093]
+layout_mode = 0
+offset_top = 118.0
+offset_right = 273.0
+offset_bottom = 190.0
+theme = ExtResource("6_tmidt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Left"
+icon = ExtResource("9_rwf8r")
+flat = true
+alignment = 2
+expand_icon = true
+
+[node name="Button4" type="Button" parent="IconHelp/Panel" unique_id=1976290935]
+layout_mode = 0
+offset_top = 179.0
+offset_right = 273.0
+offset_bottom = 251.0
+theme = ExtResource("6_tmidt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Menu"
+icon = ExtResource("10_rawfg")
+flat = true
+alignment = 2
+expand_icon = true
+
+[node name="Button5" type="Button" parent="IconHelp/Panel" unique_id=1115483957]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -117.02002
+offset_right = 197.0
+offset_bottom = -45.02002
+theme = ExtResource("6_tmidt")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Help"
+icon = ExtResource("11_y0r5t")
+flat = true
+alignment = 2
+expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="IconHelp" unique_id=626507574]
+libraries/ = SubResource("AnimationLibrary_rwf8r")
+autoplay = &"start"
 
 [connection signal="pressed" from="CanvasLayer/MenuItems/Button" to="." method="ButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/MenuItems/Button2" to="." method="ButtonPressedHome"]

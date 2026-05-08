@@ -17,9 +17,19 @@ public partial class DoorButton : Node2D
 
 	private AudioStreamPlayer2D ButtonSound;
 
+	[Export(PropertyHint.Enum, "red,blue,default,green")] private string ColorSelect = "default";
+
 	public override void _Ready()
     {
-        aniButton = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		GetNode<AnimatedSprite2D>("default").Visible = false;
+		GetNode<AnimatedSprite2D>("blue").Visible = false;
+		GetNode<AnimatedSprite2D>("green").Visible = false;
+		GetNode<AnimatedSprite2D>("red").Visible = false;
+
+
+        aniButton = GetNode<AnimatedSprite2D>(ColorSelect);
+		aniButton.Visible = true;
+		aniButton.Play("idle");
 		DetectBox = GetNode<Area2D>("Area2D");
 		ButtonSound = GetNode<AudioStreamPlayer2D>("ButtonSound");
     }

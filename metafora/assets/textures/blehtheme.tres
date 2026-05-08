@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bx36cr42mbsqq"]
+
+[ext_resource type="FontFile" uid="uid://d2h1n654joknf" path="res://assets/fonts/MozartNbp-93Ey.ttf" id="1_c3i02"]
+
+[resource]
+default_font = ExtResource("1_c3i02")
+default_font_size = 75

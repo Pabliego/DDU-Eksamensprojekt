@@ -59,15 +59,17 @@ public partial class Unit555 : CharacterBody2D
         string ExecutedSound = "IdleSound";
         
         int input = 0;
-
-        if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+        if (HasLegs == true)
         {
-            Velocity = new Vector2(Velocity.X, JumpVelocity);
-            Jumping = true;
-        }
-        else if (IsOnFloor() && Jumping)
-        {
-            Jumping = false;
+            if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+            {
+                Velocity = new Vector2(Velocity.X, JumpVelocity);
+                Jumping = true;
+            }
+            else if (IsOnFloor() && Jumping)
+            {
+                Jumping = false;
+            }
         }
 
 

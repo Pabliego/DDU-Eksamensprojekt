@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Data.Common;
 
 public partial class Menu : CanvasLayer
 {
@@ -10,11 +11,16 @@ public partial class Menu : CanvasLayer
 
 	private CanvasLayer MenuItems;
 
+	private AnimationPlayer helpani;
+
+	private bool helphidden = true;
+
 
     public override void _Ready()
     {
         MenuItems = GetNode<CanvasLayer>("CanvasLayer");
 		Ambiance = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+		helpani = GetNode<AnimationPlayer>("IconHelp/AnimationPlayer");
 		Ambiance.Play();
     }
 
@@ -32,6 +38,22 @@ public partial class Menu : CanvasLayer
 				MenuItems.Visible = false;
 			}
 		}
+
+		if (Input.IsActionJustPressed("h"))
+		{
+			if (helphidden == true)
+			{
+				helpani.Play("Open");
+				helphidden = false;
+			} 
+			else if (helphidden == false)
+			{
+				helpani.Play("Close");
+				helphidden = true;
+			}
+		}
+
+
     }
 
 

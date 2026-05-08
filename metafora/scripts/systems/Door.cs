@@ -13,7 +13,7 @@ public partial class Door : Node2D
 
 	private AudioStreamPlayer2D DoorSoundClose;
 
-	[Export(PropertyHint.Enum, "red,blue")] private string ColorSelect = "blue";
+	[Export(PropertyHint.Enum, "red,blue,vaultgreen,vaultred,vaultgreen")] private string ColorSelect = "blue";
 
 	[Export] PackedScene selectedScene {get; set;}
 
@@ -23,6 +23,7 @@ public partial class Door : Node2D
 
 		public override void _Ready()
     {
+		GetNode<AnimatedSprite2D>("blue").Visible = false;
 		aniDoor = GetNode<AnimatedSprite2D>(ColorSelect);
 		aniDoor.Visible = true;
 		

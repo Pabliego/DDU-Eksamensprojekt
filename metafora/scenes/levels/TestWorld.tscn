@@ -29,7 +29,7 @@ shape = SubResource("RectangleShape2D_1aj5d")
 
 [node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("1_iyqsp")]
 position = Vector2(413, 601)
-ColorSelect = "red"
+ColorSelect = "vaultgreen"
 selectedScene = ExtResource("2_8toc6")
 LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2")]
 
@@ -40,11 +40,13 @@ HasLegs = true
 [node name="DoorButton2" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(690, 630)
 linkedDoor = NodePath("../Door")
+ColorSelect = "blue"
 
 [node name="DoorButton" parent="." unique_id=577633547 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("3_v3ud1")]
 position = Vector2(342, 630)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("4_ydtff")]
 position = Vector2(490, 635)
@@ -65,7 +67,7 @@ position = Vector2(599, 634)
 Point1 = NodePath("Point1")
 Point2 = NodePath("Point2")
 AwaitActivaion = true
-ColorSelect = " yellow"
+ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton2"), NodePath("../ElevatorButton")]
 
 [node name="Point2" type="Node2D" parent="elevator2" unique_id=962117206]
@@ -82,18 +84,19 @@ ActivateOnce = true
 position = Vector2(726, 630)
 linkedElevator = NodePath("../elevator")
 HasToBeHeld = true
+ColorSelect = "green"
 
 [node name="ElevatorButton2" parent="." unique_id=1830074238 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_v3ud1")]
 position = Vector2(653, 630)
 linkedElevator = NodePath("../elevator2")
 HasToBeHeld = true
+ColorSelect = "green"
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("6_nig7w")]
 position = Vector2(546, 620)
 ColorSelect = " green"
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_y2t7r")]
-visible = false
 offset_left = 55.0
 offset_top = -51.0
 offset_right = 55.0
