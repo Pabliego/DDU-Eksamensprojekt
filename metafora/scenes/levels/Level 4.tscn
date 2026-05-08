@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="9_ir8iy"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="12_jrr24"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="13_pr2bn"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="12_jrr24"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="13_pr2bn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("2_0hol4")
@@ -4990,11 +4990,6 @@ position = Vector2(514, -88)
 position = Vector2(32, -32)
 LinkedButtons = [NodePath("../DoorButton3")]
 
-[node name="Door2" parent="." unique_id=1815270860 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("3_0hol4")]
-position = Vector2(1040, -32)
-selectedScene = ExtResource("5_4d7sh")
-LinkedButtons = [NodePath("../DoorButton")]
-
 [node name="DoorButton3" parent="." unique_id=101610016 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
 position = Vector2(-712, -66)
 linkedDoor = NodePath("../Door")
@@ -5010,6 +5005,11 @@ HasToBeHeld = true
 position = Vector2(280, -2)
 linkedElevator = NodePath("../elevator")
 ActivateOnce = true
+
+[node name="Door2" parent="." unique_id=1815270860 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("3_0hol4")]
+position = Vector2(1040, -32)
+selectedScene = ExtResource("5_4d7sh")
+LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_q6r6c")]
 position = Vector2(87, 0)

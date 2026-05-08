@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://5pg880tltl3m"]
+
+[ext_resource type="Texture2D" uid="uid://qpfc0h0ar538" path="res://assets/textures/Bunker/ending.png" id="1_77ye6"]
+[ext_resource type="Script" uid="uid://bbnrsvipfpvgb" path="res://scripts/ui/FinalScene.cs" id="1_w44qw"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="3_rq84w"]
+[ext_resource type="AudioStream" uid="uid://dibu616ajemj0" path="res://assets/audio/DoorOpening(Sounddino).wav" id="4_7t0yn"]
+[ext_resource type="FontFile" uid="uid://d2h1n654joknf" path="res://assets/fonts/MozartNbp-93Ey.ttf" id="5_s7xj3"]
+[ext_resource type="AudioStream" uid="uid://bb7opmtsguldr" path="res://assets/audio/Bird Sounds Spectacular Morning Bird Sound - Paul Dinning (128k) (mp3cut.net) (1).mp3" id="5_uqpra"]
+[ext_resource type="Texture2D" uid="uid://8sx38vma8pq2" path="res://assets/textures/homeicon.png" id="7_8omca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50der"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(0, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44qw"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(0, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq84w"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(528, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t0yn"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(1056, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7xj3"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(1584, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqpra"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(2112, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8omca"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(2640, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja34e"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(3168, 0, 528, 275)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50der"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50der")
+}],
+"loop": true,
+"name": &"FirstFrame",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w44qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq84w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t0yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7xj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqpra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8omca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja34e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Theme" id="Theme_uqpra"]
+default_font = ExtResource("5_s7xj3")
+default_font_size = 105
+
+[sub_resource type="Theme" id="Theme_ja34e"]
+default_font = ExtResource("5_s7xj3")
+default_font_size = 40
+
+[node name="FinalScene" type="CanvasLayer" unique_id=1539193377]
+script = ExtResource("1_w44qw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=978849129]
+position = Vector2(958.76013, 543.87506)
+scale = Vector2(3.6554554, 4.0227275)
+sprite_frames = SubResource("SpriteFrames_50der")
+autoplay = "FirstFrame"
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("3_rq84w")]
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="." unique_id=2145734751]
+stream = ExtResource("4_7t0yn")
+
+[node name="Nature" type="AudioStreamPlayer2D" parent="." unique_id=1331198848]
+stream = ExtResource("5_uqpra")
+volume_db = -15.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=317618911]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1058460206]
+offset_left = 590.0
+offset_top = 160.0
+offset_right = 1356.0
+offset_bottom = 269.0
+theme = SubResource("Theme_uqpra")
+text = "Thanks for playing!"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="CanvasLayer" unique_id=1702180676]
+anchors_preset = -1
+anchor_left = -0.030208332
+anchor_top = 0.11449675
+anchor_right = 0.0234375
+anchor_bottom = 0.06912638
+offset_left = 653.0
+offset_top = 333.3435
+offset_right = 1311.0
+offset_bottom = 543.3435
+theme = SubResource("Theme_ja34e")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 187
+text = "Main Menu"
+icon = ExtResource("7_8omca")
+flat = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=937342500]

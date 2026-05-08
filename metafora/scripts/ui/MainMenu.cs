@@ -10,12 +10,14 @@ public partial class MainMenu : Control
     private Timer CursorTimer;
 
     private AudioStreamPlayer2D alrt; 
+    private AudioStreamPlayer2D line; 
     
     public override void _Ready()
     {
         InputField = GetNode<LineEdit>("InputField");
         OutputText = GetNode<RichTextLabel>("OutputText");
         alrt = GetNode<AudioStreamPlayer2D>("AlertSound");
+        line = GetNode<AudioStreamPlayer2D>("LineSound");
 
         InputField.TextSubmitted += InputSubmit;
 
@@ -76,19 +78,25 @@ public partial class MainMenu : Control
         await WriteToTerminal("REMOTE CONNECTION SYSTEM BOOT v7.3.6 ", 0.001f, false);
         await WriteToTerminal(".................", 0.05f, false);
         await WriteToTerminal(" [OK]", 0f, true);
+        line.Play();
         //await WriteToTerminal("Loading user interface ...................... [FAIL]", 0.005f);
         await WriteToTerminal("Loading user interface ", 0.001f, false);
         await WriteToTerminal("......................", 0.08f, false);
         await WriteToTerminal(" [FAIL]", 0f, true);
+        line.Play();
         await WriteToTerminal("Initializing connection hardware ", 0.008f, false);
         await WriteToTerminal("..................", 0.005f, false);
         await WriteToTerminal(" [OK]", 0f, true);
+        line.Play();
         await WriteToTerminal("Attempting connection ..................", 0.008f, false);
         await WriteToTerminal(" [FAIL]", 0f, true);
+        line.Play();
         await WriteToTerminal("Attempting connection ..................", 0.006f, false);
         await WriteToTerminal(" [FAIL]", 0f, true);
+        line.Play();
         await WriteToTerminal("Attempting connection ..................", 0.003f, false);
         await WriteToTerminal(" [FAIL]", 0f, true);
+        line.Play();
 
         await ToSignal(GetTree().CreateTimer(0.8f), SceneTreeTimer.SignalName.Timeout);
 
@@ -96,9 +104,11 @@ public partial class MainMenu : Control
         await WriteToTerminal("Attempting connection ", 0.002f, false);
         await WriteToTerminal("..................", 0.10f, false);
         await WriteToTerminal(" [OK]", 0f, true);
+        line.Play();
 
         await WriteToTerminal("\nType 'help' for available commands.", 0.001f, true);
         await WriteToTerminal("> ", 0.01f, true);
+        line.Play();
 
         InputField.Editable = true;
         InputField.GrabFocus();
