@@ -11,6 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="9_ryo8f"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_ppfkc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryo8f"]
+size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppfkc"]
+size = Vector2(22, 3)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xgqr"]
 size = Vector2(101, 184)
 
@@ -41,24 +47,45 @@ position = Vector2(176, -64)
 position = Vector2(126, -31)
 HasLegs = true
 
+[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1124435998]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=561065613]
+position = Vector2(363, -117)
+shape = SubResource("RectangleShape2D_ryo8f")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=11880808]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1332238301]
+position = Vector2(-371, -117)
+shape = SubResource("RectangleShape2D_ryo8f")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=297159933]
+position = Vector2(-8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=821231730]
+position = Vector2(732, -117)
+shape = SubResource("RectangleShape2D_ryo8f")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=262574987]
+position = Vector2(-4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=959742511]
+position = Vector2(1048.5, -43)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_ppfkc")
+one_way_collision = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1910415535]
+position = Vector2(-2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=639932351]
+position = Vector2(-3.5, -117)
+shape = SubResource("RectangleShape2D_ryo8f")
+
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("4_24ddf")]
 position = Vector2(-270, -62)
-ColorSelect = "blue"
-
-[node name="PushableBox2" parent="." unique_id=2030664376 instance=ExtResource("4_24ddf")]
-position = Vector2(-118, -68)
-ColorSelect = "blue"
-
-[node name="PushableBox3" parent="." unique_id=194710085 instance=ExtResource("4_24ddf")]
-position = Vector2(44, -69)
-ColorSelect = "blue"
-
-[node name="PushableBox4" parent="." unique_id=1127940171 instance=ExtResource("4_24ddf")]
-position = Vector2(297, -62)
-ColorSelect = "blue"
-
-[node name="PushableBox5" parent="." unique_id=559118276 instance=ExtResource("4_24ddf")]
-position = Vector2(467, -78)
 ColorSelect = "blue"
 
 [node name="PushableBox6" parent="." unique_id=2006850080 instance=ExtResource("4_24ddf")]
@@ -94,32 +121,34 @@ ColorSelect = "blue"
 [node name="DoorButton3" parent="." unique_id=307566881 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(-89, -130)
 linkedDoor = NodePath("../Door2")
-HasToBeHeld = true
+ActivateOnce = true
 
 [node name="DoorButton4" parent="." unique_id=1766770576 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(90, -131)
 linkedDoor = NodePath("../Door2")
-HasToBeHeld = true
+ActivateOnce = true
 
 [node name="DoorButton5" parent="." unique_id=445877387 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(190, -131)
 linkedDoor = NodePath("../Door2")
-HasToBeHeld = true
+ActivateOnce = true
 
 [node name="DoorButton6" parent="." unique_id=786686599 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(473, -130)
 linkedDoor = NodePath("../Door2")
-HasToBeHeld = true
+ActivateOnce = true
 
 [node name="DoorButton7" parent="." unique_id=950354730 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(647, -130)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="DoorButton8" parent="." unique_id=883867238 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(834, -130)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=2139181631]
 tile_map_data = PackedByteArray("AADa//f/AwARABQAAADb//f/AwASABQAAADc//f/AwASABQAAADf//f/AwASABIAAADd//f/AwASABQAAADe//f/AwASABQAAADk//f/AwASABEAAADl//f/AwASABQAAADm//f/AwASABQAAADn//f/AwASABQAAADp//f/AwASABQAAADq//f/AwASABQAAADr//f/AwASABQAAADs//f/AwASABQAAADt//f/AwASABIAAAD1//f/AwASABMAAAD3//f/AwASABEAAAD4//f/AwASABQAAAD5//f/AwASABIAAAD7//f/AwASABEAAAD9//f/AwASABQAAAD8//f/AwASABQAAAD+//f/AwASABQAAAAAAPf/AwASABQAAAABAPf/AwASABQAAAACAPf/AwASABQAAAADAPf/AwASABIAAAAIAPf/AwASABEAAAAJAPf/AwASABQAAAAKAPf/AwASABIAAAAPAPf/AwASABEAAAAQAPf/AwASABQAAAARAPf/AwASABQAAAASAPf/AwASABQAAAATAPf/AwASABQAAAAUAPf/AwASABQAAAAVAPf/AwASABQAAAAXAPf/AwASABQAAAAYAPf/AwASABQAAAAZAPf/AwASABQAAAAaAPf/AwASABQAAAAbAPf/AwASABIAAAAjAPf/AwASABMAAAAlAPf/AwASABEAAAAmAPf/AwASABQAAAAnAPf/AwASABIAAAApAPf/AwASABEAAAAqAPf/AwASABQAAAArAPf/AwASABQAAAAsAPf/AwASABQAAAAuAPf/AwASABQAAAAvAPf/AwASABQAAAAwAPf/AwASABQAAAAxAPf/AwASABIAAAA4APf/AwASABEAAAA5APf/AwASABQAAAA6APf/AwASABQAAAA7APf/AwASABIAAAA=")
@@ -176,5 +205,7 @@ shape = SubResource("RectangleShape2D_3tchr")
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("8_3tchr")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_ryo8f")]
+DialogueText = "Analysis: Room is very large
+Some of the buttons seem to have a different color..."
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("10_ppfkc")]

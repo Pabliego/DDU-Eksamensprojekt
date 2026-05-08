@@ -374,6 +374,7 @@ position = Vector2(-34, -168)
 shape = SubResource("RectangleShape2D_mlrgj")
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_mlrgj")]
+DialogueText = "Jump motors rebooted, fully operational..."
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_5otsn")]
 

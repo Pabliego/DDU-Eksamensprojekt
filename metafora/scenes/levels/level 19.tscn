@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="8_h0ln6"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="11_vatyo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d5ci"]
+size = Vector2(5.7142334, 31.428572)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvscm"]
 size = Vector2(24, 111)
 
@@ -61,33 +64,48 @@ HasToBeHeld = true
 ColorSelect = "blue"
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("3_2fd72")]
-position = Vector2(235, -23)
+position = Vector2(1257, -35)
 
 [node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("4_wmiy1")]
 position = Vector2(107, -17)
 HasLegs = true
 
-[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_iud4k")]
+[node name="ElevatorButton" parent="." unique_id=1905404117 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_iud4k")]
 position = Vector2(1167, -51)
 linkedElevator = NodePath("../elevator2")
-ActivateOnce = true
+HasToBeHeld = true
 ColorSelect = "green"
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("3_tgo4t")]
-position = Vector2(235, -9)
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("3_tgo4t")]
+position = Vector2(1256, -9)
 scale = Vector2(0.7, 0.7)
-MovementDuration = 12.5
+MovementDuration = 0.0
 PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
 ColorSelect = "green"
-LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=19388697]
+position = Vector2(4.5776367e-05, 2.3841858e-07)
 
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=1839449565]
-position = Vector2(1638.572, 0)
+position = Vector2(150.00005, 1.4285719)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="elevator" unique_id=332274672]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elevator/StaticBody2D2" unique_id=911326473]
+position = Vector2(-21.428589, -8.571425)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_6d5ci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="elevator" unique_id=1894473418]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="elevator/StaticBody2D" unique_id=2035082561]
+position = Vector2(21.428555, -8.571428)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_6d5ci")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1971961729]
 
@@ -96,7 +114,7 @@ position = Vector2(1348, -23.5)
 shape = SubResource("RectangleShape2D_rvscm")
 
 [node name="elevator2" parent="." unique_id=1338458410 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("3_tgo4t")]
-position = Vector2(1255.0001, -0.99999905)
+position = Vector2(1256.0001, -112)
 scale = Vector2(1.3, 1.3)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
@@ -107,7 +125,7 @@ LinkedButtons = [NodePath("../ElevatorButton")]
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=1283973311]
 
 [node name="Node2D2" type="Node2D" parent="elevator2" unique_id=1368979580]
-position = Vector2(-9.390025e-05, -139.23077)
+position = Vector2(-0.7693243, 101.53847)
 
 [node name="Boundry" type="Area2D" parent="." unique_id=1094233063]
 position = Vector2(79, -16)

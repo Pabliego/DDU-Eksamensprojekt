@@ -411,7 +411,8 @@ shape = SubResource("WorldBoundaryShape2D_iskjd")
 debug_color = Color(0.84547526, 0.2839165, 0.63786876, 0.41960785)
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("4_eof16")]
-DialogueText = "Current elevation: 0.5 meters below ground level."
+DialogueText = "Current elevation: 0.5 meters below ground level.
+>>>You are near, I can feel you!<<<"
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("7_v8685")]
 
