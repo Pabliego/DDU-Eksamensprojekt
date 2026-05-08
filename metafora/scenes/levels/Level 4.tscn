@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_rj586"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="7_4d7sh"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="9_ir8iy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="12_jrr24"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="13_pr2bn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("2_0hol4")
@@ -4993,6 +4995,22 @@ position = Vector2(1040, -32)
 selectedScene = ExtResource("5_4d7sh")
 LinkedButtons = [NodePath("../DoorButton")]
 
+[node name="DoorButton3" parent="." unique_id=101610016 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
+position = Vector2(-712, -66)
+linkedDoor = NodePath("../Door")
+HasToBeHeld = true
+ActivateOnce = true
+
+[node name="DoorButton" parent="." unique_id=1491291196 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
+position = Vector2(519, -2)
+linkedDoor = NodePath("../Door2")
+HasToBeHeld = true
+
+[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_4d7sh")]
+position = Vector2(280, -2)
+linkedElevator = NodePath("../elevator")
+ActivateOnce = true
+
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_q6r6c")]
 position = Vector2(87, 0)
 
@@ -5004,25 +5022,17 @@ tile_set = ExtResource("1_8bi3h")
 tile_map_data = PackedByteArray("AAAJAP//AQAKABUAAAAJAP7/AQAKABUAAAAJAP3/AQAKABUAAAAJAPz/AQAKABUAAAAJAPv/AQAKABUAAAAJAPr/AQAKABUAAAAJAPn/AQAKABUAAAAJAPj/AQAKABUAAAAJAPf/AQAKABUAAAAYAP//AQAKABUAAAAYAP7/AQAKABUAAAAYAP3/AQAKABUAAAAYAPz/AQAKABUAAAAYAPv/AQAKABUAAAAYAPr/AQAKABUAAAAYAPn/AQAKABUAAAAYAPj/AQAKABUAAAAYAPf/AQAKABUAAAAYAPX/AQAKABUAAAAYAPb/AQAKABUAAAAJAAAAAQAKABUAAAAJAAEAAQAKABUAAAAYAAAAAQAKABUAAAAYAAEAAQAKABUAAAAoAAAAAAAvABkAAAAoAP//AAAvABkAAAAoAP7/AAAvABkAAAAoAP3/AAAvABkAAAAoAPz/AAAvABkAAAAoAPv/AAAvABkAAAAoAPr/AAAvABkAAAAoAPn/AAAvABkAAAAoAPj/AAAvABkAAAAoAPX/AAAvABkAAAAoAPb/AAAvABkAAAAoAPf/AAAvABkAAAA3APT/AAAtACAAAAA3APX/AAAtACAAAAA3APb/AAAtACAAAAA3APf/AAAtACAAAAA3APj/AAAtACAAAAA3APn/AAAtACAAAAA3APr/AAAtACAAAAA3APv/AAAtACAAAAA3APz/AAAtACAAAAA3AP3/AAAtACAAAAA3AP7/AAAtACAAAAA3AP//AAAtACAAAAA3AAAAAAAtACAAAAA7APT/AAAtACAAAAA7APX/AAAtACAAAAA7APb/AAAtACAAAAA7APf/AAAtACAAAAA7APj/AAAtACAAAAA7APn/AAAtACAAAAA7APr/AAAtACAAAAA7APv/AAAtACAAAAA7APz/AAAtACAAAAA7AP3/AAAtACAAAAA7AP7/AAAtACAAAAA7AP//AAAtACAAAAA7AAAAAAAtACAAAAAXAP3/AwAIABEAAAAXAP7/AwAIABIAAAAXAP//AwAIABMAAAAZAP3/AwAIABEAABAZAP7/AwAIABIAABAZAP//AwAIABMAABAKAP3/AwAIABEAABAKAP7/AwAIABIAABAKAP//AwAIABMAABAIAP3/AwAIABEAAAAIAP7/AwAIABIAAAAIAP//AwAIABMAAAD7//3/AwAIABEAABD7//7/AwAIABIAABD7////AwAIABMAABAnAP3/AwAIABEAAAAnAP7/AwAIABIAAAAnAP//AwAIABMAAAApAP3/AwAIABEAABApAP7/AwAIABIAABApAP//AwAIABMAABA2AP3/AwAIABEAAAA2AP7/AwAIABIAAAA2AP//AwAIABMAAAA4AP3/AwAIABEAABA4AP7/AwAIABIAABA4AP//AwAIABMAABA6AP3/AwAIABEAAAA6AP7/AwAIABIAAAA6AP//AwAIABMAAAA8AP3/AwAIABEAABA8AP7/AwAIABIAABA8AP//AwAIABMAABBEAP3/AwAIABEAAABEAP7/AwAIABIAAABEAP//AwAIABMAAAA4APz/AwAIABAAABA6APz/AwAIABAAAAA8APz/AwAIABAAABBEAPz/AwAIABAAAAA2APz/AwAIABAAACA2APv/AwAIABAAAAA2APr/AwAIABAAACA2APn/AwAIABAAAAApAPz/AwAIABAAADApAPv/AwAIABAAABApAPr/AwAIABAAADApAPn/AwAIABAAABAnAPz/AwAIABAAACAnAPv/AwAIABAAAAAnAPr/AwAIABAAACAnAPn/AwAIABAAAAAZAPz/AwAIABAAADAZAPv/AwAIABAAABAZAPr/AwAIABAAADAZAPn/AwAIABAAABAXAPr/AwAIABAAACAXAPn/AwAIABAAAAAXAPv/AwAIABAAAAAXAPz/AwAIABAAACAKAPz/AwAIABAAADAKAPv/AwAIABAAABAKAPr/AwAIABAAADAKAPn/AwAIABAAABAIAPz/AwAIABAAACAIAPv/AwAIABAAAAD7//z/AwAIABAAADD7//v/AwAIABAAABD7//f/AwAIAAsAABD7//j/AwAIAAwAABD7//n/AwAIAA0AABD7//r/AwAIAA4AABAIAPf/AwAIAAsAAAAIAPj/AwAIAAwAAAAIAPn/AwAIAA0AAAAIAPr/AwAIAA4AAAAKAPX/AwAIAAsAABAKAPb/AwAIAAwAABAKAPf/AwAIAA0AABAKAPj/AwAIAA4AABAXAPX/AwAIAAsAAAAXAPb/AwAIAAwAAAAXAPf/AwAIAA0AAAAXAPj/AwAIAA4AAAAZAPX/AwAIAAsAABAZAPb/AwAIAAwAABAZAPf/AwAIAA0AABAZAPj/AwAIAA4AABAnAPX/AwAIAAsAAAAnAPb/AwAIAAwAAAAnAPf/AwAIAA0AAAAnAPj/AwAIAA4AAAApAPX/AwAIAAsAABApAPb/AwAIAAwAABApAPf/AwAIAA0AABApAPj/AwAIAA4AABA2APX/AwAIAAsAAAA2APb/AwAIAAwAAAA2APf/AwAIAA0AAAA2APj/AwAIAA4AAAA4APj/AwAIAAsAABA4APn/AwAIAAwAABA4APr/AwAIAA0AABA4APv/AwAIAA4AABA6APj/AwAIAAsAAAA6APn/AwAIAAwAAAA6APr/AwAIAA0AAAA6APv/AwAIAA4AAAA8APj/AwAIAAsAABA8APn/AwAIAAwAABA8APr/AwAIAA0AABA8APv/AwAIAA4AABBEAPj/AwAIAAsAAABEAPn/AwAIAAwAAABEAPr/AwAIAA0AAABEAPv/AwAIAA4AAAAQAPr/AwARABQAAAARAPr/AwASABQAAAASAPr/AwASABQAAAATAPr/AwASABQAAAAUAPr/AwASABQAAAAVAPr/AwASABQAAAAWAPr/AwASABQAAAAaAPr/AwASABQAAAAbAPr/AwASABIAAAAlAPr/AwASABEAAAAmAPr/AwASABQAAAAqAPr/AwASABQAAAArAPr/AwASABQAAAAsAPr/AwASABQAAAAtAPr/AwASABQAAAAuAPr/AwASABQAAAAvAPr/AwASABQAAAAwAPr/AwATABQAAAA=")
 tile_set = ExtResource("1_8bi3h")
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("6_rj586")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("6_rj586")]
 position = Vector2(215, 2)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=1004859031]
 
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=1122780459]
 position = Vector2(1, -100)
-
-[node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_4d7sh")]
-position = Vector2(280, -2)
-linkedElevator = NodePath("../elevator")
-
-[node name="DoorButton" parent="." unique_id=1491291196 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
-position = Vector2(519, -2)
-linkedDoor = NodePath("../Door2")
-HasToBeHeld = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1029856000]
 
@@ -5039,10 +5049,9 @@ shape = SubResource("RectangleShape2D_4d7sh")
 [node name="PushableBox3" parent="." unique_id=1280616567 instance=ExtResource("3_d21ai")]
 position = Vector2(-711, -91)
 
-[node name="DoorButton3" parent="." unique_id=101610016 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("9_ir8iy")]
-position = Vector2(-712, -66)
-linkedDoor = NodePath("../Door")
-HasToBeHeld = true
-ActivateOnce = true
-
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("1_ir8iy")]
+visible = false
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("12_jrr24")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("13_pr2bn")]

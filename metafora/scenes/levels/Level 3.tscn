@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bn0ec22mhm4y8" path="res://scenes/levels/Level 4.tscn" id="5_jsyro"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="6_h7tt3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="9_5dt25"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_5dt25"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_h7tt3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n00oh"]
 size = Vector2(20, 126)
@@ -53,11 +55,12 @@ position = Vector2(81, -20)
 tile_map_data = PackedByteArray("AAASAPf/AwANABAAAAASAPj/AwANAA8AAAASAPn/AwANABAAAAASAPX/AwANAA4AAAASAPb/AwANAA8AAAAUAPf/AwANABAAAAAUAPj/AwANAA8AAAAUAPn/AwANABAAAAAUAPX/AwANAA4AAAAUAPb/AwANAA8AAAAiAP7/AwASABQAAAAjAP7/AwATABQAAAAhAP7/AwARABQAAAAoAP7/AwARABQAAAApAP7/AwASABQAAAAqAP7/AwATABQAAAAJAPb/AwAKABUAAAAJAPf/AwAKABUAAAAJAPj/AwAKABUAAAAJAPn/AwAKABUAAAAJAPr/AwAKABUAAAAJAPv/AwAKABUAAAAJAPz/AwAKABUAAAAJAP3/AwAKABUAAAAJAP7/AwAKABUAAAAJAP//AwAKABUAAAAJAAAAAwAKABUAAAAKAPz/AwAIABEAABAKAP3/AwAIABIAABAKAP7/AwAIABMAABAKAPv/AwAIABAAABAKAPr/AwAIAA8AABAKAPn/AwAIAA4AABAKAPb/AwAIAAsAABAKAPf/AwAIAAwAABAKAPj/AwAIAA0AABAdAPb/AwAIAAsAAAAdAPf/AwAIAAwAAAAdAPj/AwAIAA0AAAAdAPn/AwAIAA4AAAAdAPr/AwAIAA8AAAAdAPv/AwAIABAAAAAdAPz/AwAIABEAAAAdAP3/AwAIABIAAAAdAP7/AwAIABMAAAAfAPr/AwAIAA8AABAfAPv/AwAIABAAABAfAPz/AwAIABEAABAfAP3/AwAIABIAABAfAP7/AwAIABMAABArAPr/AwAIAA8AAAArAPv/AwAIABAAAAArAPz/AwAIABEAAAArAP3/AwAIABIAAAArAP7/AwAIABMAAAAfAPf/AwAIAAwAABAfAPj/AwAIAA0AABAfAPn/AwAIAA4AABArAPf/AwAIAAwAAAArAPj/AwAIAA0AAAArAPn/AwAIAA4AAAAtAPz/AwAIABEAABAtAP3/AwAIABIAABAtAP7/AwAIABMAABAwAPz/AwAIABEAAAAwAP3/AwAIABIAAAAwAP7/AwAIABMAAAAyAP3/AwAIAA4AABA6AP3/AwAIAA4AAAAyAP7/AwAIABAAABA6AP7/AwAIABAAAAAIAPz/AwAIABEAAAAIAP3/AwAIABIAAAAIAP7/AwAIABMAAAAIAPv/AwAIABAAAAAIAPr/AwAIAA4AAAAAAPr/AwAIAA4AABAAAPz/AwAIABEAABAAAP3/AwAIABIAABAAAP7/AwAIABMAABAAAPv/AwAIABAAABAsAPn/AwAKABUAAAAsAPr/AwAKABUAAAAsAPv/AwAKABUAAAAsAPz/AwAKABUAAAAsAP3/AwAKABUAAAAsAP7/AwAKABUAAAAsAP//AwAKABUAAAAsAAAAAwAKABUAAAAeAPn/AwAKABUAAAAeAPr/AwAKABUAAAAeAPv/AwAKABUAAAAeAPz/AwAKABUAAAAeAP3/AwAKABUAAAAeAP7/AwAKABUAAAAeAP//AwAKABUAAAAeAAAAAwAKABUAAAAxAPn/AwAKABUAAAAxAPr/AwAKABUAAAAxAPv/AwAKABUAAAAxAPz/AwAKABUAAAAxAP3/AwAKABUAAAAxAP7/AwAKABUAAAAxAP//AwAKABUAAAAxAAAAAwAKABUAAAA=")
 tile_set = ExtResource("1_dorh7")
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("5_5dt25")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("5_5dt25")]
 position = Vector2(248, -14)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=975029502]
 
@@ -67,6 +70,7 @@ position = Vector2(0, -88)
 [node name="ElevatorButton" parent="." unique_id=801415846 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("6_h7tt3")]
 position = Vector2(888, -19)
 linkedElevator = NodePath("../elevator")
+ActivateOnce = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1101058118]
 
@@ -81,3 +85,8 @@ position = Vector2(947, -77)
 shape = SubResource("RectangleShape2D_n00oh")
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("9_5dt25")]
+visible = false
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_5dt25")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_h7tt3")]

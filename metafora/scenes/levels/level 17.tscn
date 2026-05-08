@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://mcsbx00vf1co" path="res://scenes/levels/level 18.tscn" id="5_3xgqr"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_y54ri"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_3xgqr"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="8_3tchr"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_ryo8f"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_ppfkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xgqr"]
 size = Vector2(101, 184)
@@ -159,3 +162,9 @@ shape = SubResource("RectangleShape2D_7wgfx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=98420311]
 position = Vector2(-816.5, -186.5)
 shape = SubResource("RectangleShape2D_3tchr")
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("8_3tchr")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_ryo8f")]
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("10_ppfkc")]

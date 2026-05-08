@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="5_u4bej"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="6_44wof"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="9_cji0x"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_kn0vk"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_u3hoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbq0v"]
 size = Vector2(20, 166)
@@ -104,3 +106,7 @@ shape = SubResource("RectangleShape2D_mbq0v")
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("9_cji0x")]
 visible = false
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_kn0vk")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_u3hoo")]

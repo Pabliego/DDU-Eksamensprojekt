@@ -8,6 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="6_tr14o"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="7_fx2of"]
 [ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="8_txf0q"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_txf0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2of"]
+size = Vector2(20, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txf0q"]
+size = Vector2(1073, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ttto"]
+size = Vector2(20, 184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_foucq"]
+size = Vector2(315, 47)
 
 [node name="Node2D" type="Node2D" unique_id=283993505]
 
@@ -97,6 +110,32 @@ linkedDoor = NodePath("../Door2")
 [node name="PushableBox2" parent="." unique_id=1014715915 instance=ExtResource("6_tr14o")]
 position = Vector2(-377, -126)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1831575900]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=400178911]
+position = Vector2(-2, -104)
+shape = SubResource("RectangleShape2D_fx2of")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1533035116]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2076147513]
+position = Vector2(536.5, -202)
+shape = SubResource("RectangleShape2D_txf0q")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1318676554]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=840261583]
+position = Vector2(1063, -104)
+shape = SubResource("RectangleShape2D_3ttto")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1829391291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1523081928]
+position = Vector2(914.5, -170.5)
+shape = SubResource("RectangleShape2D_foucq")
+
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("7_fx2of")]
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("8_txf0q")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_txf0q")]

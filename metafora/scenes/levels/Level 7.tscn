@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="5_cjca4"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="6_7jdx6"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_03pv8"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="9_0up2q"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="10_ur65l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjca4"]
 size = Vector2(20, 148)
@@ -97,3 +99,7 @@ HasToBeHeld = true
 ActivateOnce = true
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_03pv8")]
+
+[node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("9_0up2q")]
+
+[node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("10_ur65l")]
