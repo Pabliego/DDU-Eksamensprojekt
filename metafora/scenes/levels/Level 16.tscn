@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_uly35"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="7_isodq"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_141nn"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_uly35"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_uly35"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="11_isodq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csuof"]
@@ -39,6 +39,7 @@ tile_set = ExtResource("1_csuof")
 position = Vector2(-320, -114)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("3_2kw4n")]
 position = Vector2(391.00003, -23)
@@ -63,6 +64,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=444662240]
@@ -76,6 +78,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "yellow"
 LinkedButtons = [NodePath("../ElevatorButton2")]
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=1376648602]
@@ -89,6 +92,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "blue"
 
 [node name="Node2D" type="Node2D" parent="elevator3" unique_id=1587409377]
 
@@ -101,6 +105,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton4")]
 
 [node name="Node2D" type="Node2D" parent="elevator4" unique_id=1847160337]
@@ -114,6 +119,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "yellow"
 LinkedButtons = [NodePath("../ElevatorButton5")]
 
 [node name="Node2D" type="Node2D" parent="elevator5" unique_id=1195567580]
@@ -126,6 +132,7 @@ position = Vector2(-264, -115)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "blue"
 
 [node name="Node2D" type="Node2D" parent="elevator8" unique_id=1697660114]
 
@@ -138,6 +145,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "red"
 
 [node name="Node2D" type="Node2D" parent="elevator6" unique_id=762320474]
 
@@ -150,6 +158,7 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "red"
 LinkedButtons = [NodePath("../ElevatorButton4")]
 
 [node name="Node2D" type="Node2D" parent="elevator7" unique_id=1062484974]
@@ -166,16 +175,19 @@ HasToBeHeld = true
 position = Vector2(-191, -2)
 linkedElevator = NodePath("../elevator3")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="ElevatorButton3" parent="." unique_id=611567952 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_isodq")]
-position = Vector2(-223, -2)
+position = Vector2(-222, -2)
 linkedElevator = NodePath("../elevator7")
 HasToBeHeld = true
+ColorSelect = "red"
 
 [node name="ElevatorButton4" parent="." unique_id=220116473 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_isodq")]
 position = Vector2(-252, -2)
 linkedElevator = NodePath("../elevator4")
 HasToBeHeld = true
+ColorSelect = "green"
 
 [node name="ElevatorButton5" parent="." unique_id=1864436441 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_isodq")]
 position = Vector2(-283, -2)
@@ -186,16 +198,19 @@ HasToBeHeld = true
 position = Vector2(-312, -2)
 linkedElevator = NodePath("../elevator8")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="ElevatorButton7" parent="." unique_id=1612813332 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_isodq")]
 position = Vector2(-343, -2)
 linkedElevator = NodePath("../elevator6")
 HasToBeHeld = true
+ColorSelect = "red"
 
 [node name="ElevatorButton8" parent="." unique_id=2043405199 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("7_isodq")]
 position = Vector2(-128, -2)
 linkedElevator = NodePath("../elevator")
 HasToBeHeld = true
+ColorSelect = "green"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1677466161]
 
@@ -232,3 +247,4 @@ position = Vector2(763, -198)
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_uly35")]
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("11_isodq")]
+visible = false

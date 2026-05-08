@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_b5w3f"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="6_fr5tx"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="7_b5w3f"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="8_bul7q"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="8_bul7q"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_iau5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fr5tx"]
@@ -29,6 +29,7 @@ tile_set = ExtResource("1_c86di")
 [node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_3ried")]
 position = Vector2(104, -40)
 scale = Vector2(0.75, 0.75)
+ColorSelect = "red"
 selectedScene = ExtResource("3_fr5tx")
 LinkedButtons = [NodePath("../DoorButton2")]
 
@@ -38,7 +39,7 @@ scale = Vector2(0.75, 0.75)
 LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1766458665 instance=ExtResource("3_sxap8")]
-position = Vector2(-124, -16)
+position = Vector2(-169, -16)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=337651412]
 
@@ -56,6 +57,7 @@ shape = SubResource("RectangleShape2D_b5w3f")
 position = Vector2(23, -18)
 linkedDoor = NodePath("../Door")
 ActivateOnce = true
+ColorSelect = "red"
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1916621722]
 tile_map_data = PackedByteArray("AAD5//z/AwAIABEAAAD5//3/AwAIABIAAAD5//7/AwAIABMAAADx//z/AwAIABEAABDx//3/AwAIABIAABDx//7/AwAIABMAABD7//z/AwAIABEAABD7//3/AwAIABIAABD7//7/AwAIABMAABD+//z/AwAIABEAAAD+//3/AwAIABIAAAD+//7/AwAIABMAAAAAAPz/AwAIABEAABAAAP3/AwAIABIAABAAAP7/AwAIABMAABAKAPz/AwAIABEAAAAKAP3/AwAIABIAAAAKAP7/AwAIABMAAAAAAPv/AwAIABAAADAAAPr/AwAIABAAABD+//v/AwAIABAAAAAKAPv/AwAIABAAACAKAPr/AwAIABAAAAD7//v/AwAIABAAABD5//v/AwAIABAAAADx//v/AwAIABAAABD5//r/AwAIAA4AAADx//r/AwAIAA4AABD7//r/AwAIAA4AABD+//r/AwAIAA4AAAAAAPn/AwAIAA4AABAKAPn/AwAIAA4AAAD6/wAAAwAKABUAAAD6////AwAKABUAAAD6//7/AwAKABUAAAD6//3/AwAKABUAAAD6//z/AwAKABUAAAD6//v/AwAKABUAAAD6//r/AwAKABUAAAD6//n/AwAKABUAAAD6//j/AwAKABUAAAD6//f/AwAKABUAAAD6//b/AwAKABUAAAD///b/AwAKABUAAAD///f/AwAKABUAAAD///j/AwAKABUAAAD///n/AwAKABUAAAD///r/AwAKABUAAAD///v/AwAKABUAAAD///z/AwAKABUAAAD///3/AwAKABUAAAD///7/AwAKABUAAAD/////AwAKABUAAAA=")
@@ -69,6 +71,7 @@ linkedDoor = NodePath("../Door2")
 position = Vector2(-594, -100)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("7_b5w3f")]
+visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("8_bul7q")]
 

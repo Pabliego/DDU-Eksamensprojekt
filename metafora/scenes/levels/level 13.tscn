@@ -3,11 +3,12 @@
 [ext_resource type="TileSet" uid="uid://gruuocerg41u" path="res://data/new_tile_set.tres" id="1_xdfse"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="2_67jeb"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="2_qrcro"]
+[ext_resource type="PackedScene" uid="uid://qrcs0t6dhds3" path="res://scenes/levels/level 14.tscn" id="3_3ttto"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="4_tr14o"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="5_rav3e"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="6_tr14o"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="7_fx2of"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="8_txf0q"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="8_txf0q"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_txf0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2of"]
@@ -43,10 +44,11 @@ LinkedButtons = [NodePath("../DoorButton2")]
 [node name="Door" parent="." unique_id=266931274 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("5_rav3e")]
 position = Vector2(983, -39)
 scale = Vector2(0.75, 0.75)
+selectedScene = ExtResource("3_3ttto")
 LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("2_qrcro")]
-position = Vector2(294, -15)
+position = Vector2(301, -16)
 HasLegs = true
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1823845338]
@@ -77,6 +79,7 @@ position = Vector2(124, 1)
 position = Vector2(681, -131)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("6_tr14o")]
 position = Vector2(46, -139)
@@ -135,6 +138,7 @@ position = Vector2(914.5, -170.5)
 shape = SubResource("RectangleShape2D_foucq")
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("7_fx2of")]
+visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("8_txf0q")]
 

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mcsbx00vf1co" path="res://scenes/levels/level 18.tscn" id="5_3xgqr"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_y54ri"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_3xgqr"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="8_3tchr"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="8_3tchr"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_ryo8f"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_ppfkc"]
 
@@ -43,27 +43,35 @@ HasLegs = true
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("4_24ddf")]
 position = Vector2(-270, -62)
+ColorSelect = "blue"
 
 [node name="PushableBox2" parent="." unique_id=2030664376 instance=ExtResource("4_24ddf")]
 position = Vector2(-118, -68)
+ColorSelect = "blue"
 
 [node name="PushableBox3" parent="." unique_id=194710085 instance=ExtResource("4_24ddf")]
 position = Vector2(44, -69)
+ColorSelect = "blue"
 
 [node name="PushableBox4" parent="." unique_id=1127940171 instance=ExtResource("4_24ddf")]
 position = Vector2(297, -62)
+ColorSelect = "blue"
 
 [node name="PushableBox5" parent="." unique_id=559118276 instance=ExtResource("4_24ddf")]
 position = Vector2(467, -78)
+ColorSelect = "blue"
 
 [node name="PushableBox6" parent="." unique_id=2006850080 instance=ExtResource("4_24ddf")]
 position = Vector2(631, -62)
+ColorSelect = "blue"
 
 [node name="PushableBox7" parent="." unique_id=628440357 instance=ExtResource("4_24ddf")]
 position = Vector2(844, -61)
+ColorSelect = "blue"
 
 [node name="PushableBox8" parent="." unique_id=1160861618 instance=ExtResource("4_24ddf")]
 position = Vector2(-509, -58)
+ColorSelect = "blue"
 
 [node name="Door2" parent="." unique_id=1566147709 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_3f6ok")]
 position = Vector2(-824.00006, -56)
@@ -75,11 +83,13 @@ LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2"), NodePath
 position = Vector2(-506, -130)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="DoorButton2" parent="." unique_id=1022495094 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(-263, -130)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
+ColorSelect = "blue"
 
 [node name="DoorButton3" parent="." unique_id=307566881 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_y54ri")]
 position = Vector2(-89, -130)
@@ -168,3 +178,4 @@ shape = SubResource("RectangleShape2D_3tchr")
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_ryo8f")]
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("10_ppfkc")]
+visible = false

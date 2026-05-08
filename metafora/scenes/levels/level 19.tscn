@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://gruuocerg41u" path="res://data/new_tile_set.tres" id="1_0ynbp"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="2_nc03r"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="3_2fd72"]
+[ext_resource type="PackedScene" uid="uid://d4fjcwfj45idl" path="res://scenes/levels/Level 20.tscn" id="3_h0ln6"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="3_tgo4t"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="4_iud4k"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_wmiy1"]
@@ -42,6 +43,7 @@ scale = Vector2(0.75, 0.75)
 [node name="Door2" parent="." unique_id=874049212 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_nc03r")]
 position = Vector2(1432, -103)
 scale = Vector2(0.75, 0.75)
+selectedScene = ExtResource("3_h0ln6")
 LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1123519707]

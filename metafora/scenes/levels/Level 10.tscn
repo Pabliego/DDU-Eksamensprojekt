@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_fcax3"]
 [ext_resource type="PackedScene" uid="uid://cxktn32vvfvpv" path="res://scenes/levels/level 11.tscn" id="7_fcax3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_y5owm"]
-[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="9_jhqoo"]
+[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_jhqoo"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="10_2pnxi"]
+[ext_resource type="PackedScene" path="res://scenes/player/legs.tscn" id="11_2pnxi"]
+[ext_resource type="PackedScene" path="res://scenes/ui/GetLegs.tscn" id="12_lhl0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcax3"]
 size = Vector2(821.5, 35)
@@ -59,17 +61,20 @@ position = Vector2(-59, -35)
 position = Vector2(46, -83)
 linkedElevator = NodePath("../elevator")
 HasToBeHeld = true
+ColorSelect = "green"
 
 [node name="ElevatorButton2" parent="." unique_id=1408366804 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_72dth")]
 position = Vector2(545, -147)
 linkedElevator = NodePath("../elevator")
 HasToBeHeld = true
+ColorSelect = "green"
 
 [node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("6_fcax3")]
 position = Vector2(296, -102)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
+ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton"), NodePath("../ElevatorButton2")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=86552077]
@@ -130,7 +135,15 @@ position = Vector2(827, -183.5)
 shape = SubResource("RectangleShape2D_y5owm")
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_y5owm")]
+visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("9_jhqoo")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("10_2pnxi")]
+
+[node name="Legs" parent="." unique_id=2061665985 node_paths=PackedStringArray("LinkedLegAnimation") instance=ExtResource("11_2pnxi")]
+position = Vector2(297, -192)
+LinkedLegAnimation = NodePath("../GetLegs")
+
+[node name="GetLegs" parent="." unique_id=205716060 instance=ExtResource("12_lhl0i")]
+visible = false
