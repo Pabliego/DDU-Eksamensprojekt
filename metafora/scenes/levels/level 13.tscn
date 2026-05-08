@@ -20,6 +20,9 @@ size = Vector2(1073, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ttto"]
 size = Vector2(20, 184)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmbxj"]
+size = Vector2(59.5, 8)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foucq"]
 size = Vector2(315, 47)
 
@@ -66,7 +69,7 @@ Point2 = NodePath("Node2D2")
 position = Vector2(1, -106)
 
 [node name="elevator2" parent="." unique_id=1571051478 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_67jeb")]
-position = Vector2(136, -122)
+position = Vector2(136, -120)
 Point1 = NodePath("Node2D2")
 Point2 = NodePath("Node2D")
 
@@ -86,6 +89,7 @@ position = Vector2(46, -139)
 
 [node name="elevator3" parent="." unique_id=131034973 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_67jeb")]
 position = Vector2(475, -58)
+PauseDuration = 4.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 
@@ -96,12 +100,13 @@ position = Vector2(0, -1)
 position = Vector2(172, 0)
 
 [node name="elevator4" parent="." unique_id=1997772884 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_67jeb")]
-position = Vector2(647, -59)
+position = Vector2(647, -53)
 PauseDuration = 1.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 
 [node name="Node2D" type="Node2D" parent="elevator4" unique_id=1695503164]
+position = Vector2(0, 3)
 
 [node name="Node2D2" type="Node2D" parent="elevator4" unique_id=1821944322]
 position = Vector2(0, -75)
@@ -130,6 +135,12 @@ shape = SubResource("RectangleShape2D_txf0q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=840261583]
 position = Vector2(1063, -104)
 shape = SubResource("RectangleShape2D_3ttto")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1979824581]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=212049670]
+position = Vector2(361.25, -97)
+shape = SubResource("RectangleShape2D_wmbxj")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1829391291]
 

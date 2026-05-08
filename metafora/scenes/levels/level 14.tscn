@@ -102,14 +102,14 @@ ColorSelect = "red"
 selectedScene = ExtResource("7_jpp3i")
 LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2")]
 
+[node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("7_qbck3")]
+position = Vector2(104, -16)
+HasLegs = true
+
 [node name="ElevatorButton2" parent="." unique_id=1341494525 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_cchio")]
 position = Vector2(209, -131)
 linkedElevator = NodePath("../elevator3")
 ActivateOnce = true
-
-[node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("7_qbck3")]
-position = Vector2(104, -16)
-HasLegs = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1832901405]
 
