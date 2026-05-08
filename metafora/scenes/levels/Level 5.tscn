@@ -10,12 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="6_l5l6y"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="8_8bpv7"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="8_xonvm"]
-[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_28dng"]
-<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="11_28dng"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_33pyt"]
-=======
-[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="12_33pyt"]
->>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrr24"]
 texture = ExtResource("1_c0mpg")
@@ -4037,7 +4033,6 @@ tile_set = ExtResource("2_vsr66")
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("3_8bpv7")]
 position = Vector2(320, -108)
-ColorSelect = "red"
 
 [node name="Door" parent="." unique_id=485062677 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("5_ob46r")]
 position = Vector2(80, -48)
@@ -4049,7 +4044,6 @@ tile_set = ExtResource("2_vsr66")
 
 [node name="Door2" parent="." unique_id=646654378 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("5_ob46r")]
 position = Vector2(1072, -48)
-ColorSelect = "red"
 selectedScene = ExtResource("5_xonvm")
 LinkedButtons = [NodePath("../DoorButton")]
 
@@ -4060,7 +4054,6 @@ position = Vector2(130, -18)
 position = Vector2(573, -99)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
-ColorSelect = "red"
 
 [node name="TileMapLayer6" type="TileMapLayer" parent="." unique_id=1701498364]
 tile_map_data = PackedByteArray("AAAtAPn/AwASABQAAAArAPn/AwASABQAAAA=")
@@ -4080,15 +4073,13 @@ Point2 = NodePath("Node2D2")
 [node name="Node2D2" type="Node2D" parent="elevator" unique_id=1170508072]
 position = Vector2(0, -99)
 
-[node name="elevator2" parent="." unique_id=247261739 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("4_xonvm")]
+[node name="elevator2" parent="." unique_id=247261739 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_xonvm")]
 position = Vector2(632, -12)
 MovementDuration = 1.0
 PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "green"
-LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=1222532647]
 position = Vector2(0, -59)
@@ -4099,8 +4090,6 @@ position = Vector2(0, -71)
 [node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("8_8bpv7")]
 position = Vector2(538, -18)
 linkedElevator = NodePath("../elevator2")
-ActivateOnce = true
-ColorSelect = "green"
 
 [node name="elevator3" parent="." unique_id=291057589 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_xonvm")]
 position = Vector2(888, -14)
@@ -4125,7 +4114,7 @@ position = Vector2(1179, -38)
 shape = SubResource("RectangleShape2D_8bpv7")
 
 [node name="TileMapLayer7" type="TileMapLayer" parent="." unique_id=888756178]
-tile_map_data = PackedByteArray("AAAnAPr/AwAOABMAAAAnAPn/AwASABQAAAAoAPn/AwASABQAAAApAPn/AwASABQAAAAqAPn/AwASABQAAAAmAPn/AwASABQAAAAlAPn/AwASABQAAAAkAPn/AwARABQAAAAuAPn/AwASABQAAAAvAPn/AwASABQAAAAwAPn/AwASABIAAAAUAPn/AwATABQAAAATAPn/AwASABQAAAASAPn/AwARABQAAAAWAPn/AwASABMAAAA=")
+tile_map_data = PackedByteArray("AAAnAPr/AwAOABMAAAAnAPn/AwASABQAAAAoAPn/AwASABQAAAApAPn/AwASABQAAAAqAPn/AwASABQAAAAmAPn/AwASABQAAAAlAPn/AwASABQAAAAkAPn/AwARABQAAAAuAPn/AwASABQAAAAvAPn/AwASABQAAAAwAPn/AwASABIAAAA=")
 tile_set = ExtResource("2_vsr66")
 
 [node name="PushableBox3" parent="." unique_id=944254387 instance=ExtResource("3_8bpv7")]
@@ -4138,8 +4127,8 @@ HasToBeHeld = true
 ActivateOnce = true
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("1_ob46r")]
+visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_28dng")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_33pyt")]
-DialogueText = "Current elevation: 21.6 meters below ground level."

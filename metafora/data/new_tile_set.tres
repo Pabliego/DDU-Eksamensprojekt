@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://buqovjtefsta8" path="res://assets/sprites/metafora/bunker tiles.png" id="2_58acd"]
 [ext_resource type="Texture2D" uid="uid://g1bokktgy7a6" path="res://assets/sprites/metafora/from treds to legs.png" id="3_3ra02"]
 [ext_resource type="Texture2D" uid="uid://cftdwq11txpv5" path="res://assets/sprites/metafora/cutoffplatform.png" id="5_i8wbx"]
-[ext_resource type="Texture2D" uid="uid://dvfmb0qgybp72" path="res://assets/sprites/arrow.png" id="6_qb3df"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ra02"]
 texture = ExtResource("1_ih3jy")
@@ -9873,14 +9872,6 @@ texture = ExtResource("5_i8wbx")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(7.035795, -8, -8, -8, -8, 4.1620197, 6.9367, 3.963829)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sds3r"]
-texture = ExtResource("6_qb3df")
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
-0:3/0 = 0
-0:4/0 = 0
-
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3ra02")
@@ -9888,4 +9879,3 @@ sources/3 = SubResource("TileSetAtlasSource_i8wbx")
 sources/1 = SubResource("TileSetAtlasSource_qb3df")
 sources/2 = SubResource("TileSetAtlasSource_5mpjc")
 sources/4 = SubResource("TileSetAtlasSource_rcjjn")
-sources/5 = SubResource("TileSetAtlasSource_sds3r")

@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="7_fey8y"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="8_un0qa"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_ifrw1"]
-[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_kldyl"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="11_kldyl"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_ifrw1"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_un0qa"]
@@ -48,18 +48,16 @@ scale = Vector2(0.75, 0.75)
 LinkedButtons = [NodePath("../DoorButton2")]
 
 [node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("4_fey8y")]
-position = Vector2(-329, -15)
+position = Vector2(-274, -17)
 HasLegs = true
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("2_fjn5t")]
 position = Vector2(351, -218)
-ColorSelect = "green"
 
 [node name="DoorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("5_yljxm")]
 position = Vector2(-57, -19)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true
-ColorSelect = "blue"
 
 [node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("3_yljxm")]
 position = Vector2(204, -42)
@@ -68,7 +66,6 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D2")
 Point2 = NodePath("Node2D")
 AwaitActivaion = true
-ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=618772260]
@@ -84,7 +81,6 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "yellow"
 LinkedButtons = [NodePath("../ElevatorButton2")]
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=1893122303]
@@ -101,7 +97,6 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "blue"
 LinkedButtons = [NodePath("../ElevatorButton3")]
 
 [node name="Node2D" type="Node2D" parent="elevator3" unique_id=83424185]
@@ -117,7 +112,6 @@ PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "red"
 LinkedButtons = [NodePath("../ElevatorButton4")]
 
 [node name="Node2D" type="Node2D" parent="elevator4" unique_id=1245713598]
@@ -138,7 +132,6 @@ debug_color = Color(0.84547526, 0.2839165, 0.63786876, 0.41960785)
 position = Vector2(24, -19)
 linkedElevator = NodePath("../elevator")
 HasToBeHeld = true
-ColorSelect = "green"
 
 [node name="ElevatorButton2" parent="." unique_id=1987160301 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("8_un0qa")]
 position = Vector2(57, -19)
@@ -149,13 +142,11 @@ HasToBeHeld = true
 position = Vector2(90, -19)
 linkedElevator = NodePath("../elevator3")
 HasToBeHeld = true
-ColorSelect = "blue"
 
 [node name="ElevatorButton4" parent="." unique_id=1124224069 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("8_un0qa")]
 position = Vector2(120, -19)
 linkedElevator = NodePath("../elevator4")
 HasToBeHeld = true
-ColorSelect = "red"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1024229543]
 
@@ -194,12 +185,8 @@ position = Vector2(-697, -179)
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_ifrw1")]
 
-[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=778043839]
-tile_map_data = PackedByteArray("AAAKAP//BAAAAAAAAAA=")
-tile_set = ExtResource("1_pdbp2")
-
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1618765504]
-tile_map_data = PackedByteArray("AAD+//b/AwAIAAsAAAD+//f/AwAIAAwAAAD+//j/AwAIAA0AAAD+//n/AwAIAA4AAAD+//r/AwAIAA8AAAD+//v/AwAIABAAAAD+//z/AwAIABEAAAD+//3/AwAIABIAAAD+//7/AwAIABMAAADx//b/AwAIAAsAABDx//f/AwAIAAwAABDx//j/AwAIAA0AABDx//n/AwAIAA4AABDx//r/AwAIAA8AABDx//v/AwAIABAAABDx//z/AwAIABEAABDx//3/AwAIABIAABDx//7/AwAIABMAABAKAPX/AgAWAAoAABAKAPb/AgAWAAsAABAKAPf/AgAWAAwAABAKAPj/AgAWAA0AABAKAPn/AgAWAA4AABAKAPr/AgAWAA8AABAKAPv/AgAWABAAABAKAPz/AgAWABEAABAKAP3/AgAWABIAABAKAP7/AgAWABMAABAKAP//AgAWABQAABAmAPX/AgAWAAoAAAAmAPb/AgAWAAsAAAAmAPf/AgAWAAwAAAAmAPj/AgAWAA0AAAAmAPn/AgAWAA4AAAAmAPr/AgAWAA8AAAAmAPv/AgAWABAAAAAmAPz/AgAWABEAAAAmAP3/AgAWABIAAAAmAP7/AgAWABMAAAAmAP//AgAWABQAAAAmAPT/AwAIAA0AAAAmAPP/AwAIAA0AAAAmAPL/AwAIAAwAAAAmAPH/AwAIAAwAAAAmAPD/AwAIAAwAAAAmAO//AwAIAAsAAAAmAO7/AwAIAAsAAAAmAO3/AwAIAAsAAAAKAPT/AwAIAA0AABAKAPP/AwAIAA0AABAKAPL/AwAIAAwAABAKAPH/AwAIAAwAABAKAPD/AwAIAAsAABAKAO//AwAIAAsAABAKAO7/AwAIAAsAABAIAPv/AwAIAA4AAAAAAPv/AwAIAA4AABDv//z/AwAIABAAAADv//3/AwAIABEAAADv//7/AwAIABIAAADn//z/AwAIABAAABDn//3/AwAIABEAABDn//7/AwAIABIAABDv//v/AwAIAA8AAADn//v/AwAIAA8AABDv//r/AwAIAA4AAADn//r/AwAIAA4AABDv//f/AwAIAAsAAADv//j/AwAIAAwAAADv//n/AwAIAA0AAADn//f/AwAIAAsAABDn//j/AwAIAAwAABDn//n/AwAIAA0AABAAAPj/AwAIAAsAABAAAPn/AwAIAAwAABAAAPr/AwAIAA0AABAIAPj/AwAIAAsAAAAIAPn/AwAIAAwAAAAIAPr/AwAIAA0AAAAIAPz/AwAIABEAAAAIAP3/AwAIABIAAAAIAP7/AwAIABMAAAAAAPz/AwAIABEAABAAAP3/AwAIABIAABAAAP7/AwAIABMAABD///X/AwAKABUAAAD///b/AwAKABUAAAD///f/AwAKABUAAAD///j/AwAKABUAAAD///n/AwAKABUAAAD///r/AwAKABUAAAD///v/AwAKABUAAAD///z/AwAKABUAAAD///3/AwAKABUAAAD///7/AwAKABUAAAD/////AwAKABUAAAAJAPP/AwAKABUAAAAJAPT/AwAKABUAAAAJAPX/AwAKABUAAAAJAPb/AwAKABUAAAAJAPf/AwAKABUAAAAJAPj/AwAKABUAAAAJAPn/AwAKABUAAAAJAPr/AwAKABUAAAAJAPv/AwAKABUAAAAJAPz/AwAKABUAAAAJAP3/AwAKABUAAAAJAP7/AwAKABUAAAAJAP//AwAKABUAAADw//T/AwAKABUAAADw//X/AwAKABUAAADw//b/AwAKABUAAADw//f/AwAKABUAAADw//j/AwAKABUAAADw//n/AwAKABUAAADw//r/AwAKABUAAADw//v/AwAKABUAAADw//z/AwAKABUAAADw//3/AwAKABUAAADw//7/AwAKABUAAADw////AwAKABUAAADw/wAAAwAKABUAAAALAP//BAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+//b/AwAIAAsAAAD+//f/AwAIAAwAAAD+//j/AwAIAA0AAAD+//n/AwAIAA4AAAD+//r/AwAIAA8AAAD+//v/AwAIABAAAAD+//z/AwAIABEAAAD+//3/AwAIABIAAAD+//7/AwAIABMAAADx//b/AwAIAAsAABDx//f/AwAIAAwAABDx//j/AwAIAA0AABDx//n/AwAIAA4AABDx//r/AwAIAA8AABDx//v/AwAIABAAABDx//z/AwAIABEAABDx//3/AwAIABIAABDx//7/AwAIABMAABAKAPX/AgAWAAoAABAKAPb/AgAWAAsAABAKAPf/AgAWAAwAABAKAPj/AgAWAA0AABAKAPn/AgAWAA4AABAKAPr/AgAWAA8AABAKAPv/AgAWABAAABAKAPz/AgAWABEAABAKAP3/AgAWABIAABAKAP7/AgAWABMAABAKAP//AgAWABQAABAmAPX/AgAWAAoAAAAmAPb/AgAWAAsAAAAmAPf/AgAWAAwAAAAmAPj/AgAWAA0AAAAmAPn/AgAWAA4AAAAmAPr/AgAWAA8AAAAmAPv/AgAWABAAAAAmAPz/AgAWABEAAAAmAP3/AgAWABIAAAAmAP7/AgAWABMAAAAmAP//AgAWABQAAAAmAPT/AwAIAA0AAAAmAPP/AwAIAA0AAAAmAPL/AwAIAAwAAAAmAPH/AwAIAAwAAAAmAPD/AwAIAAwAAAAmAO//AwAIAAsAAAAmAO7/AwAIAAsAAAAmAO3/AwAIAAsAAAAKAPT/AwAIAA0AABAKAPP/AwAIAA0AABAKAPL/AwAIAAwAABAKAPH/AwAIAAwAABAKAPD/AwAIAAsAABAKAO//AwAIAAsAABAKAO7/AwAIAAsAABAIAPv/AwAIAA4AAAAAAPv/AwAIAA4AABDv//z/AwAIABAAAADv//3/AwAIABEAAADv//7/AwAIABIAAADn//z/AwAIABAAABDn//3/AwAIABEAABDn//7/AwAIABIAABDv//v/AwAIAA8AAADn//v/AwAIAA8AABDv//r/AwAIAA4AAADn//r/AwAIAA4AABDv//f/AwAIAAsAAADv//j/AwAIAAwAAADv//n/AwAIAA0AAADn//f/AwAIAAsAABDn//j/AwAIAAwAABDn//n/AwAIAA0AABAAAPj/AwAIAAsAABAAAPn/AwAIAAwAABAAAPr/AwAIAA0AABAIAPj/AwAIAAsAAAAIAPn/AwAIAAwAAAAIAPr/AwAIAA0AAAAIAPz/AwAIABEAAAAIAP3/AwAIABIAAAAIAP7/AwAIABMAAAAAAPz/AwAIABEAABAAAP3/AwAIABIAABAAAP7/AwAIABMAABD///X/AwAKABUAAAD///b/AwAKABUAAAD///f/AwAKABUAAAD///j/AwAKABUAAAD///n/AwAKABUAAAD///r/AwAKABUAAAD///v/AwAKABUAAAD///z/AwAKABUAAAD///3/AwAKABUAAAD///7/AwAKABUAAAD/////AwAKABUAAAAJAPP/AwAKABUAAAAJAPT/AwAKABUAAAAJAPX/AwAKABUAAAAJAPb/AwAKABUAAAAJAPf/AwAKABUAAAAJAPj/AwAKABUAAAAJAPn/AwAKABUAAAAJAPr/AwAKABUAAAAJAPv/AwAKABUAAAAJAPz/AwAKABUAAAAJAP3/AwAKABUAAAAJAP7/AwAKABUAAAAJAP//AwAKABUAAADw//T/AwAKABUAAADw//X/AwAKABUAAADw//b/AwAKABUAAADw//f/AwAKABUAAADw//j/AwAKABUAAADw//n/AwAKABUAAADw//r/AwAKABUAAADw//v/AwAKABUAAADw//z/AwAKABUAAADw//3/AwAKABUAAADw//7/AwAKABUAAADw////AwAKABUAAADw/wAAAwAKABUAAAA=")
 tile_set = ExtResource("1_pdbp2")
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

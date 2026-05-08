@@ -8,12 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="5_cjca4"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="6_7jdx6"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_03pv8"]
-[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="9_0up2q"]
-<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="9_0up2q"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="10_ur65l"]
-=======
-[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="10_ur65l"]
->>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjca4"]
 size = Vector2(20, 148)
@@ -56,13 +52,11 @@ position = Vector2(211, -73)
 position = Vector2(328, -66)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
-ColorSelect = "blue"
 
 [node name="DoorButton2" parent="." unique_id=170556767 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("6_7jdx6")]
 position = Vector2(228, -130)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
-ColorSelect = "blue"
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=2012120301]
 tile_map_data = PackedByteArray("AAAWAPv/AwASABQAAAAXAPv/AwATABQAAAAVAPv/AwARABQAAAALAPv/AwARABQAAAAMAPv/AwASABQAAAANAPv/AwATABQAAAALAPf/AwARABQAAAAMAPf/AwASABQAAAANAPf/AwATABQAAAAXAPf/AwATABQAAAAWAPf/AwASABQAAAAVAPf/AwARABQAAAAgAP7/AwARABQAAAAhAP7/AwASABQAAAAiAP7/AwATABQAAAAmAP7/AwARABQAAAAnAP7/AwASABQAAAAoAP7/AwATABQAAAA=")
@@ -105,9 +99,7 @@ HasToBeHeld = true
 ActivateOnce = true
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_03pv8")]
-visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("9_0up2q")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("10_ur65l")]
-DialogueText = "vitals located in ventilation system. Expected reason, small rat infestation… "

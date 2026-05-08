@@ -9,12 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bn0ec22mhm4y8" path="res://scenes/levels/Level 4.tscn" id="5_jsyro"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="6_h7tt3"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="9_5dt25"]
-[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_5dt25"]
-<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_5dt25"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_h7tt3"]
-=======
-[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="11_h7tt3"]
->>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n00oh"]
 size = Vector2(20, 126)
@@ -45,12 +41,10 @@ position = Vector2(-263, -127)
 position = Vector2(320, -99)
 linkedDoor = NodePath("../Door2")
 ActivateOnce = true
-ColorSelect = "red"
 
 [node name="Door2" parent="." unique_id=366212413 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_dshas")]
 position = Vector2(600.00006, -40.000004)
 scale = Vector2(0.85, 0.75)
-ColorSelect = "red"
 selectedScene = ExtResource("5_jsyro")
 LinkedButtons = [NodePath("../DoorButton2")]
 
@@ -66,7 +60,6 @@ position = Vector2(248, -14)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=975029502]
@@ -78,7 +71,6 @@ position = Vector2(0, -88)
 position = Vector2(888, -19)
 linkedElevator = NodePath("../elevator")
 ActivateOnce = true
-ColorSelect = "green"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1101058118]
 
@@ -98,5 +90,3 @@ visible = false
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_5dt25")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_h7tt3")]
-DialogueText = "Seek replacement prosthetic, located in warehouse sector.
-"

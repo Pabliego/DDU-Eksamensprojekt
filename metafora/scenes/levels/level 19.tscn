@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://gruuocerg41u" path="res://data/new_tile_set.tres" id="1_0ynbp"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="2_nc03r"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="3_2fd72"]
-[ext_resource type="PackedScene" uid="uid://d4fjcwfj45idl" path="res://scenes/levels/Level 20.tscn" id="3_h0ln6"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="3_tgo4t"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="4_iud4k"]
 [ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_wmiy1"]
@@ -43,7 +42,6 @@ scale = Vector2(0.75, 0.75)
 [node name="Door2" parent="." unique_id=874049212 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_nc03r")]
 position = Vector2(1432, -103)
 scale = Vector2(0.75, 0.75)
-selectedScene = ExtResource("3_h0ln6")
 LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1123519707]
@@ -51,14 +49,13 @@ tile_map_data = PackedByteArray("AAAOAP//AwAaABQAAFAPAP//AwAaABMAAFAQAP//AwAaABM
 tile_set = ExtResource("1_0ynbp")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=2117959829]
-tile_map_data = PackedByteArray("AABOAAEAAwAaABAAACBOAAAAAwAaABEAACBOAP//AwAaABIAACBOAP7/AwAaABMAAABOAP3/AwAaABIAAABOAPz/AwAaABEAAABOAPv/AwAaABMAAABOAPr/AwAaABIAAABOAPn/AwAaABEAAABOAPj/AwAaABMAAABOAPf/AwAaABMAAABOAPb/AwAaABIAAABOAPX/AwAaABEAAABOAPT/AwAaABAAAAANAP3/AwANABEAAAAOAP3/AwAOABEAAAAPAP3/AwAPABEAAAAQAP3/AwAQABEAAAATAPz/AwANABEAAAAUAPz/AwAOABEAAAAVAPz/AwAPABEAAAAWAPz/AwAQABEAAAAYAPr/AwANABEAAAAZAPr/AwAOABEAAAAaAPr/AwAPABEAAAAbAPr/AwAQABEAAAAdAPj/AwANABEAAAAeAPj/AwAOABEAAAAfAPj/AwAPABEAAAAgAPj/AwAQABEAAAAjAPr/AwANABEAAAAkAPr/AwAOABEAAAAlAPr/AwAPABEAAAAmAPr/AwAQABEAAAApAPj/AwANABEAAAAqAPj/AwAOABEAAAArAPj/AwAPABEAAAAsAPj/AwAQABEAAAAwAPr/AwANABEAAAAxAPr/AwAOABEAAAAyAPr/AwAPABEAAAAzAPr/AwAQABEAAAA4APr/AwANABEAAAA5APr/AwAOABEAAAA6APr/AwAPABEAAAA7APr/AwAQABEAAAA/APj/AwANABEAAABAAPj/AwAOABEAAABBAPj/AwAPABEAAABCAPj/AwAQABEAAABFAPf/AwANABEAAABGAPf/AwAOABEAAABHAPf/AwAPABEAAABIAPf/AwAQABEAAABSAPv/BAAAAAAAAABTAPv/BAABAAAAAABUAPv/BAABAAAAAABKAPT/BQAAAAIAAABKAPX/BQAAAAMAAABKAPb/BQAAAAQAAAA=")
+tile_map_data = PackedByteArray("AABOAAEAAwAaABAAACBOAAAAAwAaABEAACBOAP//AwAaABIAACBOAP7/AwAaABMAAABOAP3/AwAaABIAAABOAPz/AwAaABEAAABOAPv/AwAaABMAAABOAPr/AwAaABIAAABOAPn/AwAaABEAAABOAPj/AwAaABMAAABOAPf/AwAaABMAAABOAPb/AwAaABIAAABOAPX/AwAaABEAAABOAPT/AwAaABAAAAANAP3/AwANABEAAAAOAP3/AwAOABEAAAAPAP3/AwAPABEAAAAQAP3/AwAQABEAAAATAPz/AwANABEAAAAUAPz/AwAOABEAAAAVAPz/AwAPABEAAAAWAPz/AwAQABEAAAAYAPr/AwANABEAAAAZAPr/AwAOABEAAAAaAPr/AwAPABEAAAAbAPr/AwAQABEAAAAdAPj/AwANABEAAAAeAPj/AwAOABEAAAAfAPj/AwAPABEAAAAgAPj/AwAQABEAAAAjAPr/AwANABEAAAAkAPr/AwAOABEAAAAlAPr/AwAPABEAAAAmAPr/AwAQABEAAAApAPj/AwANABEAAAAqAPj/AwAOABEAAAArAPj/AwAPABEAAAAsAPj/AwAQABEAAAAwAPr/AwANABEAAAAxAPr/AwAOABEAAAAyAPr/AwAPABEAAAAzAPr/AwAQABEAAAA4APr/AwANABEAAAA5APr/AwAOABEAAAA6APr/AwAPABEAAAA7APr/AwAQABEAAAA/APj/AwANABEAAABAAPj/AwAOABEAAABBAPj/AwAPABEAAABCAPj/AwAQABEAAABFAPf/AwANABEAAABGAPf/AwAOABEAAABHAPf/AwAPABEAAABIAPf/AwAQABEAAABSAPv/BAAAAAAAAABTAPv/BAABAAAAAABUAPv/BAABAAAAAABKAPL/AwAKABUAAABKAPP/AwAKABUAAABKAPT/AwAKABUAAABKAPX/AwAKABUAAABLAPT/AwAKABUAAABMAPP/AwAKABUAAABJAPT/AwAKABUAAABIAPP/AwAKABUAAABKAPH/AwAKABUAAAA=")
 tile_set = ExtResource("1_0ynbp")
 
 [node name="DoorButton" parent="." unique_id=838200079 node_paths=PackedStringArray("linkedDoor") instance=ExtResource("11_vatyo")]
 position = Vector2(1480, -83)
 linkedDoor = NodePath(".")
 HasToBeHeld = true
-ColorSelect = "blue"
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("3_2fd72")]
 position = Vector2(235, -23)
@@ -71,7 +68,6 @@ HasLegs = true
 position = Vector2(1167, -51)
 linkedElevator = NodePath("../elevator2")
 ActivateOnce = true
-ColorSelect = "green"
 
 [node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("3_tgo4t")]
 position = Vector2(235, -9)
@@ -98,7 +94,6 @@ scale = Vector2(1.3, 1.3)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "green"
 LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=1283973311]
@@ -116,6 +111,7 @@ shape = SubResource("WorldBoundaryShape2D_3us7d")
 debug_color = Color(0.84547526, 0.2839165, 0.63786876, 0.41960785)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("6_app4e")]
+visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("7_iud4k")]
 

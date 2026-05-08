@@ -9,12 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_r7gaa"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="7_vphsu"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="8_urbuw"]
-[ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_ljsf5"]
-<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://scenes/ui/Menu.tscn" id="10_ljsf5"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="11_r7gaa"]
-=======
-[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="11_r7gaa"]
->>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhtgv"]
 size = Vector2(20, 128)
@@ -40,9 +36,11 @@ LinkedButtons = [NodePath("../DoorButton2")]
 [node name="Door2" parent="." unique_id=1269469087 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("2_urbuw")]
 position = Vector2(1256.0001, -40.000004)
 scale = Vector2(0.85, 0.75)
-ColorSelect = "red"
 selectedScene = ExtResource("3_btc5u")
 LinkedButtons = [NodePath("../DoorButton")]
+
+[node name="Unit555Body" parent="." unique_id=1668450867 instance=ExtResource("3_1ts8h")]
+position = Vector2(104, -15)
 
 [node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_btc5u")]
 position = Vector2(1022, -115)
@@ -52,12 +50,10 @@ linkedElevator = NodePath("../elevator5")
 position = Vector2(1090, -83)
 linkedDoor = NodePath("../Door2")
 HasToBeHeld = true
-ColorSelect = "red"
 
 [node name="ElevatorButton2" parent="." unique_id=598550917 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_btc5u")]
 position = Vector2(864, -162)
 linkedElevator = NodePath("../elevator4")
-ColorSelect = "green"
 
 [node name="PushableBox" parent="." unique_id=239121608 instance=ExtResource("7_vphsu")]
 position = Vector2(350, -106)
@@ -91,27 +87,23 @@ Point2 = NodePath("Node2D2")
 [node name="Node2D2" type="Node2D" parent="elevator3" unique_id=1611929148]
 position = Vector2(-1, -81)
 
-[node name="elevator4" parent="." unique_id=2019091753 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("6_r7gaa")]
+[node name="elevator4" parent="." unique_id=2019091753 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("6_r7gaa")]
 position = Vector2(952, -100)
 PauseDuration = 1.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "green"
-LinkedButtons = [NodePath("../ElevatorButton2")]
 
 [node name="Node2D" type="Node2D" parent="elevator4" unique_id=1522693903]
 
 [node name="Node2D2" type="Node2D" parent="elevator4" unique_id=336098270]
 position = Vector2(0, -60)
 
-[node name="elevator5" parent="." unique_id=1227453496 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("6_r7gaa")]
+[node name="elevator5" parent="." unique_id=1227453496 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("6_r7gaa")]
 position = Vector2(440, -16)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
-ColorSelect = "yellow"
-LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator5" unique_id=1868834304]
 
@@ -138,15 +130,7 @@ linkedDoor = NodePath("../Door")
 position = Vector2(-304, -109)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("8_urbuw")]
-visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_ljsf5")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("11_r7gaa")]
-<<<<<<< HEAD
-
-[node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("3_1ts8h")]
-position = Vector2(106, -16)
-=======
-DialogueText = "Signals successfully received by 0 out of 18, system recognized cell towers."
->>>>>>> 52580af6bf1d69f98498bc0414449abe69376fda
