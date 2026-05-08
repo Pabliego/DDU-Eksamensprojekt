@@ -129,7 +129,7 @@ public partial class MainMenu : Control
                 _ = StartGameSequence();
                 break;
             case "help":
-                await WriteToTerminal("> Available commands: start, quit, options", 0.01f, true);
+                await WriteToTerminal("> Available commands: start, quit", 0.01f, true);
                 break;
             case "quit":
                 await WriteToTerminal("Are you sure? y/n", 0f, true);
