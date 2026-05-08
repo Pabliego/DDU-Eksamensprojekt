@@ -179,7 +179,6 @@ linkedDoor = NodePath("../Door2")
 position = Vector2(-697, -179)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("10_ifrw1")]
-visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_kldyl")]
 
