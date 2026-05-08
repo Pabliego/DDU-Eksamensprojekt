@@ -15,6 +15,7 @@ public partial class Unit555 : CharacterBody2D
 
     private AnimatedSprite2D Unit555ani;
     private AudioStreamPlayer2D sound;
+    private AudioStreamPlayer2D jumpsound;
     private AudioStreamPlaybackInteractive interactiveSound;
     private float currentSpeed = 0f;
     private bool Turning = false;
@@ -43,6 +44,7 @@ public partial class Unit555 : CharacterBody2D
         
         sound = GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
         sound.Play();
+        jumpsound = GetNode<AudioStreamPlayer2D>("AudioJump");
         interactiveSound = sound.GetStreamPlayback() as AudioStreamPlaybackInteractive;
     }
 
@@ -69,6 +71,7 @@ public partial class Unit555 : CharacterBody2D
             else if (IsOnFloor() && Jumping)
             {
                 Jumping = false;
+                jumpsound.Play();
             }
         }
 

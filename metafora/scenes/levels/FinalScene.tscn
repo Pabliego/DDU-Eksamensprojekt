@@ -1,0 +1,358 @@
+[gd_scene format=3 uid="uid://5pg880tltl3m"]
+
+[ext_resource type="Texture2D" uid="uid://qpfc0h0ar538" path="res://assets/textures/Bunker/ending.png" id="1_77ye6"]
+[ext_resource type="Script" uid="uid://bbnrsvipfpvgb" path="res://scripts/ui/FinalScene.cs" id="1_w44qw"]
+[ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="3_rq84w"]
+[ext_resource type="AudioStream" uid="uid://dibu616ajemj0" path="res://assets/audio/DoorOpening(Sounddino).wav" id="4_7t0yn"]
+[ext_resource type="FontFile" uid="uid://d2h1n654joknf" path="res://assets/fonts/MozartNbp-93Ey.ttf" id="5_s7xj3"]
+[ext_resource type="AudioStream" uid="uid://bb7opmtsguldr" path="res://assets/audio/Bird Sounds Spectacular Morning Bird Sound - Paul Dinning (128k) (mp3cut.net) (1).mp3" id="5_uqpra"]
+[ext_resource type="Texture2D" uid="uid://8sx38vma8pq2" path="res://assets/textures/homeicon.png" id="7_8omca"]
+[ext_resource type="Theme" uid="uid://7gbaakacy3yg" path="res://scenes/ui/new_theme.tres" id="7_50der"]
+[ext_resource type="Texture2D" uid="uid://4ep4aqysthvl" path="res://assets/textures/quiticon.png" id="9_kefhw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50der"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(0, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44qw"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(0, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq84w"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(528, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t0yn"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(1056, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7xj3"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(1584, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqpra"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(2112, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8omca"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(2640, 0, 528, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja34e"]
+atlas = ExtResource("1_77ye6")
+region = Rect2(3168, 0, 528, 275)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50der"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50der")
+}],
+"loop": true,
+"name": &"FirstFrame",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w44qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq84w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t0yn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7xj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqpra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8omca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja34e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Theme" id="Theme_uqpra"]
+default_font = ExtResource("5_s7xj3")
+default_font_size = 105
+
+[sub_resource type="Animation" id="Animation_50der"]
+resource_name = "ComeIn"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(590, 0, 0, 0.083333336, 0, 590, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-128.355, 0, 0, 0.083333336, 50.059166, 172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(38, 0, 0, 0.083333336, 0, 38, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1109.55, 0, 0, 0.083333336, -25.925009, 954, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1580, 0, 0, 0.083333336, 0, 1580, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1110.76, 0, 0, 0.083333336, -27.293335, 947, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_kefhw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(590, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(38, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(954, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1580, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(947, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ydepa"]
+resource_name = "start"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(590, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-128.355, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(38, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1109.55, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1580, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1110.76, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ydepa"]
+_data = {
+&"ComeIn": SubResource("Animation_50der"),
+&"RESET": SubResource("Animation_kefhw"),
+&"start": SubResource("Animation_ydepa")
+}
+
+[node name="FinalScene" type="CanvasLayer" unique_id=1539193377]
+script = ExtResource("1_w44qw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=978849129]
+position = Vector2(958.76013, 543.87506)
+scale = Vector2(3.6554554, 4.0227275)
+sprite_frames = SubResource("SpriteFrames_50der")
+autoplay = "FirstFrame"
+
+[node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("3_rq84w")]
+
+[node name="DoorSound" type="AudioStreamPlayer2D" parent="." unique_id=2145734751]
+stream = ExtResource("4_7t0yn")
+
+[node name="Nature" type="AudioStreamPlayer2D" parent="." unique_id=1331198848]
+stream = ExtResource("5_uqpra")
+volume_db = -10.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1058460206]
+offset_left = 590.0
+offset_top = 172.0
+offset_right = 1356.0
+offset_bottom = 280.99994
+theme = SubResource("Theme_uqpra")
+text = "Thanks for playing!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1841565182]
+offset_left = 38.0
+offset_top = 954.0
+offset_right = 532.0
+offset_bottom = 1056.9993
+theme = ExtResource("7_50der")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Main Menu"
+icon = ExtResource("7_8omca")
+flat = true
+expand_icon = true
+
+[node name="Button2" type="Button" parent="." unique_id=592319099]
+offset_left = 1580.0
+offset_top = 947.0
+offset_right = 1888.0
+offset_bottom = 1050.0
+theme = ExtResource("7_50der")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Quit"
+icon = ExtResource("9_kefhw")
+flat = true
+icon_alignment = 2
+expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=937342500]
+libraries/ = SubResource("AnimationLibrary_ydepa")
+autoplay = &"start"
+
+[connection signal="pressed" from="Button" to="." method="ButtonMenuPressed"]
+[connection signal="pressed" from="Button2" to="." method="ButtonQuitPressed"]
