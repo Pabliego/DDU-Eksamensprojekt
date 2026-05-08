@@ -46,12 +46,14 @@ position = Vector2(342, 630)
 linkedDoor = NodePath("../Door")
 HasToBeHeld = true
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("4_ydtff")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("4_ydtff")]
 position = Vector2(490, 635)
 MovementDuration = 3.5
 Point1 = NodePath("Point1")
 Point2 = NodePath("Point2")
+AwaitActivaion = true
 ColorSelect = " blue"
+LinkedButtons = [NodePath("../ElevatorButton3")]
 
 [node name="Point2" type="Node2D" parent="elevator" unique_id=852431211]
 position = Vector2(0, -103)
@@ -64,16 +66,22 @@ Point1 = NodePath("Point1")
 Point2 = NodePath("Point2")
 AwaitActivaion = true
 ColorSelect = " yellow"
-LinkedButtons = [NodePath("../ElevatorButton2")]
+LinkedButtons = [NodePath("../ElevatorButton2"), NodePath("../ElevatorButton")]
 
 [node name="Point2" type="Node2D" parent="elevator2" unique_id=962117206]
 position = Vector2(-2, -73)
 
 [node name="Point1" type="Node2D" parent="elevator2" unique_id=81001326]
 
-[node name="ElevatorButton" parent="." unique_id=884837610 instance=ExtResource("5_v3ud1")]
-position = Vector2(726, 630)
+[node name="ElevatorButton3" parent="." unique_id=900164684 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_v3ud1")]
+position = Vector2(519, 630)
+linkedElevator = NodePath("../elevator")
 ActivateOnce = true
+
+[node name="ElevatorButton" parent="." unique_id=884837610 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_v3ud1")]
+position = Vector2(726, 630)
+linkedElevator = NodePath("../elevator")
+HasToBeHeld = true
 
 [node name="ElevatorButton2" parent="." unique_id=1830074238 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("5_v3ud1")]
 position = Vector2(653, 630)

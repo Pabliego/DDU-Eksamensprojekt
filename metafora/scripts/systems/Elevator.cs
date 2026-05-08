@@ -51,7 +51,7 @@ public partial class Elevator : Node2D
 
 	private void CheckAllButtons()
 	{
-				if (LinkedButtons.Count == 0)
+		if (LinkedButtons.Count == 0)
 		{
 			return;
 		}

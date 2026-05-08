@@ -50,25 +50,17 @@ public partial class Elevatorbutton : Node2D
 	{
 		if (body.Name == "Unit555" || body.IsInGroup("pushable"))
 		{
+
 			aniButton.Play("pressed");
 			ButtonSound.Play();
-			if (linkedElevator != null)
+			if (linkedElevator == null)
 			{
-				ActivateLink();
-			} else {
 				GD.Print("No Door Node linked!");
 				return;
 			}
 
-		if (HasToBeHeld)
-        {
-            Activated = true;
-            linkedElevator.Activate();
-        }
-        else
-        {
-            ActivateLink();
-        }
+			Activated = true;
+			linkedElevator.UpdateElevatorState(this, true);
 		}
 	} 
 
