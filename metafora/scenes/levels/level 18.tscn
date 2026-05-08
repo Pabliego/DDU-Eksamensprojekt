@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_cstcw"]
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="6_hfhx8"]
 [ext_resource type="Script" uid="uid://ca4ywruc7y37k" path="res://scripts/systems/Boundary.cs" id="7_733e3"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_mlrgj"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="9_mlrgj"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="10_5otsn"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="11_65pmb"]
 
@@ -378,6 +378,5 @@ shape = SubResource("RectangleShape2D_mlrgj")
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_5otsn")]
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("11_65pmb")]
-visible = false
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

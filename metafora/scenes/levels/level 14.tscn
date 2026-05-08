@@ -96,10 +96,11 @@ ColorSelect = "red"
 position = Vector2(70, -48)
 LinkedButtons = [NodePath("../DoorButton3")]
 
-[node name="Door" parent="." unique_id=657204424 instance=ExtResource("6_jpp3i")]
+[node name="Door" parent="." unique_id=657204424 node_paths=PackedStringArray("LinkedButtons") instance=ExtResource("6_jpp3i")]
 position = Vector2(-78, -48)
 ColorSelect = "red"
 selectedScene = ExtResource("7_jpp3i")
+LinkedButtons = [NodePath("../DoorButton"), NodePath("../DoorButton2")]
 
 [node name="ElevatorButton2" parent="." unique_id=1341494525 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_cchio")]
 position = Vector2(209, -131)
@@ -141,7 +142,6 @@ linkedDoor = NodePath("../Door2")
 position = Vector2(846, -140)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("9_kqayy")]
-visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("10_3tm2c")]
 

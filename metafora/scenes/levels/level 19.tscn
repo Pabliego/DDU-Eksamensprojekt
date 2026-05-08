@@ -73,13 +73,16 @@ linkedElevator = NodePath("../elevator2")
 ActivateOnce = true
 ColorSelect = "green"
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("3_tgo4t")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("3_tgo4t")]
 position = Vector2(235, -9)
 scale = Vector2(0.7, 0.7)
 MovementDuration = 12.5
 PauseDuration = 0.0
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
+AwaitActivaion = true
+ColorSelect = "green"
+LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=19388697]
 
@@ -146,8 +149,8 @@ shape = SubResource("RectangleShape2D_3us7d")
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("7_iud4k")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("8_h0ln6")]
+DialogueText = "Analysis failed: Scan module damaged, using prebuilt METAFORA-instinct-drivers"
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("6_app4e")]
-visible = false
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]

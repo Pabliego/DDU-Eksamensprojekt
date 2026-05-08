@@ -193,6 +193,7 @@ position = Vector2(-697, -179)
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_kldyl")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_ifrw1")]
+DialogueText = "Logic crashed.... Rebooting..."
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=778043839]
 tile_map_data = PackedByteArray("AAAKAP//BAAAAAAAAAA=")

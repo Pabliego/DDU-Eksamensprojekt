@@ -122,7 +122,7 @@ selectedScene = ExtResource("10_iskjd")
 LinkedButtons = [NodePath("../DoorButton")]
 
 [node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("5_bruhr")]
-position = Vector2(97, -17)
+position = Vector2(93, -16)
 HasLegs = true
 
 [node name="elevator4" parent="." unique_id=1797359507 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("3_bruhr")]

@@ -67,8 +67,8 @@ position = Vector2(1, -106)
 
 [node name="elevator2" parent="." unique_id=1571051478 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("2_67jeb")]
 position = Vector2(136, -122)
-Point1 = NodePath("Node2D")
-Point2 = NodePath("Node2D2")
+Point1 = NodePath("Node2D2")
+Point2 = NodePath("Node2D")
 
 [node name="Node2D" type="Node2D" parent="elevator2" unique_id=2107721808]
 
@@ -142,3 +142,4 @@ shape = SubResource("RectangleShape2D_foucq")
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("8_txf0q")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("9_txf0q")]
+DialogueText = "Update file from server is corrupted, aborting."

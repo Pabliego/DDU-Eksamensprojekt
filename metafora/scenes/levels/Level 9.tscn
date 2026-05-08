@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dh3ch8xxhjktj" path="res://scenes/props/door.tscn" id="2_urbuw"]
 [ext_resource type="PackedScene" uid="uid://cccsok1o1x0xd" path="res://scenes/levels/Level 10.tscn" id="3_btc5u"]
 [ext_resource type="PackedScene" uid="uid://55ns62ca0pet" path="res://scenes/props/elevatorbutton.tscn" id="4_btc5u"]
+[ext_resource type="PackedScene" uid="uid://cktqbwdtjrkv3" path="res://scenes/player/Unit555.tscn" id="4_ljsf5"]
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="5_ljsf5"]
 [ext_resource type="PackedScene" uid="uid://dlptl17l7mwbb" path="res://scenes/props/elevator.tscn" id="6_r7gaa"]
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="7_vphsu"]
@@ -38,6 +39,9 @@ scale = Vector2(0.85, 0.75)
 ColorSelect = "red"
 selectedScene = ExtResource("3_btc5u")
 LinkedButtons = [NodePath("../DoorButton")]
+
+[node name="Unit555" parent="." unique_id=1668450867 instance=ExtResource("4_ljsf5")]
+position = Vector2(107, -15)
 
 [node name="ElevatorButton" parent="." unique_id=1785796626 node_paths=PackedStringArray("linkedElevator") instance=ExtResource("4_btc5u")]
 position = Vector2(1022, -115)

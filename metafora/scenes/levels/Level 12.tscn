@@ -151,12 +151,13 @@ position = Vector2(-451, -226)
 linkedElevator = NodePath("../elevator")
 ColorSelect = "green"
 
-[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2") instance=ExtResource("7_3xfrn")]
+[node name="elevator" parent="." unique_id=1021299162 node_paths=PackedStringArray("Point1", "Point2", "LinkedButtons") instance=ExtResource("7_3xfrn")]
 position = Vector2(-104, -15)
 Point1 = NodePath("Node2D")
 Point2 = NodePath("Node2D2")
 AwaitActivaion = true
 ColorSelect = "green"
+LinkedButtons = [NodePath("../ElevatorButton")]
 
 [node name="Node2D" type="Node2D" parent="elevator" unique_id=799223348]
 
@@ -177,10 +178,10 @@ linkedDoor = NodePath("../Door")
 position = Vector2(790, -160)
 
 [node name="SceneFadeTransition" parent="." unique_id=1978632930 instance=ExtResource("10_te1qw")]
-visible = false
 
 [node name="Menu" parent="." unique_id=1931243751 instance=ExtResource("11_yg08w")]
 
 [node name="Dialogue" parent="." unique_id=190047994 instance=ExtResource("12_8dwba")]
+DialogueText = "What happened to this place?"
 
 [connection signal="body_entered" from="Boundry" to="Boundry" method="OnBodyEntered"]
