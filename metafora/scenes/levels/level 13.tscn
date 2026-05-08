@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dxp27bsxadg02" path="res://scenes/props/PushableBox.tscn" id="6_tr14o"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="7_fx2of"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="8_txf0q"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="9_txf0q"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="9_txf0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fx2of"]
 size = Vector2(20, 186)

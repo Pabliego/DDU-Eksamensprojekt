@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c8taeqpj72bqx" path="res://scenes/props/doorbutton.tscn" id="8_3xfrn"]
 [ext_resource type="PackedScene" uid="uid://bg2frxhu7sqmt" path="res://scenes/ui/SceneFadeTransition.tscn" id="10_te1qw"]
 [ext_resource type="PackedScene" uid="uid://b58pr8kc4a2ph" path="res://scenes/ui/Menu.tscn" id="11_yg08w"]
-[ext_resource type="PackedScene" path="res://scenes/ui/dialogue.tscn" id="12_8dwba"]
+[ext_resource type="PackedScene" uid="uid://cvepptgkjrwks" path="res://scenes/ui/dialogue.tscn" id="12_8dwba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh0ae"]
 size = Vector2(643, 20)
